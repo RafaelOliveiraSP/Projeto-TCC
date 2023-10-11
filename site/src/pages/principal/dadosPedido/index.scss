@@ -103,16 +103,20 @@
 
     .endereco{
         display: flex;
-        justify-content: space-between;
         margin-top: 30px;
         margin-bottom: 30px;
         
-        gap: 30px;
+        gap: 10px;
 
         font-size: 14px;
 
-        width: 400px;
-        > input{
+        width: auto;
+
+        .end{
+            width: 100px;
+            margin-right: 40px;
+        }
+        .n{
             border-radius: 15px;
             border: 1px solid #4E5B60;
 
@@ -121,9 +125,35 @@
 
             padding: 0px 10px;
         }
+
+        .numero{
+            width: 60px;
+            height: 30px;
+
+            border-radius: 10px;
+            border: 1px solid #4E5B60;
+
+            padding: 0px 10px;
+        }
     }
     
 }
+
+        .continuar{
+            display: flex;
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+            border: 1px solid #4E5B60;
+
+            width: 300px;
+            height: 30px;
+            
+        }
 
 
 
