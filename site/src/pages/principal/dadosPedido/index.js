@@ -36,14 +36,16 @@ export default function DadosPedido(){
                         <hr/>
 
                     <div className='endereco'>
-                        <span>Endereço para entrega:</span>
-                        <input type='text'/>
+                        <span className='end'>Endereço para entrega :</span>
+                        <input className='n' type='text'/>
 
                         <span>N° : </span>
-                        <input type='text'/>     
+                        <input className='numero' type='text'/>     
                     </div>
-                        
-                </div>  
+                        <hr/>  
+                </div>
+
+                <button className='continuar'>Continuar</button>
              </div>
              <Rodape/>
         </div>
