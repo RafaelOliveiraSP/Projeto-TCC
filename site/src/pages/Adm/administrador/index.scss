@@ -1,0 +1,46 @@
+.pagina-administrador{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+
+    width: 100%; 
+    height: 100vh;
+    
+    
+    .titulo-adm{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+       
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    .links-adm{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .opcoes-adm {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px; 
+        
+        > div { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            > div {
+                width: 80px;
+                height: 80px;
+                border-radius: 100%;
+                background-color: #d9d9d9;
+
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.pagina-fale-conosco{
+    h1 {
+        display: flex;
+        justify-content: center;
+        padding-block-end: 100px;
+        padding-top: 20px;
+    }
+
+    p.second {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .borda {
+        padding-block-end: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .informacoes {
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        border-radius: 20px;
+        width: 50vw;
+    }
+
+    p.p1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .segunda-pt {
+        padding-top: 20px;
+
+        p {
+            justify-content: center;
+            display: flex;
+        }
+    }
+
+    p.primeiro {
+        text-align: center;
+    }
+
+    p.ultimo {
+        text-align: center;
+        padding-block-end: 50px;
+        padding-top: 20px;
+    }
+}

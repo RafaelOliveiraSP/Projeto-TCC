@@ -1,0 +1,69 @@
+.pagina-cadastro{
+    flex-direction: column;
+    width: 100%;
+
+    .cartao{
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .formulario-cadastro{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        > span{
+            width: 400px;
+            padding: 0px 10px;
+
+            margin-bottom: 5px;
+        }
+
+        > input{
+            width: 400px;
+            height: 30px;
+            border-radius: 25px;
+            padding: 10px;
+
+            padding: 0px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #4E5B60;
+        }
+    }
+      
+    .botao-cadastrar{
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+
+    .cadastro{
+        border-radius: 30px;
+        width: 300px;
+        height: 30px;
+        margin-top: 30px;
+        padding: 10px;
+        padding-top: 6px;
+
+        border: 1px solid #4E5B60;
+    }       
+
+    .texto-login{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+
+        > span > a{
+        text-decoration: none;
+        color: #005CFF;
+        padding-left: 5px;
+        }  
+    }   
+}
+    
+    

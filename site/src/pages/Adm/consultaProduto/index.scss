@@ -1,0 +1,129 @@
+.pagina-consulta{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100vh;
+
+    
+
+    .cartao{
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .titulo{
+            padding: 50px 0px;
+        }
+        
+        .input-pesquisar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            width: 500px;
+            height: auto;
+
+            position: relative;  
+        }
+
+        .texto-pesquisar{
+            font-family: 'Monda', sans-serif;
+            font-size: 15px;
+
+            width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .pesquisa{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+            
+            outline: none;
+
+            width: 100%;
+            height: 30px;
+
+            padding: 0px 50px 0px 25px;
+        }
+
+        .lupa{
+            position: absolute;
+
+            top: 35px;
+            right: 20px;
+        }
+
+        .codigo-produto{
+            display: flex;
+            flex-direction: row;
+
+            font-size: 10px;
+            gap: 30px;
+
+            padding-bottom: 50px;
+            padding-top: 30px;
+
+        }
+        .caixa-cod{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+        }
+
+        .cod > h1{
+            padding-bottom: 15px;
+        }
+
+        .caixa-id{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+        }
+
+        .id-produto > h1{
+            padding-bottom: 15px;
+        }
+
+        .caixa-marca{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+        }
+
+        .marca > h1{
+            padding-bottom: 15px;
+        }
+
+        .caixa-modelo{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+        }
+
+        .modelo > h1{
+            padding-bottom: 15px;
+        }
+
+        .caixa-estoque{
+            border-radius: 5px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+        }
+
+        .estoque > h1{
+            padding-bottom: 15px;
+        }
+    }
+}

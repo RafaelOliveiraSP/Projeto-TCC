@@ -1,0 +1,211 @@
+.pagina-travis{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    
+
+    .cartao{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .titulo{
+            display: flex;
+            padding-top: 80px;
+
+            justify-content: center;
+            align-items: center;
+
+            
+        }
+
+        .dunk-low{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 810px;
+            max-height: 350px;
+
+            border: 1px solid #4E5B60;
+            border-radius: 10px;
+
+            margin-bottom: 40px;
+             
+            > img{
+                max-width: 550px;
+                max-height: 350px;
+            }
+        }
+
+        .imgs{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            width: 810px;
+            padding: 0px 5px;
+
+            > img{
+                max-width: 250px;
+                max-height: 250px;
+            }
+        }
+
+        .desc-tenis{
+            display: flex;
+            flex-direction: column;
+            
+            font-family: 'Monda', sans-serif;
+            font-size: 25px;
+
+            width: 810px;
+
+            padding-top: 40px;
+        }
+
+        .preco{
+            display: flex;
+
+            width: 810px;
+            
+            font-size: 35px;
+            font-family: 'Monda', sans-serif;
+
+            padding-top: 70px;
+
+        .promocao {
+            padding-right: 50px;
+            text-decoration: line-through;
+
+            font-size: 30px;
+
+            padding-top: 5px;
+        }    
+        }
+
+        .entrega{
+            display: flex;
+            flex-direction: row;
+
+            width: 810px;
+
+            padding-top: 70px;
+
+            > div{
+                display: flex;
+                
+                justify-content: center;
+                align-items: center;
+
+                width: auto;
+                border: 1px solid #4E5B60;
+                border-radius: 10px;
+           
+
+        >img{
+            max-width: 45px;
+            max-height: 55px;
+
+            padding: 5px 10px 5px 10px;
+        }
+
+        >span{
+            font-size: 20px;
+
+            padding: 5px 5px;
+
+            font-family: 'Monda', sans-serif;
+
+           
+        }
+        
+    }
+
+        }
+
+        .parcela{
+            display: flex;
+
+            width: 810px;
+
+            font-family: 'Monda', sans-serif;
+            font-size: 25px;
+
+            padding-top: 30px;
+        }
+
+        .tamanho{
+            width: 810px;
+            padding-top: 20px;
+
+            font-family: 'Monda', sans-serif;
+            font-size: 25px;
+        }
+
+        .caixa-numero{
+            display: flex;
+            width: 810px;
+
+            padding-top: 5px;
+            
+
+        .numeracao{
+            
+            width: 110px;
+            height: 40px;
+            
+            font-size: 25px;
+            font-family: 'Monda', sans-serif;
+
+            border-radius: 5px;
+
+        }
+        }
+
+        .qtd{
+            width: 810px;
+            padding-top: 40px;
+
+            font-family: 'Monda', sans-serif;
+            font-size: 25px;
+
+            padding-bottom: 60px;
+
+            >input{
+                border-radius: 5px;
+                border: 1px solid #4E5B60;
+
+                height: 45px;
+                width: 105px;
+
+                margin-left: 150px;
+                
+                font-size: 25px;
+
+                padding-left: 35px;
+
+            }
+        }
+
+        .botao{
+            display: flex;
+
+            padding: 10px 10px;
+
+            border-radius: 10px;
+            border: 1px solid #4E5B60;
+
+            background-color: #C7E8B4;
+
+            font-family: 'Monda', sans-serif;
+            font-size: 15px;
+
+            margin-bottom: 80px;
+        }
+
+
+    }
+
+}

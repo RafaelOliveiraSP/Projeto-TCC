@@ -1,0 +1,24 @@
+.texto1{
+    align-items: center;
+    justify-content: center;
+}
+
+.textos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paragrafos{
+  > h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.p1{
+    display: flex;
+    padding: 60px;
+    font-size: 25px;
+}

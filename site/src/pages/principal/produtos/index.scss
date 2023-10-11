@@ -1,0 +1,224 @@
+.pagina-produtos{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    > h1{
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 35px;
+    }
+
+    .mais-vendidos{
+    
+        width: 90%;
+        display: flex;
+        justify-content: flex-end;
+    
+        > button{
+            border-radius: 45px;
+            font-size: 16px;
+            background-color: 7px 10px 20px 0px rgba(117, 115, 115, 0.2);
+            border: 1px;
+            padding: 9px 30PX ;
+            box-shadow:  4px 6px 9px 0px rgba(204, 195, 195, 0.2)
+        }
+    }
+
+    .faixa-produtos{
+        display: flex;
+        flex-direction: row;
+
+        width: 100%;
+
+        margin-top: 50px;
+
+        .filtrar-tenis{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 0px 15px;
+
+            > h1{
+                margin-bottom: 10px;
+            }
+            
+            > p{
+                margin-bottom: 10px;
+            }
+
+            > article{
+                display: flex;
+                flex-direction: column;
+
+                gap: 15px;
+
+                .button1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                width: 150px;
+                border-radius: 25px;
+                padding: 15px 0px;
+                background-color: #ffffff;
+                font-size: 16px;
+                font-weight: 530;
+                border-radius: 45px;
+                background-color: rgb(224, 224, 224);
+                border: 1px;
+                box-shadow:  7px 10px 20px 0px rgba(117, 115, 115, 0.2)
+                }
+            }
+        }
+
+        .produtos{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            gap: 40px;
+            padding: 0px 50px;
+
+            .faixa-cima-produtos{
+                display: flex;
+                justify-content: space-around;
+                text-align: center;
+                width: 100%;
+                
+                
+                .quadrado-do-tenis{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    
+                    height: auto;
+                    width: 320px;
+                    
+                    padding: 15px 19px;
+                    border-radius: 60px;
+                    border: 1px solid #000;
+
+                    > img{
+                        align-items: center;
+                        width: 246.190px;
+                        height: 130.9px;
+
+                    }
+                }
+            }  
+        }
+
+    }
+
+
+    .Preço{
+
+        padding-top: 400px;
+        text-align: right;
+        font-size: 15.9px;
+    }
+
+}
+
+
+.Marca{
+    font-weight:400
+    
+}
+
+.valorzinho{
+    padding: 55px;
+    
+}
+
+.valorzinho2{
+    padding: 55px;
+}
+
+.valorzinho3{
+    padding: 55px;
+    padding-top: 50px;
+
+}
+
+.valorzinho4{
+    padding: 60px;
+    padding-top: 80px;
+    
+}
+
+.nike-dunk{
+    padding-top: 25px;
+}
+
+.Nike-Dunk{
+    align-items: end;
+    height: 117px !important;
+    width: 250px !important;
+}
+
+.Travis{
+    height: 150px !important;
+    width: 269px !important;
+    border-radius: 80px 90px;
+
+}
+
+.botão{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    gap: 100px;
+
+}
+
+.button{
+        display: flex;
+        justify-content: center;
+
+        border: none;
+        padding-top: 0px 0px ;
+        width: 100px;
+        border-radius: 25px;
+        padding: 15px 0px;
+        background-color: #ffffff;
+        font-size: 16px;
+        font-weight: 530;
+        border-radius: 45px;
+        background-color: rgb(224, 224, 224);
+
+}
+
+.button2{
+        display: flex;
+        justify-content: center;
+
+        border: none;
+        padding-top: 0px 0px ;
+        width: 100px;
+        border-radius: 25px;
+        padding: 15px 0px;
+        background-color: #ffffff;
+        font-size: 16px;
+        font-weight: 530;
+        border-radius: 45px;
+        background-color: rgb(224, 224, 224);
+    
+
+}
+
+.marca-produtos-por-preço{
+    display: flex;
+    flex-direction: row;
+    
+
+    gap: 155px;
+    padding-left: 50px;
+    padding-top: 35px;
+    
+}
