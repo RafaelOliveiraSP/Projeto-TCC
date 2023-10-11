@@ -8,6 +8,7 @@ export default function Produtos(){
         <div className='pagina-produtos'>
             <Cabecalho />
 
-            </div>
+            <Rodape />
+        </div>
     )
 }
