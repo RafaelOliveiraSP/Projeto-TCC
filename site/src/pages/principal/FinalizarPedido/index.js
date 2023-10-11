@@ -1,5 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
+import Rodape from '../../../components/rodape';
+
 
 export default function FinalizarPedido(){
 
@@ -31,14 +33,14 @@ export default function FinalizarPedido(){
                 <h1 className='p4'> Pago No Boleto </h1>
                 </div>
 
-                <div className='button'>
-                    <button>Acompanhar pedido</button>
-                </div>
+                
+                    <button className='button'>Acompanhar pedido</button>
+                
 
             </div>
             </div>
 
-
+            <Rodape/>
 
 </div>
 

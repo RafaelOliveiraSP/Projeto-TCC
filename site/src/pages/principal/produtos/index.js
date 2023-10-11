@@ -1,5 +1,6 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
+import Rodape from '../../../components/rodape';
 
 export default function Produtos(){
 
@@ -58,7 +59,7 @@ export default function Produtos(){
                         </div>
                         <div className='quadrado-do-tenis'>
                             <img className= 'Travis' src='./assets/images/dunk-travis1.png' alt='Jordan'/>
-                            <h1  className='travis-de-tenis'> Nike x Travis Scott</h1>
+                            <h1  className='travis-de-tenis'> Travis Scott x Nike Dunk Low Cactus Jack </h1>
                             <h1  className='valorzinho4'>R$14.500,00</h1>
                         </div>  
 
@@ -68,14 +69,16 @@ export default function Produtos(){
             </div>
 
             <div className='marca-produtos-por-preço'>
-                    <h1>De</h1>
-                    <h1>Até</h1>
+                    <h1> De  </h1>
+                    <h1> Até </h1>
             </div>
 
                 <article className='botão'>
                     <button className='button'> 1000,00</button>
                     <button className='button2'> 2000,00 </button>
                 </article>
+
+                <Rodape/>
 
         </div>
     )
