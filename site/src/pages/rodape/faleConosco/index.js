@@ -22,7 +22,7 @@ export default function Faleconosco(){
                     atendimento para começar a conversar.</p>
 
                     <p className='second'>Nosso atendimento através do chat funciona de segunda a sexta, das 8:00 às</p>
-                                                <p>20:00h.</p>    
+                                                <p className='tres'>20:00h.</p>    
                 </div>
                 <div className='terceira-pt'>
                   <p className='ultimo'>Formulário de contato
