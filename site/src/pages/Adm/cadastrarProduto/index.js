@@ -5,7 +5,7 @@ import Rodape from '../../../components/rodape';
 
 export default function CadastrarProduto(){
 
-    const [fotosProduto, setFotosProduto] = ([]);
+    // const [fotosProduto, setFotosProduto] = ([]);
 
     return(
         <div className='pagina-cadastro-produto'>

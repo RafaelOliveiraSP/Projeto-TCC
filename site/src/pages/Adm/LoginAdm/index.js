@@ -1,6 +1,6 @@
 import './index.scss';
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
