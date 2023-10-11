@@ -1,53 +1,66 @@
 .pagina-fale-conosco{
-    h1 {
-        display: flex;
-        justify-content: center;
-        padding-block-end: 100px;
-        padding-top: 20px;
-    }
-
-    p.second {
-        text-align: center;
-        padding-top: 20px;
-    }
-
-    .borda {
-        padding-block-end: 100px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .informacoes {
-        display: flex;
-        flex-direction: column;
-        border: solid;
-        border-radius: 20px;
-        width: 50vw;
-    }
-
-    p.p1 {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding-top: 50px;
-    }
-
-    .segunda-pt {
-        padding-top: 20px;
-
-        p {
-            justify-content: center;
-            display: flex;
-        }
-    }
-
-    p.primeiro {
-        text-align: center;
-    }
-
-    p.ultimo {
-        text-align: center;
-        padding-block-end: 50px;
-        padding-top: 20px;
-    }
-}
+    width: 100%;
+     h1 {
+         display: flex;
+         justify-content: center;
+         padding-block-end: 100px;
+         padding-top: 20px;
+     }
+ 
+     p.second {
+         text-align: center;
+         padding-top: 20px;
+         text-decoration: underline;
+     }
+ 
+     p.tres {
+         text-decoration: underline;
+     }
+ 
+     .borda {
+         padding-block-end: 100px;
+         display: flex;
+         justify-content: center;
+     }
+ 
+     .informacoes {
+         display: flex;
+         flex-direction: column;
+         border: solid;
+         border-radius: 20px;
+         width: 70vw;
+     }
+ 
+     p.p1 {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         padding-top: 50px;
+         font-size: 32px;
+     }
+ 
+     .segunda-pt {
+         padding-top: 20px;
+ 
+         p {
+             justify-content: center;
+             display: flex;
+             font-size: 32px;
+             padding-left: 40px;
+             padding-right: 40px;
+         }
+     }
+ 
+     p.primeiro {
+         text-align: center;
+     }
+ 
+     p.ultimo {
+         text-align: center;
+         padding-block-end: 50px;
+         padding-top: 20px;
+         font-size: 32px;
+         padding-left: 40px;
+         padding-right: 40px;
+     }
+ }
