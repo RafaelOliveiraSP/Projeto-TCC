@@ -1,6 +1,11 @@
+.pagina-PedidosRealizados{
+  box-sizing: border-box;
+}
+
 .texto1{
     align-items: center;
     justify-content: center;
+    padding: 30px;
 }
 
 .textos{
@@ -22,3 +27,16 @@
     padding: 60px;
     font-size: 25px;
 }
+
+.button{
+  display: flex;
+  justify-content: center;
+
+  width: 200px;
+  height: 300px;
+
+  align-items: center;
+  border: 1px;
+  font-size: 20px;
+}
+
