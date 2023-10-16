@@ -27,7 +27,7 @@ export default function PedidoRealizado(){
                     </div>
 
                     <div className='button'>
-                        <button> Status Do Pedido </button>
+                        <button className='botao'> Status Do Pedido </button>
                     </div>
                       
                 </div>       
