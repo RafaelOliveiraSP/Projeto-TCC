@@ -74,7 +74,7 @@ export default function Produtos(){
             </div>
 
                 <article className='botão'>
-                    <button className='button'> 1000,00</button>
+                    <button className='buttonone'> 1000,00</button>
                     <button className='button2'> 2000,00 </button>
                 </article>
 
