@@ -17,3 +17,20 @@ export async function InserirAdm(adm){
       adm.id = resp.insertId;
       return adm;
 }
+
+/* Verifica login adm */
+
+export async function listaAdms(login){
+  let comando = `
+    select * from tb_admin where   ds_email = ? and
+                                   ds_senha = ?
+  `
+
+  let [dados] = await conexao.query(comando,
+    [
+      login.email,
+      login.senha
+    ]
+    );
+  return dados;
+}
