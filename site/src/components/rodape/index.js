@@ -9,7 +9,7 @@ export default function Rodape(){
             <div>
                 <h2>POLÍTICA</h2>
 
-                <span>Privacidade</span>
+                <Link to={'privacidade'}>Privacidade</Link>
                 <span>Termos e condições</span>
 
             </div>

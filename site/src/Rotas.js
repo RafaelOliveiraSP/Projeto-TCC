@@ -18,7 +18,6 @@ import DadosPedidos from        './pages/principal/dadosPedido';
 
 import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
-import Condicoes from           './pages/rodape/termos/index';
 
 
 
@@ -49,7 +48,6 @@ export default function Rotas(){
                 
                 <Route path='/ajuda' element={<Faleconosco />} />
                 <Route path='/quemsomos' element={<QuemSomos />}/>
-                <Route path='/termos' element={<Condicoes/>}/>
                 
              </Routes>
         </BrowserRouter>

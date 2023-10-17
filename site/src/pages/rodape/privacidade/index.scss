@@ -1,0 +1,39 @@
+.pagina-privacidade{
+    h1 {
+        text-align: center;
+        padding: 80px;
+        font-size: 50px;
+    }
+
+    .borda {
+        padding-block-end: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        border-radius: 20px;
+        width: 70vw;
+    }
+
+    p.prime {
+        padding: 20px;
+        text-align: justify;
+        font-size: 30px;
+    }
+
+    p.final {
+        text-align: justify;
+        padding: 20px;
+        font-size: 30px;
+    }
+
+    .botao {
+        display: flex;
+        justify-content: center;
+        padding-block-end: 30%; 
+    }
+}
