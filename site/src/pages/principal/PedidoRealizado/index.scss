@@ -1,18 +1,26 @@
 .pagina-PedidosRealizados{
-  box-sizing: border-box;
+  width: 100%;
 }
 
 .texto1{
     align-items: center;
     justify-content: center;
     padding: 30px;
-}
+    margin-top: 20px;
+}       
 
 .textos{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin: 30px;
+} 
+
+.texto2{
+  padding: 55px;
 }
+
 
 .paragrafos{
   > h1{
@@ -38,5 +46,16 @@
   align-items: center;
   border: 1px;
   font-size: 20px;
+}
+
+.botao{
+  border-radius: 20px;
+  padding: 10px;
+
+  border: 1px solid #000;
+  background: #D9D9D9;
+  font: 14px Monda sans-serif;
+  padding: 15px 30px;
+  color: #000;
 }
 

@@ -15,7 +15,8 @@ export default function PedidoRealizado(){
 
                 <div className='textos'>
                 <div className='texto2'>
-                    <div className='img'>
+                    
+                <div className='img'>
                     <img src='./assets/images/relogio.png' alt='Imagem relógio'/>
                     </div>
 
