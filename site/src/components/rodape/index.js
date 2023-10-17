@@ -9,20 +9,20 @@ export default function Rodape(){
             <div>
                 <h2>POLÍTICA</h2>
 
-                <Link to={'privacidade'}>Privacidade</Link>
-                <span>Termos e condições</span>
+                <Link to='/privacidade'>Privacidade</Link>
+                <Link to='/termos'>Termos e condições</Link>
 
             </div>
             <div>
                 <h2>AJUDA</h2>
 
-                <Link to={'/ajuda'}>Fale conosco</Link>
+                <Link to='/ajuda'>Fale conosco</Link>
                 <span>Trocas e Devoluções</span>
             </div>
             <div>
                 <h2>SOBRE A FORS</h2>
                 
-                <Link to={'/quemsomos'}>Quem somos</Link>
+                <Link to='/quemsomos'>Quem somos</Link>
             </div>
             <div>
                 <h2>REDES SOCIAIS</h2>

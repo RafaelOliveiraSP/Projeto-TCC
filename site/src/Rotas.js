@@ -18,10 +18,8 @@ import DadosPedidos from        './pages/principal/dadosPedido';
 
 import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
-
-
-
-
+import Privacidade from         './pages/rodape/privacidade';
+import Termoscondicoes from     './pages/rodape/termos';
 
 
 export default function Rotas(){
@@ -47,7 +45,9 @@ export default function Rotas(){
                 <Route path='/PainelDePedidos' element={<PainelDePedidos/>}/>
                 
                 <Route path='/ajuda' element={<Faleconosco />} />
+                <Route path='/privacidade' element={<Privacidade />}/>
                 <Route path='/quemsomos' element={<QuemSomos />}/>
+                <Route path='/termos' element={<Termoscondicoes/>}/>
                 
              </Routes>
         </BrowserRouter>
