@@ -3,6 +3,7 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CadastrarProduto(){
 
@@ -75,8 +76,11 @@ export default function CadastrarProduto(){
                         <span>Tamanho:</span>
                         <select></select>
                     </div>
+
+                    <div className='botaoCadastrar'><button>Adicionar Produto</button></div>
                 </div>
                 
+                <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>
             </div>
             <Rodape />
         </div>

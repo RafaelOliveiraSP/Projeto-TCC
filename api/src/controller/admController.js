@@ -21,3 +21,5 @@ endpoints.post('/verificarLoginAdm', async (req, resp) => {
       resp.status(500).send({ erro: err.message });
     }
   })
+
+  export default endpoints;
