@@ -27,8 +27,8 @@ export default function Privacidade(){
                 </div>
             </div>
          </div>
-            <div className='botao'>
-             <button>Voltar para a página inicial</button>
+             <div className='dino'>
+             <button className='ramon'>Voltar para a página inicial</button>
              </div>
         <Rodape/>
         </div>

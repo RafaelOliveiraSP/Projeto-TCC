@@ -7,6 +7,7 @@ export default function Termoscondicoes(){
 return(
  <div className='pagina-termos-condicoes'>
    <Cabecalho/>
+   <h1>Termos e Condições</h1>
     <div className='borda'>
         <div className='contorno'>
             <div className='comteudo'>
