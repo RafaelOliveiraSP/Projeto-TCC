@@ -17,29 +17,31 @@ export default function Admin(){
                     <span> Gerenciar e proteger sua conta</span>
                 </div>
                 <div className='opcoes-adm'>
+
+                    
                     <div>
-                        <div></div>
-                        <Link to='/consulta-produto'>Consultar produto</Link> 
+                        <Link to='/consulta-produto'><div><i class="fa-solid fa-list"></i></div></Link>
+                        <span><Link to='/consulta-produto'>Consultar produto</Link></span> 
                     </div>
 
                     <div>
-                        <div></div>
-                        <Link to='/cadastrar-produto'>Cadastrar produto</Link>
+                        <Link to='/cadastrar-produto'><div><i class="fa-regular fa-pen-to-square"></i></div></Link>
+                        <span><Link to='/cadastrar-produto'>Cadastrar produto</Link></span>
                     </div>
                             
                     <div>
-                        <div></div>
-                        Estatísticas de pedidos
+                        <Link><div><i class="fa-solid fa-chart-line"></i></div></Link>
+                        <span>Estatísticas de pedidos</span>
                     </div>
                             
                     <div>
-                        <div></div>
-                        Pedidos em andamento
+                        <Link><div><i class="fa-solid fa-truck-fast"></i></div></Link>
+                        <span>Pedidos em andamento</span>
                     </div>
                             
                     <div>
-                        <div></div>
-                        Pedidos conclúidos
+                        <Link><div><i class="fa-solid fa-person-walking-luggage"></i></div></Link>
+                        <span>Pedidos conclúidos</span>
                     </div>
                 </div> 
                 

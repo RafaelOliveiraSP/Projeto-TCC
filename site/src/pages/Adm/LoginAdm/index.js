@@ -27,10 +27,7 @@ export default function LoginAdm(){
 
             if(r.status === 204){
                 navigate('/administrador')
-                alert('Olá Adm!!!');
             }
-                
-           
         }
         catch (err) {
             alert('Você não possui cadastro!!!');  
@@ -47,7 +44,7 @@ export default function LoginAdm(){
         
             <div className="Login-Adm">
 
-                <span> Nome de usuario ou endereço de email: </span>
+                <span> Insira endereço de email: </span>
                 <input type='text' value={email}  onChange={e => setEmail(e.target.value)}/>
                 
                 <span> Senha: </span>

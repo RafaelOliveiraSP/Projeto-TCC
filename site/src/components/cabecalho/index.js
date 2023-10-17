@@ -16,7 +16,7 @@ export default function Cabecalho(){
             </div>
             <div className='conteudo-cabecalho'>
                 <div className='logo-cabecalho'>
-                    <img src='../../assets/images/Logo-Fors.png' alt='Logo-for' />
+                    <Link to='/'> <img src='../../assets/images/Logo-Fors.png' alt='Logo-for' /></Link>
                 </div>
                 <div className='links-cabecalho'>
                     <div className='paginas-cabecalho'>
