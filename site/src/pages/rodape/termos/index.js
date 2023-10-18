@@ -7,7 +7,7 @@ export default function Termoscondicoes(){
 return(
  <div className='pagina-termos-condicoes'>
    <Cabecalho/>
-   <h1>Termos e Condições</h1>
+   <h1 className='juliao'>Termos e Condições</h1>
     <div className='borda'>
         <div className='contorno'>
             <div className='comteudo'>
@@ -22,9 +22,11 @@ return(
                     Se tiver alguma dúvida sobre estes Termos e Condições, entre em contato conosco através dos canais de atendimento disponibilizados em nosso site.
                 </p>
             </div>
-            <button>Voltar para a página inicial</button>
         </div>
     </div>
+        <div className='cariani'>
+            <button className='t80'>Voltar para a página inicial</button>
+        </div>
     <Rodape/>
  </div>
 )

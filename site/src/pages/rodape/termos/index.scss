@@ -1,3 +1,52 @@
 .pagina-termos-condicoes{
     width: 100%;
+    
+    h1.juliao {
+        text-align: center;
+        padding: 8%;
+    }
+
+    .borda {
+        padding-block-end: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contorno {
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        border-radius: 20px;
+        width: 70vw;
+    }
+
+    p.relampago {
+        text-align: justify;
+        padding: 5%;
+        color: #000;
+        text-align: justify;
+        font-family: Monomaniac One;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .cariani {
+        display: flex;
+        justify-content: center;
+        padding-block-end: 5%;
+    }
+
+    button.t80 {
+        border-radius: 30px;
+        width: 400px;
+        height: 45px;
+        margin-top: 30px;
+        padding: 10px;
+        padding-top: 6px;
+        border: 1px solid #4E5B60;
+        font-size: 20px;
+    }
+
 }
