@@ -19,8 +19,8 @@ export default function Carrinho() {
                     <p>O carrinho é um local temporário,<br/>
                     depois de 15 dias que você o adicionou ele será removido</p>
                 </div>
-                <div className='botao'>
-                    <Link to='/'>Voltar para a página inicial</Link>
+                <div className='men'>
+                    <button className='super'>Voltar para a página inicial</button>
                 </div>
             </div>
             <Rodape/>
