@@ -1,0 +1,82 @@
+.pagina-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+
+    width: 100%;
+    height: 100%;
+
+    .cartao-status{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 60vh;
+
+        > h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+           margin-bottom: 90px;
+        }
+
+        > p{
+            display: flex;
+            
+            margin-top: 30px;
+            margin-bottom: 50px;
+
+            font-family: 'Monda', sans-serif;
+            font-size: 25px;
+            
+            width: 80%;
+
+            margin-top: 40px;
+
+        }
+
+        .bolinhas{
+            display: flex;
+            flex-direction: row;
+
+            gap: 20px;
+            position: relative;
+
+            margin-bottom: 30px;
+
+            > hr{
+                width: 1000px;
+
+                position: absolute;
+
+                left: 30px;
+                top: 15px;
+            }
+
+            > div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            
+                text-align: center;
+                width: 200px;
+                
+                
+                > div{
+                    border-radius: 100%;
+                    border: 1.5px solid #000;
+
+                    width: 30px;
+                    height: 30px;
+
+                    background-color: #fff;
+                    z-index: 1;
+                }
+            }
+        }
+
+
+    }    
+}

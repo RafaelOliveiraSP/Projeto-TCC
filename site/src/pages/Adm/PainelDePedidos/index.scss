@@ -7,19 +7,32 @@
                     
         height: auto;
         width: auto;
-
-                    
-        padding: 15px 19px;
+          
+        padding: 15px 15px;
         border-radius: 60px;
         border: 1px solid #000;
+        
+        margin-bottom: 70px;
 
     > h1 {
 
         display: flex;
         width: 2000px;
-        padding-left: 7%;
-             
+        padding-left: 13%;
+     
     }
+
+    > p {
+        display: flex;
+        height: 150px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    > i {
+        font-size: 70px;
+    }
+
 }
 
     .Nike-Kd14{
@@ -30,15 +43,141 @@
     }
 
 
+    .Travis-scott{
+
+        width: 310px;
+        height: 170px;
+
+    }
+
+    .quadrado-2-tenis{
+
+        display: flex;
+        align-items: center;
+                    
+        height: auto;
+        width: auto;
+
+                    
+        padding: 15px 19px;
+        border-radius: 60px;
+        border: 1px solid #000;
+        margin-bottom: 70px;
+
+        > h1 {
+
+            display: flex;
+            justify-content: center;
+            
+            justify-content: space-between;
+            width: 2000px;
+            padding-left: 9%;
+            text-align: center;
+            margin-right: 130px;
+                 
+        }
+    
+        > p {
+            display: flex;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        > i {
+            font-size: 70px;
+        }
+
+    }
+
+    
+
+    .quadrado-3-tenis{
+
+        display: flex;
+        align-items: center;
+                    
+        height: auto;
+        width: auto;
+
+                    
+        padding: 15px 19px;
+        border-radius: 60px;
+        border: 1px solid #000;
+        margin-bottom: 70px;
+
+        > h1 {
+
+            display: flex;
+            width: 2000px;
+            padding-left: 14%;
+                 
+        }
+    
+        > p {
+            display: flex;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+            padding-right: 1%;
+        }
+
+        > img {
+            width: 300px;
+            height: 155px;
+            
+        }
+
+        > i {
+            font-size: 70px;
+        }
+
+    }
 
 
+    .quadrado-4-tenis{
+
+        display: flex;
+        align-items: center;
+                    
+        height: auto;
+        width: auto;
+
+                    
+        padding: 15px 19px;
+        border-radius: 60px;
+        border: 1px solid #000;
+        margin-bottom: 130px;
+
+        > h1 {
+
+            display: flex;
+            width: 2000px;
+            padding-left: 13%;
+            margin-right: 130px;
+
+        }
+    
+        > p {
+            display: flex;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        > img {
+            width: 270px;
+            height: 140px;
+        }
+
+        > i {
+            font-size: 70px;
+        }
+
+    }
 
 
-
-
-
-
-
+    
 
 
 
