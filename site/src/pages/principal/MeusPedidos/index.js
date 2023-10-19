@@ -14,9 +14,11 @@ export default function MeusPedidos(){
             <div className='tenis-1'>
                 <p>Travis Scott x Nike Dunk Low Cactus Jack Special Box</p>
                <img className='tenis-travis' src='./assets/images/dunk-travis.png' alt='travis'/>
-               <span>R$14.500,00</span>
+               
                <button>Comprar novamente</button>
             </div>
+
+            <span className='preco'>R$14.500,00</span>
                <hr/>
             <div className='tenis-2'>
                 <p>Tênis Air Jordan 12 Retro</p>

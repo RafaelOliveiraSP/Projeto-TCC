@@ -1,0 +1,58 @@
+.pagina-MeusPedidos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+
+    width: 100%;
+    height: 100%;
+
+    > h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 50px;
+    }
+
+    .tenis-1{
+        > p{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        } 
+
+    }
+
+    .preco{
+        display: flex;
+        text-align: center;
+        justify-content: end;
+    }
+
+    .tenis-2{
+        > p{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        > img{
+            display: flex;
+            align-items: center;
+                        
+            width: 120px;
+              
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #000;
+
+            margin-left: 500px;
+            padding: 10px;    
+        }
+
+
+
+
+    }
+}
