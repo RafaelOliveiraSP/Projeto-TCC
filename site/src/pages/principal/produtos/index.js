@@ -74,8 +74,8 @@ export default function Produtos(){
             </div>
 
                 <article className='botão'>
-                    <button className='buttonone'> 1000,00</button>
-                    <button className='button2'> 2000,00 </button>
+                    <button className='buttonone'> </button>
+                    <button className='button2'>  </button>
                 </article>
 
                 <Rodape/>
