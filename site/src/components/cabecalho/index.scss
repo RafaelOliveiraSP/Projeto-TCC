@@ -14,12 +14,17 @@
         background-color: #000;
         font-size: 14px;
         color: #fff; 
-    }
 
-    .prtcima-cabecalho > a{
-        text-decoration: none;
-        font-size: 14px;
-        color: #fff;
+        > a{
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        > a:hover{
+            text-decoration: underline;
+        }
+
     }
 
     .conteudo-cabecalho{
@@ -66,13 +71,18 @@
         display: flex;
         flex-direction: row;
         gap: 30px; 
+
+        > a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        > a:hover{
+            text-decoration: underline;
+        }
     }
 
-    .paginas-cabecalho > a{
-        text-decoration: none;
-        color: #000;
-        
-    }
+    
 
     .icones-compras{
         position: relative;

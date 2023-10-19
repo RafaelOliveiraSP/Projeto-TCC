@@ -40,6 +40,10 @@
             gap: 10px;
         }
     }
+
+    a:hover{
+        text-decoration: underline;
+    }
 }
 
 @media(max-width:1124px){
@@ -93,5 +97,9 @@
         flex-direction: column; 
         height: auto;
         padding-top: 20px;
+
+        > div{
+            width: 162.3px;
+        }
     }
 }

@@ -13,7 +13,7 @@ export default function MeusPedidos(){
 
             <div className='tenis-1'>
                 <p>Travis Scott x Nike Dunk Low Cactus Jack Special Box</p>
-               <img className='tenis-travis' src='./assets/images/dunk-travis.png' alt='travis'/>
+               <img className='tenis-travis' src='./assets/images/dunk-travis1.png' alt='travis'/>
                
                <button>Comprar novamente</button>
             </div>

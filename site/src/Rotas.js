@@ -16,13 +16,14 @@ import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
-import MeusPedidos from         './pages/principal/MeusPedidos';
+import MeusPedidos from         './pages/principal/meusPedidos';
 
 
 import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
 import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
+
 
 
 export default function Rotas(){
