@@ -40,8 +40,8 @@ export default function Admin(){
                     </div>
                             
                     <div>
-                        <Link><div><i class="fa-solid fa-person-walking-luggage"></i></div></Link>
-                        <span>Pedidos conclúidos</span>
+                        <Link to='/PainelDePedidos'><div><i class="fa-solid fa-person-walking-luggage"></i></div></Link>
+                        <span><Link to='/PainelDePedidos'>Pedidos conclúidos</Link></span>
                     </div>
                 </div> 
                 
