@@ -54,7 +54,7 @@ export default function Produtos(){
                         <div className='quadrado-do-tenis'>
                             <img className='Nike-Dunk' src='./assets/images/Nike-Dunk.png' alt='Jordan'/>
                             <h1 className='nike-dunk'>Nike Dunk Low Gray</h1>
-                            <h1 className='valorzinho3'>R$999,99</h1>
+                            <h1 className='valorzinho3'>R$1099,99</h1>
 
                         </div>
                         <div className='quadrado-do-tenis'>
