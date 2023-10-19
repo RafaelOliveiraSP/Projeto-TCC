@@ -33,11 +33,23 @@
     }
 
     .logo-cabecalho{
+        max-width: 90px;
         width: 90px;
 
+        max-height: 70px;
+        padding: 0px 10px;
+
+        > a {
+            max-width: 90px;
+            width: 90px;
+
+            max-height: 70px;
+            padding: 0px 10px;
+        }
+
         a > img{
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -154,6 +166,40 @@
     }
 }
 
+@media(max-width: 500px){
+    .pagina-cabecalho{
+        .prtcima-cabecalho{
+            height: 40px;
+
+            font-size: 12px;
+
+            > a{
+                font-size: 12px;
+            }
+        }
+        .icones-compras > input{
+            height: 40px;
+        }
+        .lupa{
+            top: 12px;
+            font-size: 17px;
+        }
+        .coracao{
+            font-size: 20px;
+        }
+    
+        .carrinho{
+            font-size: 18px;
+        }
+        .conteudo-cabecalho{
+            height: 90px;
+        }
+        .prt-fixa-cabecalho{
+            font-size: 12px;
+        }
+    }
+}
+
 @media(max-width: 470px){
     .pagina-cabecalho{
         .carrinho-cabecalho{
@@ -173,24 +219,20 @@
     }
 }
 
-@media(max-width: 310px){
-    .pagina-cabecalho{
-        .prtcima-cabecalho > a{
-            font-size: 12px;
-        }
-        .logo-cabecalho{
-            font-size: 12px;
-             width: 80px;
+// @media(max-width: 310px){
+//     .pagina-cabecalho{
+//         .prtcima-cabecalho > a{
+//             font-size: 12px;
+//         }
+//         .logo-cabecalho{
+//             font-size: 12px;
+//              width: 80px;
 
-            > img{
-                width: 60px;
-                height: 60px;
-            }
-        }
+//             > img{
+//                 width: 60px;
+//                 height: 60px;
+//             }
+//         }
 
-        
-        .prt-fixa-cabecalho{
-            font-size: 12px;
-        }
-    }
-}
+//     }
+// }

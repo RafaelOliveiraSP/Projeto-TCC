@@ -14,7 +14,7 @@ export default function HomePage() {
             
           <div className='dunk-low'>
             <div className='cartao-dunk-low'>
-              <img src='../assets/images/Banner-Travis_clipdrop-enhance.png' alt='dunk-low'/>
+              <div><img src='../assets/images/Banner-Travis_clipdrop-enhance.png' alt='dunk-low'/></div>
             </div>
             <div className='detalhes-dunk-low'>
               <h1>TRAVIS SCOTT x NIKE</h1>
@@ -32,7 +32,7 @@ export default function HomePage() {
           <div className='Texto-segunda-faixa'>
             <h1>ODYSSEY ELMT LOW</h1>
             <p>Conquiste trilhas com confiança e velocidade</p>
-            <Link to='/produtos'>VER PRODUTO</Link>
+            <div><Link to='/produtos'>VER PRODUTO</Link></div>
           </div>
 
           <div className='terceira-faixa'>

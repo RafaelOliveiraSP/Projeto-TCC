@@ -87,7 +87,7 @@ export default function Cadastrar(){
                     <input type='text' value={email} onChange={e => SetEmail(e.target.value)}/>
 
                     <span > Senha:</span>
-                    <input type='text' value={senha} onChange={e => SetSenha(e.target.value)}/>
+                    <input type='password' value={senha} onChange={e => SetSenha(e.target.value)}/>
                     {SetIdCliente}
                 </div>
 
