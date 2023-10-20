@@ -14,16 +14,18 @@ export default function ProdutoMaisVendido(){
                     <h1 className='titulo'>Travis Scott x Nike Dunk Low Cactus Jack</h1>
                
                 <div className='dunk-low'>
-                    <img src='./assets/images/dunk-travis1.png' alt='dunk-low' />
+                    <div><div><img src='./assets/images/dunk-travis1.png' alt='dunk-low' /></div></div>
                 </div>
 
                 <div className='imgs'>
-                    <img src='./assets/images/image19.png' alt='sola-dunk' />
-                    <img src='./assets/images/Group2.png' alt='par-dunk' />
-                    <img src='./assets/images/image20.png' alt='calcanhar-dunk' />
+                    <span>
+                        <div><img src='./assets/images/image19.png' alt='sola-dunk' /></div>
+                        <div><img src='./assets/images/Group2.png' alt='par-dunk' /></div>
+                        <div><img src='./assets/images/image20.png' alt='calcanhar-dunk' /></div>
+                    </span>
                 </div>
 
-                    <span className='desc-tenis'> Travis Scott x Nike Dunk Low <br/>"Cactus Jack" </span>
+                <div className='desc-tenis'><span> Travis Scott x Nike Dunk Low <br/>"Cactus Jack" </span></div>
                 
                 <div className='preco'>
                     <span className='promocao'>&nbsp;R$14.700,00&nbsp;</span>
