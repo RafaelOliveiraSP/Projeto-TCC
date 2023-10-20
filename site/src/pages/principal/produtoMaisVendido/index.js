@@ -28,8 +28,11 @@ export default function ProdutoMaisVendido(){
                 <div className='desc-tenis'><span> Travis Scott x Nike Dunk Low <br/>"Cactus Jack" </span></div>
                 
                 <div className='preco'>
-                    <span className='promocao'>&nbsp;R$14.700,00&nbsp;</span>
-                    <span>R$14.500,00</span>
+                    <div>
+                        <span className='promocao'>&nbsp;R$14.700,00&nbsp;</span>
+                        <span>R$14.500,00</span>
+                    </div>
+                    
                 </div>
 
                 <div className='entrega'>
