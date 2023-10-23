@@ -81,9 +81,16 @@
 @media(max-width: 650px){ 
     .pagina-rodape{ 
 
-        > div{   
+        > div{ 
+
+            > a{
+                text-align: center;
+            } 
+
             > h2{  
-                    font-size: 14px; 
+                    font-size: 14px;
+                    text-align: center;
+                
             }
             > span{ 
                     font-size: 12px; 
@@ -100,6 +107,16 @@
 
         > div{
             width: 162.3px;
+
+            > a{
+                text-align: none;
+            } 
+
+            > h2{  
+                    font-size: 14px;
+                    text-align: none;
+                
+            }
         }
     }
 }

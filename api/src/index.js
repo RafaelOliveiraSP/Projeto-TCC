@@ -4,6 +4,7 @@ import cors from 'cors';
 
 import cadastroController from './controller/cadastroController.js';
 import admController from './controller/admController.js';
+import cadastrarProdutoController from './controller/cadastrarProdutoController.js'
 
 let servidor = express();
 servidor.use(cors());
@@ -11,6 +12,7 @@ servidor.use(express.json());
 
 servidor.use(cadastroController);
 servidor.use(admController);
+servidor.use(cadastrarProdutoController)
 
 
 servidor.listen(

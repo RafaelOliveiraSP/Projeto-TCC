@@ -1,9 +1,22 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { useState } from 'react';
 
 
 export default function ProdutoMaisVendido(){
+
+    const [quantidade,setQuantidade] = useState(0);
+    const [estoque, setEstoque]      = useState(250);
+
+    const cont = 0;
+
+    function verificarQuant(){
+       if(cont > quantidade && cont < estoque){
+            setQuantidade( Number(quantidade) + 1)
+            setEstoque(250)
+       }
+    }
 
     return(
         <div className='pagina-travis'>
@@ -59,11 +72,10 @@ export default function ProdutoMaisVendido(){
                     </select>
                 </div>  
 
-                <div className='qtd'> Quantidade
-                   
-                    <input type='number' />
+                <div className='qtd'> Quantidade 
+                    <input type='number' onClick={verificarQuant} value={quantidade} onChange={e => setQuantidade(e.target.value)} />
                 </div>
-
+                {quantidade}
                 <button className='botao'>ADICIONAR AO CARRINHO</button>
             </div>
             <Rodape />
