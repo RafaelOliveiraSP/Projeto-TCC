@@ -29,6 +29,7 @@ import MinhaConta from          './pages/principal/minhaConta';
 
 
 
+
 export default function Rotas(){
 
     return(
@@ -46,6 +47,7 @@ export default function Rotas(){
                 <Route path='/DadosPedido' element={<DadosPedidos/>} />
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
                 <Route path='/meusPedidos' element={<MeusPedidos/>} />
+                <Route path='/minhaconta' element={<MinhaConta/>} />
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
