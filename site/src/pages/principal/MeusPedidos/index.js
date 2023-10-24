@@ -39,7 +39,7 @@ export default function MeusPedidos(){
 
             <div className='tenis-3'>
 
-                <img src='./assets/images/jordan-azul.png' alt='adidas'/>
+                <img src='./assets/images/076c1f8bedcf4d52b329aedf00aa5539_9366__1_-removebg-preview 4.png' alt='ultra'/>
                 <p>Tênis Ultra 4DFWD</p>
 
                 <div>
@@ -47,9 +47,13 @@ export default function MeusPedidos(){
                     <button>Comprar novamente</button>
                 </div>
             </div>
-            <Rodape/>
+
+            <button className='botao'>Voltar para a pagina inicial</button>
+            
 
             </div>
+
+            <Rodape/>
         </div>
     )
 }
