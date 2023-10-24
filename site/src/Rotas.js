@@ -16,6 +16,7 @@ import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
+   
 
 
 import QuemSomos from           './pages/rodape/quemSomos';
@@ -23,6 +24,7 @@ import Faleconosco from         './pages/rodape/faleConosco';
 import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
+import MinhaConta from          './pages/principal/minhaConta';
 
 
 
@@ -42,6 +44,7 @@ export default function Rotas(){
                 <Route path='/PedidoRealizado' element={<PedidoRealizado/>} />
                 <Route path='/DadosPedido' element={<DadosPedidos/>} />
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
+                <Route path='/minhaConta' element={<MinhaConta/>}/>
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
