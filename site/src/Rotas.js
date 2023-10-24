@@ -22,6 +22,7 @@ import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
 import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
+import Trocas from              './pages/rodape/trocas';
 
 
 
@@ -52,7 +53,8 @@ export default function Rotas(){
                 <Route path='/privacidade' element={<Privacidade />}/>
                 <Route path='/quemsomos' element={<QuemSomos />}/>
                 <Route path='/termos' element={<Termoscondicoes/>}/>
-                
+                <Route path='/trocas' element={<Trocas/>}/>
+
              </Routes>
         </BrowserRouter>
     )

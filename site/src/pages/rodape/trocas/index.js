@@ -2,7 +2,7 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
-export default function Termoscondicoes(){
+export default function Trocas(){
 
     return(
      <div className='pagina-trocas'>
@@ -26,8 +26,8 @@ export default function Termoscondicoes(){
                 <div></div>
             </div>
         </div>
-            <div className='cariani'>
-                <button className='t80'>Voltar para a página inicial</button>
+            <div className='lua'>
+                <button className='f1'>Voltar para a página inicial</button>
             </div>
         <Rodape/>
      </div>
