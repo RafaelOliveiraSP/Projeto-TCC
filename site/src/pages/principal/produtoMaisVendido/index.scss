@@ -212,15 +212,20 @@
         }
 
         .qtd{
+            display: flex;
             width: 810px;
-            padding-top: 40px;
+            margin-top: 40px;
+            position: relative;
 
             font-family: 'Monda', sans-serif;
             font-size: 25px;
 
-            padding-bottom: 60px;
+            margin-bottom: 60px;
 
-            >input{
+            > div{
+                display: flex;
+                align-items: center;
+                position: relative;
                 border-radius: 5px;
                 border: 1px solid #4E5B60;
 
@@ -233,6 +238,30 @@
 
                 padding-left: 35px;
 
+            }
+
+            .setacima{
+                position: absolute;
+                top: 6px;
+                right: 10px;
+
+                font-size: 21px;
+            }
+
+            .setacima:hover{
+                cursor: pointer;
+            }
+
+            .setabaixo{
+                position: absolute;
+                bottom: 6px;
+                right: 10px;
+
+                font-size: 21px;
+            }
+
+            .setabaixo:hover{
+                cursor: pointer;
             }
         }
 
