@@ -5,7 +5,7 @@ const endpoints = Router();
 
 
 
-endpoints.get('/listartamanhos', async (req, resp) => {
+endpoints.get('/tamanhos', async (req, resp) => {
     let r = await listarTamanhos();
     resp.send(r);
   });

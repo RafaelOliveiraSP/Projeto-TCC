@@ -1,15 +1,18 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { useState } from 'react';
+import { useEffect ,useState } from 'react';
 
-
+import axios from "axios";
 
 export default function ProdutoMaisVendido(){
 
     const [quantidade,setQuantidade] = useState(0);
     const [estoque, setEstoque]      = useState(200);
     const cont = 0;
+
+    const [opcoesTamanhos, setOpcoesTamanhos] = useState([]);
+    const [tamanho, setTamanho]               = useState(0);
 
     function addProduto(){
         if(cont <= quantidade && estoque > quantidade){
@@ -26,6 +29,18 @@ export default function ProdutoMaisVendido(){
     function addCarrinho(){
         setEstoque(estoque - 1)
     }
+
+    async function listarTamanhos() {
+        let r = await axios.get('http://localhost:5035/tamanhos');
+        setOpcoesTamanhos(r.data);
+    }
+
+    useEffect(() => {
+        //
+        listarTamanhos();
+        //
+      }, [])
+    
         
     return(
         <div className='pagina-travis'>
@@ -70,7 +85,13 @@ export default function ProdutoMaisVendido(){
                 
                 
                 <div className='caixa-numero'>
-                    <select className='numeracao'>
+                    <select className='numeracao' type='text' value={tamanho} onChange={e => setTamanho(e.target.value)}>
+                    <option value={0}> Selecione </option>
+                    {opcoesTamanhos.map(item =>
+                        <option value={item.id}> {item.numero} </option>  
+                    )}
+                    </select>
+                    {/* <select >
                         <option>37</option>
                         <option>38</option>
                         <option>39</option>
@@ -78,7 +99,7 @@ export default function ProdutoMaisVendido(){
                         <option>41</option>
                         <option>42</option>
                         <option>43</option>
-                    </select>
+                    </select> */}
                 </div>  
 
                 <div className='qtd'> 

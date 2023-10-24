@@ -9,3 +9,13 @@ export async function listarTamanhos(){
         let [dados] = await conexao.query(comando);
         return dados;
 }
+
+export async function buscarTipoPorId(id) {
+    let comando = `
+        select  * 
+        from    tb_tamanho 
+        where   id_tamanho = ?`;
+
+    let [dados] = await conexao.query(comando, [id]);
+    return dados;
+  }
