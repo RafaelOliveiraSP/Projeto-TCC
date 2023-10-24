@@ -37,6 +37,7 @@ export default function Cabecalho(){
                     </div>
                     <i class="fa-regular fa-heart coracao" style={{color: "#000000",}}></i>
                     <Link to='/carrinho'><i class="fa-solid fa-cart-shopping carrinho" style={{color: "#000000",}}></i></Link>
+                    <Link><i class="fa-solid fa-user usuario" style={{color: "#000000",}}></i></Link>
                     
                 </div>
             </div>
