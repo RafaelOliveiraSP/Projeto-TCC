@@ -42,7 +42,7 @@ export default function Rotas(){
                 <Route path='/PedidoRealizado' element={<PedidoRealizado/>} />
                 <Route path='/DadosPedido' element={<DadosPedidos/>} />
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
-                <Route path='/MeusPedidos' element={<MeusPedidos/>} />
+                <Route path='/meusPedidos' element={<meusPedidos/>} />
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
