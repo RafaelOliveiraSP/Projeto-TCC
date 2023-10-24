@@ -9,8 +9,9 @@ return(
         <div className='pagina-MinhaConta'>
             <Cabecalho/>
 
-
-
+        <div className='MinhaConta'>
+            <h1>Minha Conta</h1>
+        </div>
 
 
 
