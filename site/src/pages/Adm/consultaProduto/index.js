@@ -50,7 +50,7 @@ export default function Consulta(){
                         </div>
                     </div>
 
-                    <Link to='/administrador'>Volte para o menu do ADM</Link>
+                    <Link className='voltar' to='/administrador'>Volte para o menu do ADM</Link>
                 </div>
 
             <Rodape />

@@ -91,15 +91,6 @@ export default function ProdutoMaisVendido(){
                         <option value={item.id}> {item.numero} </option>  
                     )}
                     </select>
-                    {/* <select >
-                        <option>37</option>
-                        <option>38</option>
-                        <option>39</option>
-                        <option>40</option>
-                        <option>41</option>
-                        <option>42</option>
-                        <option>43</option>
-                    </select> */}
                 </div>  
 
                 <div className='qtd'> 
