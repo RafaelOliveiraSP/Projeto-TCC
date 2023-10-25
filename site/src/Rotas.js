@@ -16,7 +16,7 @@ import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
-import MeusPedidos from         './pages/principal/MeusPedidos';
+import MeusPedidos from         './pages/principal/meusPedidos';
    
 
 
