@@ -17,6 +17,7 @@ import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
 import MeusPedidos from         './pages/principal/meusPedidos';
+import FormasDePagamento from   './pages/principal/formasDePagamento';
    
 
 import QuemSomos from           './pages/rodape/quemSomos';
@@ -25,6 +26,7 @@ import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
 import MinhaConta from          './pages/principal/minhaConta';
+
 
 
 
