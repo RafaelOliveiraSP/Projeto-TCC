@@ -95,13 +95,15 @@
             width: 100%;
 
             gap: 40px;
-            padding: 0px 50px;
+            padding: 0px 50px 70px;
 
             .faixa-cima-produtos{
                 display: flex;
-                justify-content: space-around;
-                text-align: center;
+                flex-wrap: wrap;
+                justify-content: center;
                 width: 100%;
+
+                gap: 50px;
                 
                 
                 .quadrado-do-tenis{
@@ -130,10 +132,62 @@
 
 
     .Preço{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 50px;
 
-        padding-top: 400px;
-        text-align: right;
-        font-size: 15.9px;
+        >h1{
+            padding: 40px;
+        }
+    }
+
+    .botão{
+        display: flex;
+        padding-top: 20px;
+        padding-left: 17px; 
+    
+        gap: 100px;
+    
+        
+    }
+    
+    .marca-produtos-por-preço{
+        display: flex;
+        flex-direction: row;
+
+        gap: 30px;
+
+        > div{
+            max-width: 100px;
+            padding-bottom: 10px;
+
+            >input{
+                width: 100%;
+                border-radius: 10px;
+
+                    display: flex;
+                    justify-content: center;
+            
+                    align-items: center;
+                    border: none;
+            
+                    padding-top: 0px 0px ;
+                    width: 95px;
+                    padding: 15px 0px;
+                    background-color: #ffffff;
+                    font-size: 16px;
+                    font-weight: 530;
+                    border-radius: 45px;
+                    border: none;
+                    background-color:rgb(224, 224, 224);
+                    margin-bottom: 280px;
+
+                    outline: none;
+                    padding: 12px 10px 10px 35px;
+            }
+        }
     }
 
 }
@@ -182,43 +236,7 @@
 
 }
 
-.botão{
-    display: flex;
-    padding-top: 20px;
-    padding-left: 17px; 
 
-    gap: 100px;
-
-    > button {
-        display: flex;
-        justify-content: center;
-
-        align-items: center;
-        border: none;
-
-        padding-top: 0px 0px ;
-        width: 95px;
-        padding: 15px 0px;
-        background-color: #ffffff;
-        font-size: 16px;
-        font-weight: 530;
-        border-radius: 45px;
-        border: none;
-        background-color:rgb(224, 224, 224);
-        margin-bottom: 280px;
-    }
-}
-
-.marca-produtos-por-preço{
-    display: flex;
-    flex-direction: row;
-    
-
-    gap: 155px;
-    padding-left: 50px;
-    padding-top: 35px;
-    
-}
 
 
 
