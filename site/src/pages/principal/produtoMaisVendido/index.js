@@ -48,6 +48,9 @@ export default function ProdutoMaisVendido(){
             <Cabecalho />
 
             <div className='cartao'>
+                   
+                   <div className='cartao2'>
+
                     <h1 className='titulo'>Travis Scott x Nike Dunk Low Cactus Jack</h1>
                
                 <div className='dunk-low'>
@@ -101,8 +104,12 @@ export default function ProdutoMaisVendido(){
                         <i onClick={removerProduto} class="fa-solid fa-caret-up fa-rotate-180 setabaixo"></i>
                     </div>
                 </div>
-                <button className='botao' onClick={addCarrinho}>ADICIONAR AO CARRINHO</button>
+                
+                <div className='botao1'>
+                    <button onClick={addCarrinho}>ADICIONAR AO CARRINHO</button>
+                </div>
             </div>
+        </div>
             <Rodape />
         </div>
     )
