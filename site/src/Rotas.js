@@ -17,8 +17,7 @@ import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
 import MeusPedidos from         './pages/principal/meusPedidos';
-import FormasDePagamento from   './pages/principal/formasDePagamento';   
-
+   
 
 import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
