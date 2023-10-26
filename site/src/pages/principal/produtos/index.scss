@@ -21,10 +21,18 @@
             font-size: 16px;
             background-color: 7px 10px 20px 0px rgba(117, 115, 115, 0.2);
             border: 1px;
-            padding: 9px 30PX ;
-            box-shadow:  4px 6px 9px 0px rgba(204, 195, 195, 0.2);           
+            padding: 9px 30px;
+              
         }
-    }
+
+        > button:hover{
+                background-color: #000;
+                color: #ffffff;
+                transition: 0.9s;
+                transform: rotate(0.4deg);
+            }
+        }
+    
     
 
         .faixa-produtos{
@@ -177,46 +185,28 @@
 .botão{
     display: flex;
     padding-top: 20px;
-    padding-left: 20px;
+    padding-left: 17px; 
 
     gap: 100px;
 
-}
-
-.buttonone{
+    > button {
         display: flex;
         justify-content: center;
 
+        align-items: center;
         border: none;
 
-      border: none;
         padding-top: 0px 0px ;
         width: 95px;
-        border-radius: 25px;
-        padding: 15px 50px;
-        background-color: #ffffff;
-        font-weight: 530;
-        border-radius: 45px;
-        background-color: rgb(224, 224, 224);
-        margin-bottom: 280px;
-}
-
-.button2{
-        display: flex;
-        justify-content: center;
-
-        border: none;
-        padding-top: 0px 0px ;
-        width: 95px;
-        border-radius: 25px;
         padding: 15px 0px;
         background-color: #ffffff;
         font-size: 16px;
         font-weight: 530;
         border-radius: 45px;
-        background-color: rgb(224, 224, 224);
+        border: none;
+        background-color:rgb(224, 224, 224);
         margin-bottom: 280px;
-
+    }
 }
 
 .marca-produtos-por-preço{
@@ -225,7 +215,10 @@
     
 
     gap: 155px;
-    padding-left: 45px;
-    padding-top: 45px;
+    padding-left: 50px;
+    padding-top: 35px;
     
 }
+
+
+

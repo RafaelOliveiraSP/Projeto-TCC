@@ -1,3 +1,4 @@
+
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
@@ -74,8 +75,8 @@ export default function Produtos(){
             </div>
 
                 <article className='botão'>
-                    <button className='buttonone'> </button>
-                    <button className='button2'>  </button>
+                    <button> 32 </button>
+                    <button> 45 </button>
                 </article>
 
                 <Rodape/>
