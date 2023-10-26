@@ -19,13 +19,13 @@ import StatusPedido from        './pages/principal/StatusPedido';
 import MeusPedidos from         './pages/principal/meusPedidos';
    
 
-
 import QuemSomos from           './pages/rodape/quemSomos';
 import Faleconosco from         './pages/rodape/faleConosco';
 import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
 import MinhaConta from          './pages/principal/minhaConta';
+
 
 
 
@@ -48,6 +48,7 @@ export default function Rotas(){
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
                 <Route path='/meusPedidos' element={<MeusPedidos/>} />
                 <Route path='/minhaconta' element={<MinhaConta/>} />
+                <Route path='/formasdepagamento' element={<FormasDePagamento />} />
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
