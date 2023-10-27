@@ -13,7 +13,7 @@ export default function Admin(){
             
             <div className='links-adm'>
                 <div className='titulo-adm'>
-                    <h1> Bem Vindo Admin</h1>
+                    <h1> Bem-Vindo Admin</h1>
                     <span> Gerenciar e proteger sua conta</span>
                 </div>
                 <div className='opcoes-adm'>
