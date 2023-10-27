@@ -16,7 +16,7 @@ import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
-//import MeusPedidos from         './pages/principal/meusPedidos';
+import MeusPedidos from         './pages/principal/pedidosFinalizados';
 import FormasDePagamento from   './pages/principal/formasDePagamento';
    
 
@@ -48,7 +48,7 @@ export default function Rotas(){
                 <Route path='/PedidoRealizado' element={<PedidoRealizado/>} />
                 <Route path='/DadosPedido' element={<DadosPedidos/>} />
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
-                {/*<Route path='/meusPedidos' element={<MeusPedidos/>} />*/}
+                <Route  path='/meuspedidos'  element={<MeusPedidos />} />
                 <Route path='/minhaconta' element={<MinhaConta/>} />
                 <Route path='/formasdepagamento' element={<FormasDePagamento />} />
 
