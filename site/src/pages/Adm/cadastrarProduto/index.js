@@ -25,7 +25,7 @@ export default function CadastrarProduto(){
     const [cor, setCor]                     = useState('');
 
     async function listarMarcas(){
-        let r = await axios.get('http://localhost:5035/marcas');
+        let r = await axios.get('http://129.148.42.252:5025/marcas');
         setOpcoesMarcas(r.data);
     }
 

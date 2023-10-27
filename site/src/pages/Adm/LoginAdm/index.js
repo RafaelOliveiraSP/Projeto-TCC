@@ -8,6 +8,8 @@ import { useState } from 'react';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
+import { API_URL } from '../../../constants.js';
+
 
 export default function LoginAdm(){
 
@@ -23,7 +25,7 @@ export default function LoginAdm(){
                 senha: senha
             }
 
-            let r = await axios.post('http://localhost:5035/verificarLoginAdm', login);
+            let r = await axios.post(API_URL + '/verificarLoginAdm', login);
 
             if(r.status === 204){
                 navigate('/administrador')

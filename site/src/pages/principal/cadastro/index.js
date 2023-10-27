@@ -43,7 +43,7 @@ export default function Cadastrar(){
         }
       
         if (idCliente === 0) {
-           await axios.post('http://localhost:5035/inserirCliente', cliente);
+           await axios.post('http://129.148.42.252:5025/inserirCliente', cliente);
            alert('Cliente cadastrado com sucesso!');
            navigate('/')
         }
