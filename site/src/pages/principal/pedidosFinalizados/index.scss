@@ -162,11 +162,14 @@
             > button{
                 border-radius: 5px;
                 border: 1px solid #D9D9D9;
+
                 width: 200px;
-                height: 35px;   
+                height: 35px;  
+
                 font-family: 'Monda', sans-serif;
                 font-weight: 700;
             }
+
         }
     }
 
@@ -174,10 +177,19 @@
         display: flex;
         margin-top: 100px;
         border-radius: 10px;
+
         border: 1px solid #D9D9D9   ;
         font-family: 'Monda', sans-serif;
         font-weight: 900;
     }
+
+    .botao:hover{
+        background-color: #000000;
+        color: #ffffff;
+        transition: 0.9s;
+        transform: rotate(0.4deg);
+    }
+
 
  }
  
