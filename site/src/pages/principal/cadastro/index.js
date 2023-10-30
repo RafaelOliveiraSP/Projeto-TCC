@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { API_URL } from '../../../constants.js';
+
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
