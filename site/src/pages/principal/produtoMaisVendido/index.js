@@ -3,6 +3,8 @@ import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 import { useEffect ,useState } from 'react';
 
+import { API_URL } from '../../../constants.js';
+
 import axios from "axios";
 
 export default function ProdutoMaisVendido(){
@@ -31,7 +33,7 @@ export default function ProdutoMaisVendido(){
     }
 
     async function listarTamanhos() {
-        let r = await axios.get('http://129.148.42.252:5035/tamanhos');
+        let r = await axios.get( API_URL +'/tamanhos');
         setOpcoesTamanhos(r.data);
     }
 

@@ -5,6 +5,8 @@ import Rodape from '../../../components/rodape';
 import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { API_URL } from '../../../constants.js';
+
 import axios from "axios";
 
 export default function CadastrarProduto(){
@@ -25,7 +27,7 @@ export default function CadastrarProduto(){
     const [cor, setCor]                     = useState('');
 
     async function listarMarcas(){
-        let r = await axios.get('http://129.148.42.252:5025/marcas');
+        let r = await axios.get(  API_URL + '/marcas');
         setOpcoesMarcas(r.data);
     }
 
