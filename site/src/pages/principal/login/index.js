@@ -8,6 +8,8 @@ import Rodape from '../../../components/rodape';
 
 import axios from 'axios';
 
+import { API_URL } from '../../../constants.js';
+
 
 export default function Login(){
 
@@ -25,7 +27,7 @@ export default function Login(){
                 senha: senha
             }
 
-            let r = await axios.post('http://129.148.42.252:5035/verificarLogin', login);
+            let r = await axios.post( API_URL + '/verificarLogin', login);
 
             if(r.status === 204){
                 navigate('/')

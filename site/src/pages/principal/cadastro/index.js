@@ -51,7 +51,7 @@ export default function Cadastrar(){
         }
       } 
       catch (err) {
-        toast.error(err.response.data.erro);  
+        toast.error(err.response.data.erro);
       }
     }
 
