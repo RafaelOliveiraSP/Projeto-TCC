@@ -31,7 +31,7 @@ export default function ProdutoMaisVendido(){
     }
 
     async function listarTamanhos() {
-        let r = await axios.get('http://129.148.42.252:5025/tamanhos');
+        let r = await axios.get('http://129.148.42.252:5035/tamanhos');
         setOpcoesTamanhos(r.data);
     }
 
