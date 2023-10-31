@@ -5,36 +5,65 @@ import { Link } from 'react-router-dom'
 
 export default function MinhaConta(){
 
-return(
+        return(
+            
+            <div className='pagina-MinhaConta'>
 
-        <div className='pagina-MinhaConta'>
             <Cabecalho/>
+
             <div className='texto-principal'>
                 <h1>Minha Conta</h1>
             </div>
 
-            <div>
-                <h3>Minha Conta</h3>
-                <Link><i class="fa-solid fa-user usuario" style={{color: "#000000",}}></i></Link>
-                <h3>Perfil</h3>
-                <h3>Cartões / Contas Bancarias  </h3>
-                <h3>Endereços                   </h3>
-                <h3>Trocar senha                </h3>
-                <h3>Preferncias De Cookies      </h3>
+
+            <div className='texto-dos-nomes-de-cadastro'>
+                <div>
+                    <h4>Nome:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Sobrenome:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Usúario:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>CPF:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Sexo:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Número de Telefone:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Data de Nascimento:</h4>
+                    <input></input>
+                </div>
+
+                <div>
+                    <h4>Email:</h4>
+                    <input></input>
+                </div>
+
+                </div>
+
+                <div className='rodapezi'>
+                    <Rodape/>
+                </div>
+
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <Rodape/>
-        </div>
-    )
-}
+        )
+    }
+    
