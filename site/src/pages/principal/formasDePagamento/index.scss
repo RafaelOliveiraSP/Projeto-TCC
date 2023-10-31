@@ -59,6 +59,40 @@
             .formas-de-pagamentos{
                 display: flex;
                 align-items: center;
+
+                >div{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    min-width: 151.97px;
+                    height: 36px;
+
+                    i{
+                        font-size: 23px;
+                        margin: 0px 15px;
+                    }
+
+                    img{
+                        max-width: 31.5px;
+                        max-height: 39px;
+                    }
+
+                    .cartao-credito{
+                        font-size: 28px;
+                    }
+
+                    .pix{
+                        font-size: 32px;
+                    }
+                }
+
+                >span{
+                    display: flex;
+                    justify-content: flex-end;
+                    text-align: end;
+                    width: auto;
+                }
             }
         }
     }
