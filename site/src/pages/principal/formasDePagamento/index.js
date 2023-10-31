@@ -71,14 +71,14 @@ export default function FormasDePagamento(){
                             <div>
                                 <i class="fa-solid fa-caret-up fa-rotate-180"></i>
                                 <i class="fa-brands fa-pix pix" style={{color: '#9CDC86',}}></i>
-                                <span>Cartão de débito</span>
+                                <span>Pix</span>
                             </div>
                             <span>à vista</span>
                         </div>
 
                         <hr />
 
-                        
+                        <div className='botao-confirm'><button>CONFIRMAR</button></div>
                     </div>
                 </div> 
 
