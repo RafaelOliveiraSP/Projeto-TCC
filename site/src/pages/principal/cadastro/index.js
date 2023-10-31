@@ -52,7 +52,7 @@ export default function Cadastrar(){
       } 
       catch (err) {
         toast.error(err.response.data.erro);
-        alert(err.response.data.erro)  
+        alert('Você não possui cadastro!!')  
       }
     }
 
