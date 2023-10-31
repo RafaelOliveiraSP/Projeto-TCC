@@ -25,7 +25,7 @@ export default function Login(){
                 senha: senha
             }
 
-            let r = await axios.post('http://129.148.42.252:5025/verificarLogin', login);
+            let r = await axios.post('http://129.148.42.252:5035/verificarLogin', login);
 
             if(r.status === 204){
                 navigate('/')
