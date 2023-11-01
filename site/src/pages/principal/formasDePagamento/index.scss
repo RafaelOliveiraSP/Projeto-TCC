@@ -86,7 +86,7 @@
 
                     .pix{
                         font-size: 32px;
-                        margin: 0px 10px 0px 0px;
+                        margin: 0px 10px 0px 1px;
                     }
                 }
 
@@ -96,6 +96,77 @@
                     text-align: end;
                     width: auto;
                 }
+            }
+
+            .form-cartao{
+                display: flex;
+                justify-content: center;
+
+                width: 100%;
+                padding: 20px 0px;
+
+               
+
+                > div{
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid black;
+
+                    padding: 20px 50px;
+                    border-radius: 15px;
+
+                     > input{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 1px solid black;
+
+                        height: 25px;
+                        margin-bottom: 10px;
+
+                        padding: 0px 5px;
+                    }
+
+                    > label{
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+
+                    > div{
+                        display: flex;
+                        gap: 20px;
+
+                        >span{
+                            display: flex;
+                            flex-direction: column;
+
+                            > input{
+                                border-radius: 5px;
+                                outline: none;
+                                border: 1px solid black;
+        
+                                height: 25px;
+                            } 
+
+                            > label{
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    > select{
+                        border-radius: 5px;
+                        outline: none;
+                        border: 1px solid black;
+
+                        height: 25px;
+                    }
+
+                    #quant-parcelas{
+                        margin-top: 10px;
+                    }
+                }
+
             }
 
             .botao-confirm{
