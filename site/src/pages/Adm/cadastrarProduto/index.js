@@ -2,8 +2,12 @@ import './index.scss';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { API_URL } from '../../../constants.js';
+
+import axios from "axios";
 
 export default function CadastrarProduto(){
 
@@ -15,8 +19,23 @@ export default function CadastrarProduto(){
     const [descReduzida, setDescReduzida]   = useState('');
     const [estoque, setEstoque]             = useState('');
     const [classificacao, setClassificacao] = useState('');
+
+    const [opcoesMarcas, setOpcoesMarcas] = useState([]);
+    const [marca, setMarca]               = useState(0);
+
     const [nome, setNome]                   = useState('');
     const [cor, setCor]                     = useState('');
+
+    async function listarMarcas(){
+        let r = await axios.get(  API_URL + '/marcas');
+        setOpcoesMarcas(r.data);
+    }
+
+    useEffect(() => {
+        //
+        listarMarcas();
+        //
+      }, [])
 
     return(
         <div className='pagina-cadastro-produto'>
@@ -61,7 +80,12 @@ export default function CadastrarProduto(){
 
                     <div className='input-duplo'>
                         <span>Marca:</span>
-                        <select></select>
+                        <select value={marca} onChange={e => setMarca(e.target.value)}>
+                        <option value={0}> Selecione </option>
+                            {opcoesMarcas.map(item =>
+                                <option value={item.id}> {item.marca} </option>  
+                            )}
+                        </select>
 
                         <span>Nome:</span>
                         <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
@@ -73,8 +97,9 @@ export default function CadastrarProduto(){
                     </div>
 
                     <div>
-                        <span>Tamanho:</span>
+                        <span>Tamanhos disponiveis:</span>
                         <select></select>
+                        
                     </div>
 
                     <div className='botaoCadastrar'><button>Adicionar Produto</button></div>

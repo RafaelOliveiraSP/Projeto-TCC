@@ -1,0 +1,64 @@
+.pagina-trocas{
+
+    h1.reginaldo {
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    h1.picapau {
+        text-align: center;
+        padding: 5%;
+    }
+
+    .galaxia{
+        padding-block-end: 100px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .via-lactea{
+        display: flex;
+        flex-direction: column;
+        border: solid;
+        border-radius: 20px;
+        width: 70vw;
+    }
+
+    p.plutao {
+        padding: 5%;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: -webkit-center;
+    }
+
+    p.marte {
+        padding: 5%;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 25px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: -webkit-center;
+    };
+
+    .lua {
+        display: flex;
+        justify-content: center;
+        padding-block-end: 5%;
+    }
+
+    button.f1 {
+        border-radius: 30px;
+        width: 250px;
+        height: 45px;
+        margin-top: 30px;
+        padding: 10px;
+        padding-top: 6px;
+        border: 1px solid #4E5B60;
+    }
+}

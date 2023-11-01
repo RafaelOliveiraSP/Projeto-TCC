@@ -20,7 +20,7 @@ export default function Carrinho() {
                     depois de 15 dias que você o adicionou ele será removido</p>
                 </div>
                 <div className='men'>
-                    <button className='super'>Voltar para a página inicial</button>
+                    <Link to='/'>Voltar para a página inicial</Link>
                 </div>
             </div>
             <Rodape/>

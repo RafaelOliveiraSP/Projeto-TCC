@@ -38,12 +38,16 @@
     .cartao-dunk-low{
       max-width: 600px;
       max-height: 700px;
-      min-width: 302px;
-      min-height: 441px;
 
       padding: 20px;
 
-      > img{
+      > div{
+        max-width: 100%;
+        max-height: 100%;
+
+      }
+
+      div > img{
         width: 100%;
         height: 100%;
 
@@ -67,6 +71,9 @@
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: #000;
       margin-bottom: 10px;
+
+      padding: 0px 10px;
+      text-align: center;
     }
 
     > h2{
@@ -74,6 +81,8 @@
       font-size: 32px;
 
       margin-bottom: 30px;
+      padding: 0px 10px;
+      text-align: center;
     }
 
     > p{
@@ -140,29 +149,51 @@
       color: #212529;
       -webkit-text-stroke-width: 2px;
       -webkit-text-stroke-color: #000;
-      margin-bottom: 10px; 
+      margin-bottom: 10px;
+      
+      padding: 0px 10px;
+      text-align: center;
     }
 
     > p{
       text-align: center;
       font-family: 'Inter', sans-serif; 
       font-size: 16px;
-      margin-bottom: 45px; 
+      margin-bottom: 45px;
+      
+      padding: 0px 10px;
     }
 
-    > a{
+    div{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 0px 10px;
+    }
+
+    div > a{
       color: #000;
       font-family: 'Monda', sans-serif;
       font-size: 14px;
       font-weight: 600;
 
-      padding: 15px 100px;
+
+      max-width: 304.44px;
+      width: 304.44px;
+      padding: 15px 0px;
       border-radius: 30px;
       border: 1px solid #000;
 
       text-decoration: none;
-      background-color: #d9d9d9; 
-    } 
+      background-color: #d9d9d9;
+      text-align: center; 
+    }
+    
+    div > a:hover{
+      background-color: #000;
+      color: #fff;
+      transition: 0.9s;
+    }
   }
 
   .terceira-faixa{
@@ -220,7 +251,6 @@
         max-height: 260px;
         padding: 0px 10px; 
         
-        
         > img{ 
           width: 100%;
           height: 100%;
@@ -239,6 +269,16 @@
           font-size: 14px; 
           font-weight: 600;
           border-radius: 30px; 
+        }
+      }
+
+      > div:hover{
+        cursor: pointer;
+        
+        > img{
+          border: 2px solid #000;
+          border-radius: 15px;
+         
         }
       }
     }
@@ -298,7 +338,11 @@
       background-color: #d9d9d9;
       margin-bottom: 100px;
     }
-    
+    > a:hover{
+      background-color: #000;
+      color: #fff;
+      transition: 0.9s;
+    }
   } 
 
 }  
@@ -354,77 +398,21 @@
         }
       }
     }
+
+    .Texto-segunda-faixa{
+      > h1{
+        font-size: 35px;
+      }
+    }
+
   }
 }
 
-// @media(max-width: 950px){
-//   .pagina-principal{
-//     .dunk-low{
-//       gap: 0px;
+@media(max-width: 600px){
+  .pagina-principal{
+    .dunk-low{
+      padding: 90px 10px 0px 10px;
+    }
+  }
+}
 
-//       > div{
-        
-//         max-width: 400px;
-//         max-height: 200px;
-
-//         padding: 5px;
-
-//         > img{
-//           width: 100%;
-//           height: 100%;
-//         }
-//       }
-
-//       .detalhes-dunk-low{
-
-//         > h1{
-//           font-size: 30px;
-//         }
-
-//         > h2{
-//           font-size: 25px;
-//         }
-
-//         > p{
-//           font-size: 14px;
-//         }
-//       }
-//     }
-//   }
-// }
-  
-// @media(max-width: 850px){
-//   .pagina-principal{
-//     .dunk-low{
-//       gap: 0px;
-
-//       > div{
-        
-//         max-width: 300px;
-//         max-width: 100px;
-
-//         padding: 5px;
-
-//         > img{
-//           width: 100%;
-//           height: 100%;
-//         }
-//       }
-
-//       .detalhes-dunk-low{
-
-//         > h1{
-//           font-size: 30px;
-//         }
-
-//         > h2{
-//           font-size: 25px;
-//         }
-
-//         > p{
-//           font-size: 14px;
-//         }
-//       }
-//     }
-//   }
-// }

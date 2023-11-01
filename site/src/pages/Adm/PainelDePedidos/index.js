@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { Link } from 'react-router-dom';
 
 export default function Produtos(){
 
@@ -40,7 +41,7 @@ export default function Produtos(){
             <i class="fa-solid fa-xmark"style={{color: "#ff0026",}}></i>
         </div>
 
-
+        <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>
 
 
             <Rodape />

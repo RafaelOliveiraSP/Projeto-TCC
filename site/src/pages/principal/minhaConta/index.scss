@@ -1,0 +1,46 @@
+.texto-principal {
+    display: flex;
+    justify-content: center;
+
+    padding: 100px;
+}
+
+.cartao-nomes {
+    justify-content: center;
+
+}
+
+.texto-dos-nomes-de-cadastro {
+    display: flex;
+    justify-content: flex-end;
+
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+
+
+    > div {
+        display: flex;
+        justify-content: flex-end;
+
+        gap: 10px;
+        width: 50%;
+        font-size: 15px;
+        padding-right: 210px;        
+        padding-top: 30px;
+
+        > input{
+            border-radius: 10px;
+            border:1px solid #000000;
+            font-size: 20px;
+            outline: none;
+            padding: 0px 0px 2px 25px;
+            
+        }
+    }
+}
+
+.rodapezi{
+    padding-top: 100px;
+}
+

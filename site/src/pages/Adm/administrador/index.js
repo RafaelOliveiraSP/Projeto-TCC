@@ -13,7 +13,7 @@ export default function Admin(){
             
             <div className='links-adm'>
                 <div className='titulo-adm'>
-                    <h1> Bem Vindo Admin</h1>
+                    <h1> Bem-Vindo Admin</h1>
                     <span> Gerenciar e proteger sua conta</span>
                 </div>
                 <div className='opcoes-adm'>
@@ -40,8 +40,8 @@ export default function Admin(){
                     </div>
                             
                     <div>
-                        <Link><div><i class="fa-solid fa-person-walking-luggage"></i></div></Link>
-                        <span>Pedidos conclúidos</span>
+                        <Link to='/PainelDePedidos'><div><i class="fa-solid fa-person-walking-luggage"></i></div></Link>
+                        <span><Link to='/PainelDePedidos'>Pedidos conclúidos</Link></span>
                     </div>
                 </div> 
                 

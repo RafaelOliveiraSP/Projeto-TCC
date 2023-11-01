@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { API_URL } from '../../../constants.js';
+
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
@@ -43,13 +45,13 @@ export default function Cadastrar(){
         }
       
         if (idCliente === 0) {
-           await axios.post('http://localhost:5035/inserirCliente', cliente);
+           await axios.post(API_URL + '/inserirCliente', cliente);
            alert('Cliente cadastrado com sucesso!');
            navigate('/')
         }
       } 
       catch (err) {
-        toast.error(err.response.data.erro);  
+        toast.error(err.response.data.erro);
       }
     }
 
@@ -87,7 +89,7 @@ export default function Cadastrar(){
                     <input type='text' value={email} onChange={e => SetEmail(e.target.value)}/>
 
                     <span > Senha:</span>
-                    <input type='text' value={senha} onChange={e => SetSenha(e.target.value)}/>
+                    <input type='password' value={senha} onChange={e => SetSenha(e.target.value)}/>
                     {SetIdCliente}
                 </div>
 

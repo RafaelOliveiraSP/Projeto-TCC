@@ -14,12 +14,17 @@
         background-color: #000;
         font-size: 14px;
         color: #fff; 
-    }
 
-    .prtcima-cabecalho > a{
-        text-decoration: none;
-        font-size: 14px;
-        color: #fff;
+        > a{
+            text-decoration: none;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        > a:hover{
+            text-decoration: underline;
+        }
+
     }
 
     .conteudo-cabecalho{
@@ -33,11 +38,23 @@
     }
 
     .logo-cabecalho{
+        max-width: 90px;
         width: 90px;
 
+        max-height: 70px;
+        padding: 0px 10px;
+
+        > a {
+            max-width: 90px;
+            width: 90px;
+
+            max-height: 70px;
+            padding: 0px 10px;
+        }
+
         a > img{
-            width: 80px;
-            height: 80px;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -54,13 +71,18 @@
         display: flex;
         flex-direction: row;
         gap: 30px; 
+
+        > a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        > a:hover{
+            text-decoration: underline;
+        }
     }
 
-    .paginas-cabecalho > a{
-        text-decoration: none;
-        color: #000;
-        
-    }
+    
 
     .icones-compras{
         position: relative;
@@ -99,6 +121,10 @@
 
     .carrinho{
         font-size: 22px;
+    }
+
+    .usuario{
+        font-size: 20.4px;
     }
 
     .prt-fixa-cabecalho{
@@ -154,6 +180,40 @@
     }
 }
 
+@media(max-width: 500px){
+    .pagina-cabecalho{
+        .prtcima-cabecalho{
+            height: 40px;
+
+            font-size: 12px;
+
+            > a{
+                font-size: 12px;
+            }
+        }
+        .icones-compras > input{
+            height: 40px;
+        }
+        .lupa{
+            top: 12px;
+            font-size: 17px;
+        }
+        .coracao{
+            font-size: 20px;
+        }
+    
+        .carrinho{
+            font-size: 18px;
+        }
+        .conteudo-cabecalho{
+            height: 90px;
+        }
+        .prt-fixa-cabecalho{
+            font-size: 12px;
+        }
+    }
+}
+
 @media(max-width: 470px){
     .pagina-cabecalho{
         .carrinho-cabecalho{
@@ -173,24 +233,20 @@
     }
 }
 
-@media(max-width: 310px){
-    .pagina-cabecalho{
-        .prtcima-cabecalho > a{
-            font-size: 12px;
-        }
-        .logo-cabecalho{
-            font-size: 12px;
-             width: 80px;
+// @media(max-width: 310px){
+//     .pagina-cabecalho{
+//         .prtcima-cabecalho > a{
+//             font-size: 12px;
+//         }
+//         .logo-cabecalho{
+//             font-size: 12px;
+//              width: 80px;
 
-            > img{
-                width: 60px;
-                height: 60px;
-            }
-        }
+//             > img{
+//                 width: 60px;
+//                 height: 60px;
+//             }
+//         }
 
-        
-        .prt-fixa-cabecalho{
-            font-size: 12px;
-        }
-    }
-}
+//     }
+// }

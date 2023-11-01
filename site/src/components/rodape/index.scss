@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center; 
 
+    padding: 0px 20px;
     width: 100%;
     height: 190px;
     background-color: #000;
@@ -38,6 +39,10 @@
             flex-direction: row;
             gap: 10px;
         }
+    }
+
+    a:hover{
+        text-decoration: underline;
     }
 }
 
@@ -76,9 +81,16 @@
 @media(max-width: 650px){ 
     .pagina-rodape{ 
 
-        > div{   
+        > div{ 
+
+            > a{
+                text-align: center;
+            } 
+
             > h2{  
-                    font-size: 14px; 
+                    font-size: 14px;
+                    text-align: center;
+                
             }
             > span{ 
                     font-size: 12px; 
@@ -87,10 +99,24 @@
     }
 }
  
-@media(max-width: 400px){ 
+@media(max-width: 450px){ 
     .pagina-rodape{ 
         flex-direction: column; 
         height: auto;
         padding-top: 20px;
+
+        > div{
+            width: 162.3px;
+
+            > a{
+                text-align: none;
+            } 
+
+            > h2{  
+                    font-size: 14px;
+                    text-align: none;
+                
+            }
+        }
     }
 }
