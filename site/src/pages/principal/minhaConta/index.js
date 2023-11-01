@@ -17,47 +17,51 @@ export default function MinhaConta(){
 
 
             <div className='texto-dos-nomes-de-cadastro'>
+                
                 <div>
-                    <h4>Nome:</h4>
-                    <input></input>
+                    <div>
+                        <h2>Nome:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Sobrenome:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Usúario:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>CPF:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Sexo:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Número de Telefone:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Data de Nascimento:</h2>
+                        <input></input>
+                    </div>
+
+                    <div>
+                        <h2>Email:</h2>
+                        <input></input>
+                    </div>
+
                 </div>
 
-                <div>
-                    <h4>Sobrenome:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>Usúario:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>CPF:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>Sexo:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>Número de Telefone:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>Data de Nascimento:</h4>
-                    <input></input>
-                </div>
-
-                <div>
-                    <h4>Email:</h4>
-                    <input></input>
-                </div>
-
-                </div>
+            </div>
 
                 <div className='rodapezi'>
                     <Rodape/>
