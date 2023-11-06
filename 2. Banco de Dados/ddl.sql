@@ -34,7 +34,8 @@ create table tb_dados_cartao(
     nr_cartao							varchar(200) not null,
     nm_cartao							varchar(200) not null,
     nr_cod_seguranca					int			 not null,
-    dt_vencimento						date         not null
+    dt_vencimento						varchar(5)   not null,
+    qtd_parcelas 						int 		 
 );
 
 create table tb_pedido_item (
