@@ -71,12 +71,16 @@
         .pagina-cadastro{
             .formulario-cadastro{
                 > input{
-                    width: 350px;
+                    width: 200px;
                 }
 
                 > span{
-                    width: 350px;
+                    width: 200px;
                 }
+            }
+
+            .botao-cadastrar{
+                width: 200px;
             }
         }
 
