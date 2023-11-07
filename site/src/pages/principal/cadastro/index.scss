@@ -66,4 +66,19 @@
     }   
 }
     
+
+    @media(max-width: 700px){
+        .pagina-cadastro{
+            .formulario-cadastro{
+                > input{
+                    width: 350px;
+                }
+
+                > span{
+                    width: 350px;
+                }
+            }
+        }
+
+    }
     
