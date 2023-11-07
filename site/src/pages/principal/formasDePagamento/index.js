@@ -10,6 +10,10 @@ export default function FormasDePagamento(){
     const [mostrarFormCred, setMostrarFormCred] = useState('none');
     const [mostrarFormDeb, setMostrarFormDeb]   = useState('none');
 
+    const [nomeCard, setNomeCard]               = useState('');
+    const [nmrCard, setNmrCard]                 = useState('');
+    const [codCard, setCodCard]                 = useState(0);
+    const [vencimento, setVencimento]           = useState('');
     const [nmrParcelas, setNmrParcelas]         = useState(0);
 
     function mostrarTabelaCred(){
@@ -35,8 +39,6 @@ export default function FormasDePagamento(){
             setMostrarFormDeb('none')
         }
     }
-
-
 
     return(
         <div className='pagina-pagamentos'>
@@ -90,19 +92,19 @@ export default function FormasDePagamento(){
 
                                 <div>
                                     <label>Nome impresso no cartão*</label>
-                                    <input type='text' />
-
+                                    <input type='text' value={nomeCard} onChange={e => setNomeCard(e.target.value)}/>
+                                    
                                     <label>Número do cartão*</label>
-                                    <input type='text' />
+                                    <input type='text' value={nmrCard} onChange={e => setNmrCard(e.target.value)}/>
                                     <div>
                                         <span>
                                            <label>Vencimento*</label>
-                                            <input type='text' /> 
+                                            <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}/> 
                                         </span>
                                         
                                         <span>
                                             <label>CVV*</label>
-                                            <input type='text' />  
+                                            <input type='text' value={codCard} onChange={e => setCodCard(e.target.value)}/>  
                                         </span>
                                     </div>
 
@@ -134,19 +136,19 @@ export default function FormasDePagamento(){
 
                                 <div>
                                     <label>Nome impresso no cartão*</label>
-                                    <input type='text' />
+                                    <input type='text' value={nomeCard} onChange={e => setNomeCard(e.target.value)}/>
 
                                     <label>Número do cartão*</label>
-                                    <input type='text' />
+                                    <input type='text' value={nmrCard} onChange={e => setNmrCard(e.target.value)}/>
                                     <div>
                                         <span>
                                            <label>Vencimento*</label>
-                                            <input type='text' /> 
+                                            <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}/> 
                                         </span>
                                         
                                         <span>
                                             <label>CVV*</label>
-                                            <input type='text' />  
+                                            <input type='text' value={codCard} onChange={e => setCodCard(e.target.value)}/>  
                                         </span>
                                     </div>
                                 </div>

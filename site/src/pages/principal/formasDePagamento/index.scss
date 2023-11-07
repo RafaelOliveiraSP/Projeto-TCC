@@ -105,15 +105,16 @@
                 width: 100%;
                 padding: 20px 0px;
 
-               
-
                 > div{
                     display: flex;
                     flex-direction: column;
+                    flex-wrap: wrap;
+                    
                     border: 1px solid black;
 
                     padding: 20px 50px;
                     border-radius: 15px;
+                    max-width: 472px;
 
                      > input{
                         border-radius: 5px;
@@ -124,6 +125,7 @@
                         margin-bottom: 10px;
 
                         padding: 0px 5px;
+                        max-width: 370px;
                     }
 
                     > label{

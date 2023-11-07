@@ -13,7 +13,6 @@ export default function CadastrarProduto(){
 
     // const [fotosProduto, setFotosProduto] = ([]);
 
-    const [idProduto, setIdProduto]         = useState('');
     const [codigo, setCodigoProduto]        = useState('');
     const [descricao, setDescricao]         = useState('');
     const [descReduzida, setDescReduzida]   = useState('');
@@ -51,8 +50,8 @@ export default function CadastrarProduto(){
                     </div>
                     
                     <div className='input-duplo'>
-                        <span>Id:</span>
-                        <input id='primeiro-input' type='text' value={idProduto} onChange={e => setIdProduto(e.target.value)}/>
+                        <span>Nome:</span>
+                        <input id='primeiro-input'type='text' value={nome} onChange={e => setNome(e.target.value)}/>
 
                         <span>Código:</span>
                         <input type='text' value={codigo} onChange={e => setCodigoProduto(e.target.value)}/>
@@ -88,18 +87,12 @@ export default function CadastrarProduto(){
                         </select>
 
                         <span>Nome:</span>
-                        <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
+                        <input />
                     </div>
 
                     <div>
                         <span>Cor:</span>
                         <input type='color' value={cor} onChange={e => setCor(e.target.value)}/>
-                    </div>
-
-                    <div>
-                        <span>Tamanhos disponiveis:</span>
-                        <select></select>
-                        
                     </div>
 
                     <div className='botaoCadastrar'><button>Adicionar Produto</button></div>
