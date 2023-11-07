@@ -10,7 +10,7 @@
         align-items: center;
 
         padding: 100px 0px;
-    }
+    
 
 
     .titulo{
@@ -208,9 +208,84 @@
 
 }
 
+}
+}
+
+@media(max-width: 510px){
+    .pagina-login{
+        .cartao{
+            .cartao-email{
+                width: 200px;
+            }
+
+            > span{
+                width: 200px;
+            }
+
+            .cadastro{
+                width: 350px;
+            }
+            
+            .pg-google{
+                width: 350px;
+            }
+            
+            .pg-face{
+                width: 350px;
+            }
+        }
+    }
 
 }
 
+@media(max-width: 469px){
+    .pagina-login{
+        .cartao{
+            .cartao-email{
+                width: 100px;
+            
+            > span{
+                width: 250px;
+            }
+           
+            .caixa-email{
+                width: 250px;
+            }
+            
+            .caixa-senha{
+                width: 250px;
+            }
+        }
+           
+        }
+
+    }
+
+}
+
+@media(max-width: 384px){
+    .pagina-login{
+        .cartao{
+            .botao-conectado{
+                width: 200px;
+        }
+   }
+}
+}
+
+@media(max-width: 360px){
+    .pagina-login{
+        .cartao{
+            .pg-google{
+                width: 200px;
+            }
+            
+            .pg-face{
+                width: 200px;
+            }
+   }
+}
+}
 
 
 

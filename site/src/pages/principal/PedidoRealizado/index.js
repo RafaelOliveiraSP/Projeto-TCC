@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { Link } from 'react-router-dom';
 
 
 export default function PedidoRealizado(){
@@ -30,6 +31,8 @@ export default function PedidoRealizado(){
                     <div className='button'>
                         <button className='botao'> Status Do Pedido </button>
                     </div>
+
+                    <Link className='voltar' to='/statuspedido'>voltar para status do pedido</Link>
                       
                 </div>       
             </div>  
