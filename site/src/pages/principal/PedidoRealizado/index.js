@@ -28,11 +28,7 @@ export default function PedidoRealizado(){
                     <h1 className='p1'>Falta pouco para você adquirir o seu(s) produto(s)basta realizar o pagamento e esperar no conforto da sua casa</h1>
                     </div>
 
-                    <div className='button'>
-                        <button className='botao'> Status Do Pedido </button>
-                    </div>
-
-                    <Link className='voltar' to='/statuspedido'>voltar para status do pedido</Link>
+                    <Link className='voltar' to='/statuspedido'>Voltar para status do pedido</Link>
                       
                 </div>       
             </div>  
