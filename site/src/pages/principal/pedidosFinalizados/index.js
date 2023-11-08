@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { Link } from 'react-router-dom';
 
 export default function MeusPedidos(){
 
@@ -48,7 +49,7 @@ export default function MeusPedidos(){
                     </div>
                 </div>
 
-                <button className='botao'>Voltar para a pagina inicial</button>
+                <Link className='voltar' to='/'> Voltar para a pagina inicial </Link>
                 
                 </div>
 
