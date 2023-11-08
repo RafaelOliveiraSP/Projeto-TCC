@@ -2,14 +2,15 @@ create database fors_bd;
 use fors_bd;
 
 create table tb_produto ( 
-	id_produto 							int primary key auto_increment, 
-	id_marca 							int          not null,
+	id_produto 							int primary key auto_increment,
 	nm_produto 							varchar(200) not null,
+	ds_codigo							varchar(50)  not null,
+	ds_descricao						varchar(200) not null,
+	qnt_estoque							int          not null,
 	vl_preco 							decimal(6,2) not null,        
 	vl_preco_promocional 				decimal(6,2) not null,
-    ds_descricao						varchar(200) not null,
-    ds_desc_reduzida					varchar(100) not null,
-    qnt_estoque							int          not null,
+	id_marca 							int          not null,
+	ds_cor								varchar(50)  not null,
     foreign key (id_marca) 				references tb_marca (id_marca)
 );
 
