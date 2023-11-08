@@ -52,6 +52,7 @@ export default function Rotas(){
                 <Route  path='/meuspedidos'  element={<MeusPedidos />} />
                 <Route path='/minhaconta' element={<MinhaConta/>} />
                 <Route path='/formasdepagamento' element={<FormasDePagamento />} />
+                
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
