@@ -120,14 +120,30 @@
 
                     > img{
                         align-items: center;
-                        width: 246.190px;
-                        height: 130.9px;
+                        width: 250.190px;
+                        height: 140.9px;
+                        
+                        > button{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: none;
+                            width: 150px;
+                            border-radius: 25px;
+                            padding: 15px 0px;
+                            padding-top: 300px;
+                            background-color: #ffffff;
+                            font-size: 16px;
+                            font-weight: 530;
+                            border-radius: 45px;
+                            background-color: rgb(224, 224, 224);
+                            border: 1px;
 
+                        }
                     }
                 }
             }  
         }
-
     }
 
 
@@ -204,18 +220,18 @@
 }
 
 .valorzinho2{
-    padding: 55px;
+    padding: 95px;
 }
 
 .valorzinho3{
-    padding: 55px;
+    padding: 95px;
     padding-top: 70px;
 
 }
 
 .valorzinho4{
-    padding: 60px;
-    padding-top: 20px;
+    padding: 95px;
+    padding-top: 70px;
     
 }
 
@@ -225,18 +241,27 @@
 
 .Nike-Dunk{
     align-items: end;
-    height: 117px !important;
-    width: 250px !important;
+    height: 145px !important;
+    width: 265px !important;
 }
 
 .Travis{
-    height: 150px !important;
+    height: 145px !important;
     width: 269px !important;
-    border-radius: 80px 90px;
 
 }
 
+.button2{
+    display: flex;
+    flex-direction: row-reverse;
 
 
+}
 
+.button3-do-texto{
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 45px;
 
+}

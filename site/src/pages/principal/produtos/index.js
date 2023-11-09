@@ -57,21 +57,41 @@ export default function Produtos(){
                             <img src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
                             <h1 className='jordan'>Tênis Nike KD 14</h1>
                             <h1 className='valorzinho'>R$1.709,99</h1>
+
+                            <div className='button2'>
+                                <button  className='button3-do-produto'>Ver Produto</button>
+                            </div>
+
                         </div>
                         <div className='quadrado-do-tenis'>
-                            <img src='./assets/images/mizuno1.png' alt='Mizuno'/>
+                            <img src='./assets/images/Tenis-KD14Pink.png' alt='Mizuno'/>
                             <h1 className='Mizuno'>Mizuno Wave Prophecy 12</h1>
                             <h1 className='valorzinho2'>R$1.799,99</h1>
+
+                            <div className='button2'>
+                                <button  className='button3-do-produto'>Ver Produto</button>
+                            </div>
+
                         </div>
                         <div className='quadrado-do-tenis'>
-                            <img className='Nike-Dunk' src='./assets/images/Nike-Dunk.png' alt='Jordan'/>
+                            <img className='Nike-Dunk' src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
                             <h1 className='nike-dunk'>Nike Dunk Low Gray</h1>
                             <h1 className='valorzinho3'>R$1099,99</h1>
+
+                            <div className='button2'>
+                                <button  className='button3-do-produto'>Ver Produto</button>
+                            </div>
+
                         </div>
                         <div className='quadrado-do-tenis'>
-                            <img className= 'Travis' src='./assets/images/dunk-travis1.png' alt='Jordan'/>
+                            <img className= 'Travis' src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
                             <h1  className='travis-de-tenis'> Travis Scott x Nike Dunk Low Cactus Jack </h1>
                             <h1  className='valorzinho4'>R$14.500,00</h1>
+
+                            <div className='button2'>
+                                <button className='button3-do-produto'>Ver Produto</button>
+                            </div>
+
                         </div>        
                     </div>
 
