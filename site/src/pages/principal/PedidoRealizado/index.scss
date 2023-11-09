@@ -1,42 +1,42 @@
-.pagina-PedidosRealizados{
-  width: 100%;
-}
+  .pagina-PedidosRealizados{
+    width: 100%;
+  }
 
-.texto1{
+  .texto1{
     align-items: center;
     justify-content: center;
     padding: 30px;
     margin-top: 20px;
-}       
+  }       
 
-.textos{
+  .textos{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin: 30px;
-} 
+  } 
 
-.texto2{
+  .texto2{
   padding: 55px;
-}
+  }
 
 
-.paragrafos{
+  .paragrafos{
   > h1{
     display: flex;
     align-items: center;
     justify-content: center;
   }
-}
+  }
 
-.p1{
+  .p1{
     display: flex;
     padding: 60px;
     font-size: 25px;
-}
+  }
 
-.button{
+  .button{
   display: flex;
   justify-content: center;
 
@@ -46,9 +46,9 @@
   align-items: center;
   border: 1px;
   font-size: 20px;
-} 
+  } 
 
-.botao{
+  .botao{
   border-radius: 20px;
   padding: 10px;
 
@@ -57,5 +57,31 @@
   font: 14px 'Monda', sans-serif;
   padding: 15px 30px;
   color: #000;
-}
+  }
+
+  .voltar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    width: 250px;
+    height: 25px;
+    border-radius: 15px;
+
+    font-family: 'Monda', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+
+    margin-bottom: 10px;
+
+    color: #000;
+    margin-top: 10px;
+    padding: 20px 0px;
+
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+  }
+
 

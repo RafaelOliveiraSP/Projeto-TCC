@@ -5,6 +5,7 @@ import Consulta from            './pages/Adm/consultaProduto';
 import LoginAdm from            './pages/Adm/LoginAdm';
 import CadastrarProduto from    './pages/Adm/cadastrarProduto';
 import PainelDePedidos from     './pages/Adm/PainelDePedidos';
+import PedidosEmAndamento from  './pages/Adm/pedidosAndamento';
 
 import HomePage from            './pages/principal/homePage';
 import Produtos from            './pages/principal/produtos';
@@ -51,13 +52,15 @@ export default function Rotas(){
                 <Route  path='/meuspedidos'  element={<MeusPedidos />} />
                 <Route path='/minhaconta' element={<MinhaConta/>} />
                 <Route path='/formasdepagamento' element={<FormasDePagamento />} />
+                
 
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
                 <Route path='/consulta-produto' element={<Consulta/>} />
                 <Route path='/cadastrar-produto' element={<CadastrarProduto />} />
                 <Route path='/PainelDePedidos' element={<PainelDePedidos/>}/>
-                
+                <Route path='/PedidosEmAndamento' element={<PedidosEmAndamento/>}/>
+
                 <Route path='/ajuda' element={<Faleconosco />} />
                 <Route path='/privacidade' element={<Privacidade />}/>
                 <Route path='/quemsomos' element={<QuemSomos />}/>

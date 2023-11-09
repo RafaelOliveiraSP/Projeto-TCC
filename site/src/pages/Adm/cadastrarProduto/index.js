@@ -5,27 +5,29 @@ import Rodape from '../../../components/rodape';
 import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { API_URL } from '../../../constants.js';
+
 import axios from "axios";
 
 export default function CadastrarProduto(){
 
     // const [fotosProduto, setFotosProduto] = ([]);
 
-    const [idProduto, setIdProduto]         = useState('');
-    const [codigo, setCodigoProduto]        = useState('');
-    const [descricao, setDescricao]         = useState('');
-    const [descReduzida, setDescReduzida]   = useState('');
-    const [estoque, setEstoque]             = useState('');
-    const [classificacao, setClassificacao] = useState('');
+    const [nome, setNome]                           = useState('');
+    const [codigo, setCodigoProduto]                = useState('');
+    const [descricao, setDescricao]                 = useState('');
+    const [estoque, setEstoque]                     = useState('');
+    const [valor, setValor]                         = useState('');
+    const [valorPromocional, setValorPromocional]   = useState('');
+
 
     const [opcoesMarcas, setOpcoesMarcas] = useState([]);
     const [marca, setMarca]               = useState(0);
 
-    const [nome, setNome]                   = useState('');
-    const [cor, setCor]                     = useState('');
+    const [cor, setCor]                   = useState('');
 
     async function listarMarcas(){
-        let r = await axios.get('http://129.148.42.252:5025/marcas');
+        let r = await axios.get(  API_URL + '/marcas');
         setOpcoesMarcas(r.data);
     }
 
@@ -45,12 +47,14 @@ export default function CadastrarProduto(){
                 <div className='formulario-produto'>
                     
                     <div className='colocar-imagens'>
-                        <input type='file' />
+                        <div>
+                             <input type='file' />
+                        </div>
                     </div>
                     
                     <div className='input-duplo'>
-                        <span>Id:</span>
-                        <input id='primeiro-input' type='text' value={idProduto} onChange={e => setIdProduto(e.target.value)}/>
+                        <span>Nome:</span>
+                        <input id='primeiro-input'type='text' value={nome} onChange={e => setNome(e.target.value)}/>
 
                         <span>Código:</span>
                         <input type='text' value={codigo} onChange={e => setCodigoProduto(e.target.value)}/>
@@ -62,43 +66,33 @@ export default function CadastrarProduto(){
                     </div>
                     
                     <div>
-                        <span>Desc. reduzida:</span>
-                        <input type='text' value={descReduzida} onChange={e => setDescReduzida(e.target.value)}/>
-                    </div>
-
-                    <div>
                         <span>Estoque:</span>
                         <input type='text' value={estoque} onChange={e => setEstoque(e.target.value)}/>
                     </div>
 
                     <div>
-                        <span>Classificação:</span>
-                        <input type='text' value={classificacao} onChange={e => setClassificacao(e.target.value)}/>
+                        <span>Valor:</span>
+                        <input type='text' value={valor} onChange={e => setValor(e.target.value)}/>
+                    </div>
+
+                    <div>
+                        <span>Valor promocional:</span>
+                        <input type='text' value={valorPromocional} onChange={e => setValorPromocional(e.target.value)}/>
                     </div>
 
                     <div className='input-duplo'>
                         <span>Marca:</span>
-                        <select value={marca} onChange={e => setMarca(e.target.value)}>
+                        <select value={marca} onChange={e => setMarca(e.target.value)} style={{width: '175px'}}>
                         <option value={0}> Selecione </option>
                             {opcoesMarcas.map(item =>
                                 <option value={item.id}> {item.marca} </option>  
                             )}
                         </select>
 
-                        <span>Nome:</span>
-                        <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
-                    </div>
-
-                    <div>
-                        <span>Cor:</span>
+                        <span style={{width: '54.84px', textAlign: 'right'}}>Cor:</span>
                         <input type='color' value={cor} onChange={e => setCor(e.target.value)}/>
                     </div>
 
-                    <div>
-                        <span>Tamanhos disponiveis:</span>
-                        <select></select>
-                        
-                    </div>
 
                     <div className='botaoCadastrar'><button>Adicionar Produto</button></div>
                 </div>

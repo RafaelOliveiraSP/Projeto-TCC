@@ -14,10 +14,10 @@ endpoints.post('/inserirCliente', async (req, resp) => {
         throw new Error('Nome obrigatório!');
 
       if(!cliente.sobrenome)
-        throw new Error('Sobrenome obrigatório!')  
+        throw new Error('Sobrenome obrigatório!');
 
       if(!cliente.usuario)
-        throw new Error('Usuário obrigatório!')
+        throw new Error('Usuário obrigatório!');
 
       let r1 = await consultar(cliente.usuario)
       if (r1.length > 0)

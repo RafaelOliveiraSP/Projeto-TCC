@@ -1,4 +1,4 @@
-.pagina-consulta{
+.pagina-andamento{
     display: flex;
     flex-direction: column;
 
@@ -25,7 +25,7 @@
             flex-direction: column;
             align-items: center;
             
-            width: 500px;
+            width: 350px;
             height: auto;
 
             position: relative;  
@@ -60,7 +60,7 @@
             right: 20px;
         }
 
-        .codigo-produto{
+        .id-produto{
             display: flex;
             flex-direction: row;
             max-width: 100vw;
@@ -71,17 +71,6 @@
             padding: 50px 10px;
         }
 
-        .caixa-cod{
-            border-radius: 10px;
-            border: 1px solid #4E5B60;
-
-            padding: 5px 5px;
-        }
-
-        .cod > h1{
-            padding-bottom: 15px;
-        }
-
         .caixa-id{
             border-radius: 10px;
             border: 1px solid #4E5B60;
@@ -89,40 +78,54 @@
             padding: 5px 5px;
         }
 
-        .id-produto > h1{
+        .id > h1{
             padding-bottom: 15px;
         }
-
-        .caixa-marca{
+        
+        .caixa-nome{
             border-radius: 10px;
             border: 1px solid #4E5B60;
 
             padding: 5px 5px;
         }
 
-        .marca > h1{
+        .nome-cliente > h1{
             padding-bottom: 15px;
         }
 
-        .caixa-modelo{
+        .caixa-prod{
             border-radius: 10px;
             border: 1px solid #4E5B60;
 
             padding: 5px 5px;
         }
 
-        .modelo > h1{
+        .produto > h1{
             padding-bottom: 15px;
         }
 
-        .caixa-estoque{
+        .caixa-pag{
             border-radius: 10px;
             border: 1px solid #4E5B60;
 
             padding: 5px 5px;
         }
 
-        .estoque > h1{
+        .pagamento > h1{
+            padding-bottom: 15px;
+        }
+
+        .caixa-status{
+            border-radius: 10px;
+            border: 1px solid #4E5B60;
+
+            padding: 5px 5px;
+            
+            width: 150px;
+            
+        }
+
+        .status > h1{
             padding-bottom: 15px;
         }
 
