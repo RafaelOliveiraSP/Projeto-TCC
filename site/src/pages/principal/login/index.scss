@@ -276,6 +276,18 @@
 @media(max-width: 360px){
     .pagina-login{
         .cartao{
+            
+            .cadastro{
+                width: 200px;
+                font-size: 12px;
+            }
+
+            .adm{
+                width: 200px;
+                font-size: 12px;
+            }
+            
+            
             .pg-google{
                 width: 200px;
             }
@@ -283,6 +295,16 @@
             .pg-face{
                 width: 200px;
             }
+   }
+}
+}
+
+@media(max-width: 308px){
+    .pagina-login{
+        .cartao{
+            .botao-login{
+                width: 200px;
+        }
    }
 }
 }
