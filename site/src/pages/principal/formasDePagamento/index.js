@@ -4,7 +4,6 @@ import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 import { useState } from 'react';
 
-
 export default function FormasDePagamento(){
 
     const [mostrarFormCred, setMostrarFormCred] = useState('none');
@@ -12,9 +11,41 @@ export default function FormasDePagamento(){
 
     const [nomeCard, setNomeCard]               = useState('');
     const [nmrCard, setNmrCard]                 = useState('');
-    const [codCard, setCodCard]                 = useState(0);
+    const [codCard, setCodCard]                 = useState('');
     const [vencimento, setVencimento]           = useState('');
     const [nmrParcelas, setNmrParcelas]         = useState(0);
+
+    function verificarTexto(e){
+        let n = Number(e);
+
+        if(isNaN(n)){
+            setNmrCard('')
+        }
+        else{
+            let cont = 16;
+            let tam = n + "";
+
+            if(cont >= tam.length){
+                setNmrCard(n)
+            }
+        }
+    }
+
+    function maxCod(e){
+        let cvv = Number(e);
+
+        if(isNaN(cvv)){
+            setCodCard('')
+        }
+        else{
+            let cont = 4;
+            let tam = cvv + "";
+
+            if(cont >= tam.length){
+                setCodCard(cvv)
+            }
+        }
+    }
 
     function mostrarTabelaCred(){
         if(mostrarFormDeb === 'flex'){
@@ -95,16 +126,15 @@ export default function FormasDePagamento(){
                                     <input type='text' value={nomeCard} onChange={e => setNomeCard(e.target.value)}/>
                                     
                                     <label>Número do cartão*</label>
-                                    <input type='text' value={nmrCard} onChange={e => setNmrCard(e.target.value)}/>
+                                    <input type='text' value={nmrCard} onChange={e=>  verificarTexto(e.target.value)}/>
                                     <div>
                                         <span>
                                            <label>Vencimento*</label>
-                                            <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}/> 
+                                            <input type='date' value={vencimento} onChange={e => setVencimento(e.target.value)} style={{minWidth: '175px',}}/> 
                                         </span>
-                                        
                                         <span>
                                             <label>CVV*</label>
-                                            <input type='text' value={codCard} onChange={e => setCodCard(e.target.value)}/>  
+                                            <input type='text' value={codCard} onChange={e => maxCod(e.target.value)}/>  
                                         </span>
                                     </div>
 
@@ -139,7 +169,7 @@ export default function FormasDePagamento(){
                                     <input type='text' value={nomeCard} onChange={e => setNomeCard(e.target.value)}/>
 
                                     <label>Número do cartão*</label>
-                                    <input type='text' value={nmrCard} onChange={e => setNmrCard(e.target.value)}/>
+                                    <input type='text' value={nmrCard} onChange={e=>  verificarTexto(e.target.value)}/>
                                     <div>
                                         <span>
                                            <label>Vencimento*</label>
@@ -148,7 +178,7 @@ export default function FormasDePagamento(){
                                         
                                         <span>
                                             <label>CVV*</label>
-                                            <input type='text' value={codCard} onChange={e => setCodCard(e.target.value)}/>  
+                                            <input type='text' value={codCard} onChange={e => maxCod(e.target.value)}/>  
                                         </span>
                                     </div>
                                 </div>
