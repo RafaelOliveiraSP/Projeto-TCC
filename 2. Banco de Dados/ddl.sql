@@ -38,7 +38,6 @@ create table tb_pedido (
 	id_cliente 							int			 not null,
 	id_endereco_entrega 				int			 not null,
 	ds_status 							varchar(200) not null,
-	tp_forma_de_pagamento 				varchar(200) not null,
     id_cartao							int			 not null,
 	dt_pedido 							datetime 	 not null,
 	qtd_parcelas 						int 		 not null,

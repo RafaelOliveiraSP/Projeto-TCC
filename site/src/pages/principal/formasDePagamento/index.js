@@ -2,7 +2,14 @@ import './index.scss';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { useState } from 'react';
+
+import { toast } from 'react-toastify';
+import { useState }     from 'react';
+import { useNavigate }  from 'react-router-dom';
+import { API_URL }      from '../../../constants.js';
+
+import axios from 'axios';
+
 
 export default function FormasDePagamento(){
 
@@ -14,7 +21,7 @@ export default function FormasDePagamento(){
     const [codCard, setCodCard]                 = useState('');
     const [vencimento, setVencimento]           = useState('');
     const [nmrParcelas, setNmrParcelas]         = useState(0);
-
+    
     function verificarTexto(e){
         let n = Number(e);
 
@@ -53,6 +60,12 @@ export default function FormasDePagamento(){
         }
         else if(mostrarFormCred === 'none'){
             setMostrarFormCred('flex')  
+
+            setNomeCard('');
+            setNmrCard('');
+            setCodCard('');
+            setVencimento('');
+            setNmrParcelas(0);
         }
         else{
             setMostrarFormCred('none')
@@ -65,10 +78,42 @@ export default function FormasDePagamento(){
         }
         else if(mostrarFormDeb === 'none'){
             setMostrarFormDeb('flex')
+
+            setNomeCard('');
+            setNmrCard('');
+            setCodCard('');
+            setVencimento('');
+            setNmrParcelas(0);
         }
         else{
             setMostrarFormDeb('none')
         }
+    }
+
+
+    const navigate = useNavigate();
+    async function cadastrarCartao() {
+      try {
+        let cartao = {
+            numero: nmrCard,
+            nome:   nomeCard,
+            codigo: codCard,
+            vencimento: vencimento,
+            parcelas: nmrParcelas
+        }
+      
+        
+        await axios.post(API_URL + '/inserirCartao', cartao);
+
+        alert(`Pagamento efetuado com sucesso!
+              Acompanhe o status de seu pedido :)`);
+
+        navigate('/')
+        
+      } 
+      catch (err) {
+        toast.error(err.response.data.erro);
+      }
     }
 
     return(
@@ -173,7 +218,7 @@ export default function FormasDePagamento(){
                                     <div>
                                         <span>
                                            <label>Vencimento*</label>
-                                            <input type='text' value={vencimento} onChange={e => setVencimento(e.target.value)}/> 
+                                            <input type='date' value={vencimento} onChange={e => setVencimento(e.target.value)} style={{minWidth: '175px',}}/> 
                                         </span>
                                         
                                         <span>
@@ -197,7 +242,7 @@ export default function FormasDePagamento(){
 
                         <hr />
 
-                        <div className='botao-confirm'><button>CONFIRMAR</button></div>
+                        <div className='botao-confirm' onClick={cadastrarCartao}><button>CONFIRMAR</button></div>
                     </div>
                 </div> 
 
