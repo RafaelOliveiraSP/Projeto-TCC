@@ -54,8 +54,8 @@ export default function Produtos(){
                     
                     <div className='faixa-cima-produtos'>
                         <div className='quadrado-do-tenis'>
-                            <img src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
-                            <h1 className='jordan'>Tênis Nike KD 14</h1>
+                            <img src='./assets/images/Tenis-KD14Pink.png' alt='KD14'/>
+                            <h1 className='Kd14'>Tênis Nike KD 14</h1>
                             <h1 className='valorzinho'>R$1.709,99</h1>
 
                             <div className='button2'>
@@ -68,7 +68,7 @@ export default function Produtos(){
                             <h1 className='Mizuno'>Mizuno Wave Prophecy 12</h1>
                             <h1 className='valorzinho2'>R$1.799,99</h1>
 
-                            <div className='button2'>
+                            <div className='button3'>
                                 <button  className='button3-do-produto'>Ver Produto</button>
                             </div>
 

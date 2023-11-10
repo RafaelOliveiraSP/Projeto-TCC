@@ -111,18 +111,21 @@
                     flex-direction: column;
                     align-items: center;
                     
-                    height: auto;
+                    height: 500px;
                     width: 320px;
-                    
-                    padding: 15px 19px;
+
+                    padding-top: 20px;
+                    padding-right: 1px;
                     border-radius: 60px;
                     border: 1px solid #000;
 
                     > img{
                         align-items: center;
-                        width: 250.190px;
+                        width: 265.190px;
                         height: 140.9px;
                         
+                        
+
                         > button{
                             display: flex;
                             justify-content: center;
@@ -146,6 +149,7 @@
         }
     }
 
+    
 
     .Preço{
         display: flex;
@@ -177,8 +181,7 @@
 
         > div{
             max-width: 100px;
-            padding-bottom: 55px;
-
+            
             >input{
                 width: 100%;
                 border-radius: 1px;
@@ -210,7 +213,7 @@
 
 
 .Marca{
-    font-weight:400
+    font-weight:40
     
 }
 
@@ -220,30 +223,23 @@
 }
 
 .valorzinho2{
-    padding: 95px;
+    padding: 55px;
+    
 }
 
 .valorzinho3{
-    padding: 95px;
-    padding-top: 70px;
+    padding: 80px;
+    
 
 }
 
 .valorzinho4{
-    padding: 95px;
-    padding-top: 70px;
-    
+    padding: 100px;
+   
 }
 
-.nike-dunk{
-    padding-top: 25px;
-}
 
-.Nike-Dunk{
-    align-items: end;
-    height: 145px !important;
-    width: 265px !important;
-}
+
 
 .Travis{
     height: 145px !important;
@@ -258,10 +254,24 @@
 
 }
 
-.button3-do-texto{
+.button3-do-produto{
     width: 150px;
     height: 50px;
     border: none;
     border-radius: 45px;
 
 }
+
+.button3{
+    padding-bottom: 50px;
+}
+
+
+
+.div-texto-tenis{
+    display: flex;
+    justify-content: center;
+
+
+}
+
