@@ -56,10 +56,10 @@ export default function FormasDePagamento(){
 
     function mostrarTabelaCred(){
         if(mostrarFormDeb === 'flex'){
-            setMostrarFormCred('none')
+            setMostrarFormCred('none');
         }
         else if(mostrarFormCred === 'none'){
-            setMostrarFormCred('flex')  
+            setMostrarFormCred('flex');
 
             setNomeCard('');
             setNmrCard('');
@@ -68,16 +68,16 @@ export default function FormasDePagamento(){
             setNmrParcelas(0);
         }
         else{
-            setMostrarFormCred('none')
+            setMostrarFormCred('none');
         }
     }
 
     function mostrarTabelaDeb(){
         if(mostrarFormCred === 'flex'){
-            setMostrarFormDeb('none')
+            setMostrarFormDeb('none');
         }
         else if(mostrarFormDeb === 'none'){
-            setMostrarFormDeb('flex')
+            setMostrarFormDeb('flex');
 
             setNomeCard('');
             setNmrCard('');
@@ -86,7 +86,7 @@ export default function FormasDePagamento(){
             setNmrParcelas(0);
         }
         else{
-            setMostrarFormDeb('none')
+            setMostrarFormDeb('none');
         }
     }
 
@@ -183,7 +183,7 @@ export default function FormasDePagamento(){
                                         </span>
                                     </div>
 
-                                    <label id='quant-parcelas'>Parcelas*</label>
+                                    <label id='quant-parcelas'>Parcelas</label>
                                     <select value={nmrParcelas} onChange={e => setNmrParcelas(e.target.value)}>
                                         <option>Selecione</option>
                                         <option>1</option>
