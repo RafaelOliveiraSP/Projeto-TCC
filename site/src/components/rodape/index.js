@@ -17,7 +17,7 @@ export default function Rodape(){
                 <h2>AJUDA</h2>
 
                 <Link to='/ajuda'>Fale conosco</Link>
-                <Link>Trocas e Devoluções</Link >
+                <Link to='/trocas'>Trocas e Devoluções</Link >
             </div>
             <div>
                 <h2>SOBRE A FORS</h2>
