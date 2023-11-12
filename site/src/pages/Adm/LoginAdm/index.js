@@ -38,9 +38,9 @@ export default function LoginAdm(){
         }
     }
 
-    function logarAdm(e){
-        if(e.Key === 'Enter'){
-            verificarDados();
+    function teclaPressionada(e){
+        if (e.key === 'Enter'){
+            verificarDados(); 
         }
     }
 
@@ -69,7 +69,7 @@ export default function LoginAdm(){
                 <input type='text' value={email}  onChange={e => setEmail(e.target.value)}/>
                 
                 <span> Senha: </span>
-                <input type='password' value={senha} onKeyUp={logarAdm} onChange={e => setSenha(e.target.value)}/>
+                <input type='password' value={senha} onKeyUp={teclaPressionada} onChange={e => setSenha(e.target.value)}/>
 
 
                 <div className='botao-lembre'>  
