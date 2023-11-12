@@ -1,22 +1,20 @@
 import './index.scss';
 
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
 import axios from 'axios';
+import storage from 'local-storage';
 
 import { API_URL } from '../../../constants.js';
-
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function Login(){
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-
-    const [erro, setErro]   = useState('');
 
     const navigate = useNavigate()
 
@@ -28,19 +26,34 @@ export default function Login(){
             }
 
             let r = await axios.post( API_URL + '/verificarLogin', login);
+            storage('usuario-logado', r)
 
             if(r.status === 204){
                 navigate('/')
-                alert('Usuário existe!!!');
-            }
-                
-           
+                alert('Seja bem-vindo a Fors :)');
+            } 
         }
         catch (err) {
-            setErro(err.response.data.erro);
-            alert('Você não possui cadastro!!!');  
+            toast.error(err.response.data.erro);  
         }
     }
+
+    function teclaPressionada(e){
+        if (e.key === 'Enter'){
+            verificarDados(); 
+        }
+    }
+    
+    useEffect(() => {
+        if (storage('usuario-logado')){
+            navigate('/');
+        }
+        else if(storage('adm-logado')){
+            navigate('/administrador');
+        }
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
  
     return(
         <div className='pagina-login'>
@@ -61,7 +74,7 @@ export default function Login(){
                     <span className='texto-senha'>Senha: </span>
                 
                     <div className='caixa-senha'>    
-                        <input className='senha' type='text' value={senha} onChange={e => setSenha(e.target.value)}/>
+                        <input className='senha' type='text' value={senha} onKeyUp={teclaPressionada} onChange={e => setSenha(e.target.value)}/>
                     </div>
                 </div>
 
@@ -73,8 +86,6 @@ export default function Login(){
                 <div className='botao-login'>
                     <button className='login' onClick={verificarDados}>Login </button>
                 </div>
-
-                <div>{erro}</div>
                 
                 <span className='cadastro'>Ainda não faz parte da nossa familia? <Link to={'/cadastro'}>cadastre-se</Link></span>
                 <span className='adm'> Entrar como <Link to={'/LoginAdm'}>administrador</Link></span>

@@ -3,11 +3,12 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 import { useEffect,useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../../constants.js';
 
 import axios from "axios";
+import storage from 'local-storage';
 
 export default function CadastrarProduto(){
 
@@ -31,11 +32,24 @@ export default function CadastrarProduto(){
         setOpcoesMarcas(r.data);
     }
 
+    const navigate = useNavigate();
+
     useEffect(() => {
-        //
+        
         listarMarcas();
-        //
-      }, [])
+        
+        if (storage('usuario-logado')){
+            navigate('/');
+        }
+        else if(!storage('adm-logado')){
+            navigate('/');
+        }
+        else if(!storage('adm-logado') && !storage('usuario-logado')){
+            navigate('/');
+        }    
+          
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div className='pagina-cadastro-produto'>

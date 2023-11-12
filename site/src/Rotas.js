@@ -27,6 +27,7 @@ import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
 import MinhaConta from          './pages/principal/minhaConta';
+import Estatisticas from './pages/Adm/estatisticas';
 
 
 
@@ -60,6 +61,7 @@ export default function Rotas(){
                 <Route path='/cadastrar-produto' element={<CadastrarProduto />} />
                 <Route path='/PainelDePedidos' element={<PainelDePedidos/>}/>
                 <Route path='/PedidosEmAndamento' element={<PedidosEmAndamento/>}/>
+                <Route path='/estatisticas' element={<Estatisticas />} />
 
                 <Route path='/ajuda' element={<Faleconosco />} />
                 <Route path='/privacidade' element={<Privacidade />}/>

@@ -1,9 +1,30 @@
 import './index.scss';
+
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
+
+import storage from 'local-storage';
+import { useEffect } from 'react';
 
 export default function Produtos(){
+
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        if (storage('usuario-logado')){
+            navigate('/');
+        }
+        else if(!storage('adm-logado')){
+            navigate('/');
+        }
+        else if(!storage('adm-logado') && !storage('usuario-logado')){
+            navigate('/');
+        }
+    
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div className='pagina-produtos'>

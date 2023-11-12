@@ -1,15 +1,15 @@
 import './index.scss';
 
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-
 import { API_URL } from '../../../constants.js';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
 import axios from 'axios';
+import storage from 'local-storage';
 
 
 export default function Cadastrar(){
@@ -46,7 +46,7 @@ export default function Cadastrar(){
       
         if (idCliente === 0) {
            await axios.post(API_URL + '/inserirCliente', cliente);
-           alert('Cliente cadastrado com sucesso!');
+           alert(`Seja bem-vindo a Fors ${nome}!!`);
            navigate('/')
         }
       } 
@@ -54,6 +54,17 @@ export default function Cadastrar(){
         toast.error(err.response.data.erro);
       }
     }
+    
+    useEffect(() => {
+      if (storage('usuario-logado')){
+          navigate('/');
+      }
+      else if(storage('adm-logado')){
+        navigate('/');
+      }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
         <div className='pagina-cadastro'>

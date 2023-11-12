@@ -1,9 +1,30 @@
 import './index.scss'
+
 import Cabecalho from '../../../components/cabecalho'
 import Rodape from '../../../components/rodape'
 
+import { useNavigate } from 'react-router-dom';
+
+import storage from 'local-storage';
+import { useEffect } from 'react';
 
 export default function MinhaConta(){
+
+        const navigate = useNavigate();
+
+        function sairConta(){
+            storage.remove('usuario-logado');
+            navigate('/');
+        }
+
+        useEffect(() => {
+            if (!storage('usuario-logado')){
+                navigate('/login');
+            }
+            else if(storage('adm-logado')){
+                navigate('/administrador');
+            }
+        }, [])
 
         return(
             
@@ -19,6 +40,8 @@ export default function MinhaConta(){
             <div className='texto-dos-nomes-de-cadastro'>
                 
                 <div>
+                    <img src='../assets/images/logo-Jordan1.png' alt='Jordan1-logo'/>
+
                     <div>
                         <h2>Nome:</h2>
                         <input></input>
@@ -59,6 +82,7 @@ export default function MinhaConta(){
                         <input></input>
                     </div>
 
+                    <button onClick={sairConta}> Sair da minha conta</button>
                 </div>
 
             </div>

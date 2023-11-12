@@ -1,15 +1,15 @@
 import './index.scss';
 
-import axios from 'axios';
-
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
-
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import { API_URL } from '../../../constants.js';
+import { toast } from 'react-toastify';
 
+import axios from 'axios';
+import storage from 'local-storage';
 
 export default function LoginAdm(){
 
@@ -26,15 +26,34 @@ export default function LoginAdm(){
             }
 
             let r = await axios.post(API_URL + '/verificarLoginAdm', login);
+            storage('adm-logado', r)
 
             if(r.status === 204){
+                alert('Olá adm!')
                 navigate('/administrador')
             }
         }
         catch (err) {
-            alert('Você não possui cadastro!!!');  
+            toast.error(err.response.data.erro);  
         }
     }
+
+    function logarAdm(e){
+        if(e.Key === 'Enter'){
+            verificarDados();
+        }
+    }
+
+    useEffect(() => {
+        if (storage('usuario-logado')){
+            navigate('/');
+        }
+        else if(storage('adm-logado')){
+            navigate('/administrador');
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return(
     <div className='pagina-LoginAdm'>
@@ -50,7 +69,7 @@ export default function LoginAdm(){
                 <input type='text' value={email}  onChange={e => setEmail(e.target.value)}/>
                 
                 <span> Senha: </span>
-                <input type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
+                <input type='password' value={senha} onKeyUp={logarAdm} onChange={e => setSenha(e.target.value)}/>
 
 
                 <div className='botao-lembre'>  
