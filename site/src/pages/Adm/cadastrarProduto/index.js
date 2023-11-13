@@ -6,33 +6,70 @@ import { useEffect,useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../../constants.js';
+import { toast } from 'react-toastify';
 
 import axios from "axios";
 import storage from 'local-storage';
+
 
 export default function CadastrarProduto(){
 
     
     // const [fotos, setFotos] = useState([]);
     // const [urlImagem, setUrlImagem] = useState('');
-
+ 
+    const [idProduto, setIdProduto]                 = useState(0);
     const [nome, setNome]                           = useState('');
     const [codigo, setCodigoProduto]                = useState('');
     const [descricao, setDescricao]                 = useState('');
     const [estoque, setEstoque]                     = useState('');
-    const [valor, setValor]                         = useState('');
-    const [valorPromocional, setValorPromocional]   = useState('');
-
-
-    const [opcoesMarcas, setOpcoesMarcas] = useState([]);
-    const [marca, setMarca]               = useState(0);
-
-    const [cor, setCor]                   = useState('');
+    const [valor, setValor]                         = useState();
+    const [valorPromocional, setValorPromocional]   = useState();
+    const [opcoesMarcas, setOpcoesMarcas]           = useState([]);
+    const [marca, setMarca]                         = useState(0);
+    const [cor, setCor]                             = useState('');
 
     async function listarMarcas(){
         let r = await axios.get(  API_URL + '/marcas');
         setOpcoesMarcas(r.data);
     }
+
+    async function cadastrarNovoProduto() {
+        try {
+          let produto = {
+            id: idProduto,
+            nome: nome,
+            codigo: codigo,
+            descricao: descricao,
+            estoque: estoque,
+            preco: valor,
+            precopromocional: valorPromocional,
+            marca: marca,
+            cor: cor
+          }
+        
+          if (idProduto === 0) {
+            await axios.post(API_URL + '/inserirProduto', produto);
+            toast.done('Produto cadastrado com sucesso!')
+            limparFormulario();
+          }
+        } 
+        catch (err) {
+          toast.error(err.response.data.erro);
+        }
+      }
+
+      function limparFormulario(){
+        setIdProduto(0);
+        setNome('');
+        setCodigoProduto('');
+        setDescricao('');
+        setEstoque('');
+        setValor();
+        setValorPromocional();
+        setMarca(0);
+        setCor('');
+      }
 
     // function adicionarImagem () {
     //     const img = new Image();
@@ -128,7 +165,7 @@ export default function CadastrarProduto(){
                     
                     <div className='input-duplo'>
                         <span>Nome:</span>
-                        <input id='primeiro-input'type='text' value={nome} onChange={e => setNome(e.target.value)}/>
+                        <input id='primeiro-input' type='text' value={nome} onChange={e => setNome(e.target.value)}/>
 
                         <span>Código:</span>
                         <input type='text' value={codigo} onChange={e => setCodigoProduto(e.target.value)}/>
@@ -168,7 +205,7 @@ export default function CadastrarProduto(){
                     </div>
 
 
-                    <div className='botaoCadastrar'><button>Adicionar Produto</button></div>
+                    <div className='botaoCadastrar' onClick={cadastrarNovoProduto}><button>Adicionar Produto</button></div>
                 </div>
                 
                 <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>

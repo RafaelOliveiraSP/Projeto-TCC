@@ -22,6 +22,36 @@ export async function inserirProduto(produto) {
       return produto;
 }
 
+export async function verificarCodigo(codigo) {
+  let comando = `
+      select * from tb_cadastrar_produto                                    
+              where ds_codigo       like ?
+  `
+
+  let [dados] = await conexao.query(comando, [ '%' + codigo + '%',])
+  return dados;
+}
+
+export async function buscarMarcaPorId(id) {
+  let comando = `
+      select * from tb_marca 
+              where id_marca = ?
+      `
+      
+  let [dados] = await conexao.query(comando, [id]);
+  return dados;
+}
+
+export async function consultarCodigo(busca) {
+  let comando = `
+      select * from tb_cadastrar_produto                                    
+              where ds_codigo       like ?
+  `
+
+  let [dados] = await conexao.query(comando, [ '%' + busca + '%',])
+  return dados;
+}
+
 
 export async function cadastrarImagens(img) {
   const comando = `
