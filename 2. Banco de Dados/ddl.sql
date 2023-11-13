@@ -8,7 +8,7 @@ create database fors_bd;
 use fors_bd;
 show tables;
 
-create table tb_produto ( 
+create table tb_cadastrar_produto( 
 	id_produto 							int primary key auto_increment,
 	nm_produto 							varchar(200) not null,
 	ds_codigo							varchar(50)  not null,
@@ -21,32 +21,34 @@ create table tb_produto (
     foreign key (id_marca) 				references tb_marca (id_marca)
 );
 
-create table tb_tamanho(
-	id_tamanho 							integer primary key auto_increment,
-	ds_numero 							varchar(2) not null
-);
-
 create table tb_marca(
 	id_marca 							int primary key auto_increment,
 	ds_marca 							varchar(200) not null
 );
 
+create table tb_imagem_produto(
+	id_imagem 							int primary key auto_increment,
+    id_produto							int 		 not null,
+	img_produto 						varchar(200) not null
+);
+
 -- ----------------------------------------------------------------------------------------
 
-create table tb_pedido (
+
+
+create table tb_pedido(
 	id_pedido 							int primary key auto_increment,
 	id_cliente 							int			 not null,
 	id_endereco_entrega 				int			 not null,
-	ds_status 							varchar(200) not null,
     id_cartao							int			 not null,
-	dt_pedido 							datetime 	 not null,
-	qtd_parcelas 						int 		 not null,
+	dt_pedido 							date	 	 not null,
+    ds_status 							varchar(200) not null,
     foreign key (id_cliente) 			references tb_cliente  		(id_cliente),
 	foreign key (id_cartao)				references tb_dados_cartao	(id_cartao),
     foreign key (id_endereco_entrega)	references tb_endereco 		(id_endereco)
 );
 
-create table tb_cliente (
+create table tb_cliente(
 	id_cliente 							integer primary key auto_increment,
 	nm_nome 							varchar(200) not null,
     ds_sobrenome						varchar(200) not null,
@@ -68,7 +70,7 @@ create table tb_dados_cartao(
     qtd_parcelas 						int 		 
 );
 
-create table tb_endereco (
+create table tb_endereco(
 	id_endereco 						integer primary key auto_increment,
 	ds_cep 								varchar(200) not null,
 	ds_endereco 						varchar(200) not null,
@@ -76,29 +78,27 @@ create table tb_endereco (
 	ds_cidade 							varchar(200) not null
 );
 
--- ---------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------
 
-create table tb_pedido_item (
+create table tb_pedido_item(
 	id_pedido_item 						int primary key auto_increment,
 	id_pedido 							int not null,
 	id_produto 							int not null, 
-	qtd_itens 							int not null,
+    qtd_itens 							int 		 not null,
+    id_tamanho							int          not null,
+    foreign key	(id_tamanho)			references tb_tamanho(id_tamanho),			
     foreign key (id_pedido)  			references tb_pedido (id_pedido),
     foreign key (id_produto) 			references tb_produto(id_produto)
 );
 
--- --------------------------------------------------------------------------------------------
-
-create table tb_produto_imagem (
-	id_produto_img 						int primary key auto_increment,
-	id_produto 							int          not null, 
-	img_produto 						varchar(200) not null,
-    foreign key (id_produto)			references tb_produto(id_produto)
+create table tb_tamanho(
+	id_tamanho 							integer primary key auto_increment,
+	ds_numero 							varchar(2) not null
 );
 
 -- --------------------------------------------------------------------------------------------
 
-create table tb_admin (
+create table tb_admin(
 	id_admin 							int primary key auto_increment,
 	ds_email 							varchar(200) not null,
 	ds_senha 							varchar(200) not null
