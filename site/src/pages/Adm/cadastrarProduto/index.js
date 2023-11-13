@@ -12,7 +12,9 @@ import storage from 'local-storage';
 
 export default function CadastrarProduto(){
 
-    // const [fotosProduto, setFotosProduto] = ([]);
+    
+    // const [fotos, setFotos] = useState([]);
+    // const [urlImagem, setUrlImagem] = useState('');
 
     const [nome, setNome]                           = useState('');
     const [codigo, setCodigoProduto]                = useState('');
@@ -31,6 +33,64 @@ export default function CadastrarProduto(){
         let r = await axios.get(  API_URL + '/marcas');
         setOpcoesMarcas(r.data);
     }
+
+    // function adicionarImagem () {
+    //     const img = new Image();
+    //     img.src = urlImagem;
+
+    //     img.onload = () => {
+    //         if(id !== 0) {
+    //             setFotosAdicionadas([...fotosAdicionadas, urlImagem])
+    //             let object = { caminho: urlImagem }
+    //             setFotos([...fotos, object])
+    //             setUrlImagem('');
+    //         }
+    //         else{
+    //             setFotos([...fotos, urlImagem]);
+    //             setUrlImagem('');
+    //         }
+    //     }
+    //     img.onerror = () => {
+    //         toast.error('URL Inválida!')
+    //     }
+    // }
+
+    // async function cadastrarImagens(idProduto) {
+    //     try {
+    //         if(id !== 0){
+
+    //             if(fotosAdicionadas) {
+    //                 for (let item of fotosAdicionadas) {
+    //                     let url = URLRota + "/imagemproduto";
+    //                     const imagem = {
+    //                         idProduto: idProduto,
+    //                         caminho: item
+    //                     }
+    //                     await axios.post(url, imagem)
+    //                 }
+    //             }
+    //             if(fotosExcluir) {
+    //                 await excluirImagens(fotosExcluir, idProduto)
+    //             }
+    //         }
+    //         else{
+    //             for (let item of fotos) {
+    //                 let urlFormando = URLRota + "/imagemproduto";
+    //                 const imagem = {
+    //                     idProduto: idProduto,
+    //                     caminho: item
+    //                 }
+    //                 await axios.post(urlFormando, imagem)
+    //             }
+    //         }
+
+    //     } catch (err) {
+    //         if(err.response)
+    //             toast.warn(err.response.data.erro)
+    //         else
+    //             toast.warn(err.message)
+    //     }
+    // }
 
     const navigate = useNavigate();
 
