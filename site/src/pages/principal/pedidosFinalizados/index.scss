@@ -185,3 +185,20 @@
  }
  
 }
+
+ @media(max-width:600px){
+    .pagina-MeusPedidos{
+        .cartao{
+           .tenis-1{
+             > p{
+                font-size: 15px;
+             }
+             .tenis-travis{
+                padding: 0px 0px 0px 100px;
+                height: 60px;
+                width: 250px;
+             }
+           }
+        }
+    }
+ }
