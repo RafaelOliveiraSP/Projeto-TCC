@@ -141,7 +141,6 @@
                             border-radius: 45px;
                             background-color: rgb(224, 224, 224);
                             border: 1px;
-
                         }
                     }
                 }
@@ -218,40 +217,59 @@
 }
 
 .valorzinho{
-    padding: 95px;
+    padding: 90px;
     
 }
 
 .valorzinho2{
-    padding: 55px;
+    padding: 50px;
     
 }
 
 .valorzinho3{
-    padding: 80px;
+    padding: 90px;
     
 
 }
 
 .valorzinho4{
-    padding: 100px;
+    padding: 6px;
    
 }
-
-
-
 
 .Travis{
     height: 145px !important;
     width: 269px !important;
+}
 
+.Mizuno{
+   margin-left: 60px;
+}
+
+.botao1{
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
 }
 
 .button2{
     display: flex;
     flex-direction: row-reverse;
 
+    margin-top: 47px;
+}
 
+.button3{
+    display: flex;
+    justify-content: center;
+}
+
+.button4{
+    display: flex;
+    justify-content: center;
+
+    margin:80px
 }
 
 .button3-do-produto{
