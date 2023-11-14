@@ -171,6 +171,48 @@
 
             }
 
+            .dados-Endereco{
+                display: flex;
+                justify-content: center;
+
+                width: 100%;
+                padding: 20px 0px;
+
+                > div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    
+                    
+                    border: 1px solid black;
+
+                    padding: 20px 20px;
+                    border-radius: 15px;
+                    max-width: 500px;
+                    width: 100%;
+                    gap: 15px;
+
+                    article{
+                        display: flex; 
+                        justify-content: center;
+                        
+                        gap: 15px;
+                        width: 100%;
+
+
+                        > input{
+                            border-radius: 5px;
+                            outline: none;
+                            border: 1px solid black;
+        
+                            height: 25px;
+                            max-width: 100%;
+                        }
+                    }
+                }
+                
+            }
+
             .botao-confirm{
                 display: flex;
                 justify-content: center;

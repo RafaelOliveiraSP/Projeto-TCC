@@ -14,7 +14,7 @@ import storage from 'local-storage';
 
 export default function CadastrarProduto(){
     
-    const [fotos, setFotos] = useState([]);
+    // const [fotos, setFotos] = useState([]);
     
     const [idProduto, setIdProduto]                 = useState(0);
     const [nome, setNome]                           = useState('');
@@ -163,18 +163,18 @@ export default function CadastrarProduto(){
                     
                     <div className='colocar-imagens'>
 
-                        <input type='text' />
+                        
                         <div>
-                             
+                            <input type='file' />
                         </div>
                     </div>
-                    {fotos.map((item) => {
+                    {/* {fotos.map((item) => {
                         return (
                             <main>
                                 <img src={item} />
                             </main>
                         )
-                    })}
+                    })} */}
                     <div className='input-duplo'>
                         <span>Nome:</span>
                         <input id='primeiro-input' type='text' value={nome} onChange={e => setNome(e.target.value)}/>
@@ -194,8 +194,8 @@ export default function CadastrarProduto(){
                     </div>
 
                     <div>
-                        <input type='text' value={valor} onChange={e => verificarValor(e.target.value)}/>
                         <span>Valor:</span>
+                        <input type='text' value={valor} onChange={e => verificarValor(e.target.value)}/>
                     </div>
 
                     <div>
