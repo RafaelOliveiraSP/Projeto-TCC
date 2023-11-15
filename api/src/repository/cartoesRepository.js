@@ -21,18 +21,15 @@ export async function CadastrarCartao (cartao){
       return cartao;
   }
 
- /* Consulta número do cartão*/
+// Consulta número do cartão*/
 
-// export async function consultarNumeroCard(busca){
-//     let comando = `
-//         select *
-//           from tb_dados_cartao
-//           where tb_dados_cartao  like ?
-//     `
+ export async function consultarNumeroCard(busca){
+     let comando = `
+         select *
+          from tb_dados_cartao
+          where nr_cartao  = ?
+     `
   
-//     let [dados] = await conexao.query(comando,
-//       [
-//         '%' + busca + '%'
-//       ])
-//     return dados;
-// }
+    let [dados] = await conexao.query(comando,[ busca ])
+    return dados;
+ }
