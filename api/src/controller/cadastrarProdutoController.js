@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { buscarMarcaPorId, cadastrarImagens, verificarCodigo, inserirProduto } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -44,13 +44,31 @@ endpoints.post('/inserirProduto', async (req, resp) => {
     if(!produto.cor)
       throw new Error('Informe a cor desse produto!');
 
-      let r = await inserirProduto(produto)
-      resp.send(r);
+      let produtoInserido = await inserirProduto(produto)
+      resp.send(produtoInserido);
   }
   catch (err) {
     resp.status(500).send({ erro: err.message });
   }
 })
+
+// Insere uma imagem
+
+endpoints.put('/inserirProduto/:id/capa', upload.single('capa'), async (req, resp) => {
+    try {
+         
+        const { id } = req.params;
+        const imagem = req.file.path;
+        
+        const dados = await inserirImagem(imagem, id);
+        if(dados != 1)
+          throw new Error('A imagem não pode ser salvo!')
+
+        resp.status(204).send();
+    } catch (error) {
+        resp.status(500).send({erro: error.message})
+    }
+});
 
 // Lista todas as marcas
 
@@ -77,24 +95,5 @@ endpoints.get('/tamanhos', async (req, resp) => {
     }
 });
 
-// Insere uma imagem
-
-endpoints.post('/inserirProduto/:id/capa', upload.single('Capa'), async (req, resp) => {
-    try {
-         
-        const { id } = req.params;
-        const imagem = req.file.path;
-        
-        const dados = await cadastrarImagens(id, imagem);
-        if(dados != 1)
-          throw new Error('Imagem não pode ser salva')
-
-        resp.status(204).send();
-    } catch (error) {
-        resp.status(500).send({
-            erro: error.message
-        })
-    }
-});
 
 export default endpoints;
