@@ -12,6 +12,9 @@ let servidor = express();
 servidor.use(cors());
 servidor.use(express.json());
 
+// liberar asquivos da storage
+servidor.use('/storage/imagensProdutos', express.static('storage/imagensProdutos'));
+
 servidor.use(cadastroController);
 servidor.use(admController);
 servidor.use(cadastrarProdutoController);

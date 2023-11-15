@@ -1,5 +1,8 @@
 import conexao from "./connection.js";
 
+
+// Inserindo um produto  
+
 export async function inserirProduto(produto) {
     let comando = `
         insert into tb_cadastrar_produto(nm_produto, ds_codigo, ds_descricao, qnt_estoque, vl_preco, vl_preco_promocional, id_marca, ds_cor) 
@@ -52,20 +55,14 @@ export async function consultarCodigo(busca) {
   return dados;
 }
 
+// Inserindo imagens ao produto 
 
-export async function cadastrarImagens(img) {
+export async function cadastrarImagens(id,img) {
   const comando = `
-              insert into tb_produto_imagem(id_produto, img_produto)
-                                     values(?, ?);`
+        insert into tb_imagem_produto(id_produto, img_produto)
+                               values(?, ?);
+  `
 
-  let resp = await conexao.query(comando, 
-    [
-      img.idProduto,
-      img.caminho
-    ])
-
-    const dados = resp[0]; 
-
-    // img.id = resp.insertId;
-    // return img;
+  let [dados] = await conexao.query(comando, [id,img])
+  return dados.affectedRows;
 }

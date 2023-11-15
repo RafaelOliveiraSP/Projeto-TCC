@@ -1,10 +1,12 @@
+import { Router } from 'express';
+import { buscarMarcaPorId, cadastrarImagens, verificarCodigo, inserirProduto } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
-import { Router } from 'express';
-import { buscarMarcaPorId, cadastrarImagens, verificarCodigo, inserirProduto } from '../repository/cadastroProdutoRepository.js';
+import  multer from 'multer';
 
 const endpoints = Router();
+const upload = multer({dest: 'storage/imagensProdutos'});
 
 endpoints.post('/inserirProduto', async (req, resp) => {
   try{
@@ -50,6 +52,8 @@ endpoints.post('/inserirProduto', async (req, resp) => {
   }
 })
 
+// Lista todas as marcas
+
 endpoints.get('/marcas', async (req, resp) => {
   try{
     let r = await listarMarcas();
@@ -61,6 +65,8 @@ endpoints.get('/marcas', async (req, resp) => {
   }
 });
 
+// Lista de tamanhos
+
 endpoints.get('/tamanhos', async (req, resp) => {
     try{
       let r = await listarTamanhos();
@@ -71,15 +77,19 @@ endpoints.get('/tamanhos', async (req, resp) => {
     }
 });
 
-endpoints.post('/imagemproduto', async (req, resp) => {
-    try {
-        const infoImagem = {
-            idProduto: req.body.idProduto,
-            caminho: req.body.caminho
-        }
+// Insere uma imagem
 
-        const cadastrar = cadastrarImagens(infoImagem);
-        resp.send(cadastrar) 
+endpoints.post('/inserirProduto/:id/capa', upload.single('Capa'), async (req, resp) => {
+    try {
+         
+        const { id } = req.params;
+        const imagem = req.file.path;
+        
+        const dados = await cadastrarImagens(id, imagem);
+        if(dados != 1)
+          throw new Error('Imagem não pode ser salva')
+
+        resp.status(204).send();
     } catch (error) {
         resp.status(500).send({
             erro: error.message
@@ -87,4 +97,4 @@ endpoints.post('/imagemproduto', async (req, resp) => {
     }
 });
 
-  export default endpoints;
+export default endpoints;

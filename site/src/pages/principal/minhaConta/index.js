@@ -24,6 +24,8 @@ export default function MinhaConta(){
             else if(storage('adm-logado')){
                 navigate('/administrador');
             }
+
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, [])
 
         return(
