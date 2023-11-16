@@ -2,8 +2,30 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { useEffect, useState } from 'react';
+import { API_URL } from '../../../constants';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default function Produtos(){
+
+    const [produtos, setProdutos] = useState([]);
+
+    const navigate = useNavigate();
+    function enviarProduto(){
+        navigate('/produto-mais-vendido');
+    }
+
+    
+    async function listaDeProdutos(){
+        let r = await axios.get(  API_URL + '/listarProdutos');
+        setProdutos(r.data);
+    }
+
+    useEffect(() => {
+        listaDeProdutos();
+    }, [])
 
     return(
         <div className='pagina-produtos'>
@@ -53,17 +75,64 @@ export default function Produtos(){
                 <div className='produtos'>     
                     
                     <div className='faixa-cima-produtos'>
-                        <div className='quadrado-do-tenis'>
-                            <img src='./assets/images/Tenis-KD14Pink.png' alt='KD14'/>
-                            <h1 className='Kd14'>Tênis Nike KD 14</h1>
-                            <h1 className='valorzinho'>R$1.709,99</h1>
+                        {produtos.map(item =>
+                            <div className='quadrado-do-tenis'>
+                                <img src='./assets/images/Tenis-KD14Pink.png' alt='KD14'/>
+                                <h1 className='Kd14'>{item.produto}</h1>
+                                <h1 className='valorzinho'>{item.preco}</h1>
 
-                            <div className='botao1'>
-                                <button  className='button3-do-produto'>Ver Produto</button>
-                            </div>
+                                <div className='botao1'>
+                                    <button onClick={enviarProduto} className='button3-do-produto'>Ver Produto</button>
+                                </div>
 
-                        </div>
-                        <div className='quadrado-do-tenis'>
+                            </div> 
+                        )}
+                    </div>
+                </div>
+
+            </div>
+            <Rodape/>
+        </div>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <div className='quadrado-do-tenis'>
                             <img src='./assets/images/Tenis-KD14Pink.png' alt='Mizuno'/>
                             <h1 className='Mizuno'>Mizuno Wave Prophecy 12</h1>
                             <h1 className='valorzinho2'>R$1.799,99</h1>
@@ -92,17 +161,4 @@ export default function Produtos(){
                                 <button className='button3-do-produto'>Ver Produto</button>
                             </div>
 
-                        </div>        
-                    </div>
-
-
-                </div>
-            </div>
-
-            
-
-                <Rodape/>
-
-        </div>
-    )
-}
+                        </div>         */}

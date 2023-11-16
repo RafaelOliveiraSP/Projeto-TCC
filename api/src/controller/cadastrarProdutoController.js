@@ -1,4 +1,4 @@
-import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -53,7 +53,6 @@ endpoints.post('/inserirProduto', async (req, resp) => {
     resp.status(400).send({ 
       erro: err.message 
     });
-    console.log(err)
   }
 })
 
@@ -61,13 +60,15 @@ endpoints.post('/inserirProduto', async (req, resp) => {
 
 endpoints.put('/inserirProduto/:id/capa', upload.single('capa'), async (req, resp) => {
     try {
-         
+        if(!req.file)
+          throw new Error('A imagem do tênis!')   
+
         const { id } = req.params;
         const imagem = req.file.path;
         
         const dados = await inserirImagem(imagem, id);
         if(dados != 1)
-          throw new Error('A imagem não pode ser salvo!')
+          throw new Error('A imagem não pode ser salva!')
 
         resp.status(204).send();
     } catch (error) {
@@ -102,5 +103,16 @@ endpoints.get('/tamanhos', async (req, resp) => {
     }
 });
 
+// Lista todos os produtos cadastrados
+
+endpoints.get('/listarProdutos', async (req, resp) => {
+  try{
+    let r = await BuscarTodosOsProdutos()
+    resp.send(r)
+  }
+  catch (err) {
+    resp.status(500).send({ erro: err.message });
+  }
+})
 
 export default endpoints;

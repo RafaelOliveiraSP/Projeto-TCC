@@ -36,14 +36,21 @@ export default function CadastrarProduto(){
 
     async function cadastrarNovoProduto() {
         try {
-            const r = inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
+            if(!primeiraImg)
+                throw new Error('Escolha a imagem do produto');
+            
+            const novoProduto = await inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
+            const r = await enviarImagem(novoProduto.id, primeiraImg);
+
 
             toast.success(`Produto foi cadastrado com sucesso!`)
-
-        } 
-        catch (err) {
-            alert(err.response.data.erro);
-            toast.error(err.response.data.erro)
+            limparFormulario();
+        }
+        catch(err) {
+            if(err.response)
+                toast.error(err.response.data.erro);
+            else
+                toast.error(err.message);
         }
     }
 

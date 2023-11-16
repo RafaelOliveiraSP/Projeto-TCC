@@ -26,18 +26,19 @@ export async function inserirFilme(nome, codigo, descricao, estoque, preco, prec
         marca: marca,
         cor: cor
     });
+    
     return r1.data;
 }
 
 
 export async function enviarImagem(id, imagem){
-    const fromData = new FormData();
+    const FormData = new FormData();
     FormData.append('capa', imagem);
 
-    const resposta = await axios.put(`/inserirProduto/${id}/capa`, fromData, {
+    const resposta = await axios.put(`/inserirProduto/${id}/capa`, FormData, {
         headers:{
             "Content-Type": "multipart/form-data"
         },
     });
-    return resposta.status
+    return resposta.status;
 }
