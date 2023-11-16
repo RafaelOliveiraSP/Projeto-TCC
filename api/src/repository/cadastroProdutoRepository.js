@@ -1,10 +1,12 @@
 import conexao from "./connection.js";
 
+
+// Inserindo um produto  
+
 export async function inserirProduto(produto) {
     let comando = `
         insert into tb_cadastrar_produto(nm_produto, ds_codigo, ds_descricao, qnt_estoque, vl_preco, vl_preco_promocional, id_marca, ds_cor) 
-                                 values (?, ?, ?, ?, ?, ?, ?, ?)
-    `
+                                 values (?, ?, ?, ?, ?, ?, ?, ?)`
   
     let [resp] = await conexao.query(comando,
       [
@@ -22,6 +24,23 @@ export async function inserirProduto(produto) {
       return produto;
 }
 
+// Inserindo imagens ao produto 
+
+export async function inserirImagem(imagem, id) {
+  const comando = `
+        update tb_cadastrar_produto
+           set img_produto        = ?
+         where id_produto         = ?;   
+  `
+
+  const [dados] = await conexao.query(comando, [imagem, id])
+  return dados.affectedRows;
+}
+
+
+
+// verifica código do produto
+
 export async function verificarCodigo(codigo) {
   let comando = `
       select * from tb_cadastrar_produto                                    
@@ -32,6 +51,8 @@ export async function verificarCodigo(codigo) {
   return dados;
 }
 
+// busca marcas pelo id 
+
 export async function buscarMarcaPorId(id) {
   let comando = `
       select * from tb_marca 
@@ -40,32 +61,4 @@ export async function buscarMarcaPorId(id) {
       
   let [dados] = await conexao.query(comando, [id]);
   return dados;
-}
-
-export async function consultarCodigo(busca) {
-  let comando = `
-      select * from tb_cadastrar_produto                                    
-              where ds_codigo       like ?
-  `
-
-  let [dados] = await conexao.query(comando, [ '%' + busca + '%',])
-  return dados;
-}
-
-
-export async function cadastrarImagens(img) {
-  const comando = `
-              insert into tb_produto_imagem(id_produto, img_produto)
-                                     values(?, ?);`
-
-  let resp = await conexao.query(comando, 
-    [
-      img.idProduto,
-      img.caminho
-    ])
-
-    const dados = resp[0]; 
-
-    // img.id = resp.insertId;
-    // return img;
 }

@@ -2,45 +2,44 @@ import './index.scss';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import LoadingBar from 'react-top-loading-bar';
 
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import { API_URL } from '../../../constants.js';
+import { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 
-import axios from 'axios';
+
 import storage from 'local-storage';
+import { loginAdmin } from '../../../api/AdmApi';
 
 export default function LoginAdm(){
 
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    const navigate = useNavigate()
+    const[carregando, setCarregando] = useState(false);
+
+    const navigate = useNavigate();
+    const ref = useRef();
 
     async function verificarDados(){
-        try{
-            let login = {
-                email: email,
-                senha: senha
-            }
+        ref.current.continuousStart();
+        setCarregando(true);
 
-            let r = await axios.post(API_URL + '/verificarLoginAdm', login);
+        try{
+
+            const r = await loginAdmin(email, senha)
             storage('adm-logado', r)
 
-            if(r.status === 204){
+            setTimeout(() => {
                 alert('Olá adm!')
                 navigate('/administrador')
-            }
+            }, 4000);
         }
         catch (err) {
-            toast.error(err.response.data.erro);  
-        }
-    }
-
-    function teclaPressionada(e){
-        if (e.key === 'Enter'){
-            verificarDados(); 
+            toast.error(err.response.data.erro);
+            ref.current.complete(); 
+            setCarregando(false);  
         }
     }
 
@@ -58,7 +57,7 @@ export default function LoginAdm(){
     return(
     <div className='pagina-LoginAdm'>
         <Cabecalho />
-
+        <LoadingBar color='#f11946' ref={ref} />
         <div className='cartao'>
             
             <h1 className='titulo'>Administrador</h1>
@@ -69,7 +68,7 @@ export default function LoginAdm(){
                 <input type='text' value={email}  onChange={e => setEmail(e.target.value)}/>
                 
                 <span> Senha: </span>
-                <input type='password' value={senha} onKeyUp={teclaPressionada} onChange={e => setSenha(e.target.value)}/>
+                <input type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
 
 
                 <div className='botao-lembre'>  
@@ -79,7 +78,7 @@ export default function LoginAdm(){
 
             </div>      
 
-            <button className="login" onClick={verificarDados}>Fazer Login</button>           
+            <button className="login" onClick={verificarDados} disabled={carregando}>Fazer Login</button>           
         </div>
 
         <div className='rodape'>

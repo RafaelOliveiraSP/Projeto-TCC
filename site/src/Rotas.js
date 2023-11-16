@@ -15,7 +15,6 @@ import ProdutoMaisVendido from  './pages/principal/produtoMaisVendido';
 import Carrinho from            './pages/principal/carrinho';
 import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
-import DadosPedidos from        './pages/principal/dadosPedido';
 import StatusPedido from        './pages/principal/StatusPedido';
 import MeusPedidos from         './pages/principal/pedidosFinalizados';
 import FormasDePagamento from   './pages/principal/formasDePagamento';
@@ -48,13 +47,11 @@ export default function Rotas(){
                 <Route path='/carrinho' element={<Carrinho/>} />
                 <Route path='/FinalizarPedido' element={<FinalizarPedido/>} />
                 <Route path='/PedidoRealizado' element={<PedidoRealizado/>} />
-                <Route path='/DadosPedido' element={<DadosPedidos/>} />
                 <Route path='/StatusPedido' element={<StatusPedido/>} />
                 <Route  path='/meuspedidos'  element={<MeusPedidos />} />
                 <Route path='/minhaconta' element={<MinhaConta/>} />
                 <Route path='/formasdepagamento' element={<FormasDePagamento />} />
                 
-
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
                 <Route path='/consulta-produto' element={<Consulta/>} />

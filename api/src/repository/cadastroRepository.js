@@ -117,7 +117,7 @@ export async function listarTodos(){
 
 /* Busca login dos usuarios */
 
-export async function listaLogins(login){
+export async function listaLogins(email, senha){
   let comando = `
     select  id_cliente          as  Id,
             nm_nome			        as  Nome,
@@ -135,9 +135,9 @@ export async function listaLogins(login){
 
   let [dados] = await conexao.query(comando,
     [
-      login.email,
-      login.senha
+      email,
+      senha
     ]
     );
-  return dados;
+  return dados[0];
 }

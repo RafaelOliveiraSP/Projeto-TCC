@@ -21,7 +21,11 @@ export default function FormasDePagamento(){
     const [codCard, setCodCard]                 = useState('');
     const [vencimento, setVencimento]           = useState('');
     const [nmrParcelas, setNmrParcelas]         = useState(0);
-    
+
+    const [enderecoCasa, setEnderecoCasa]       = useState('');
+    const [cep, setCep]                         = useState('');
+    const [nmrCasa, setNmrCasa]                 = useState('');
+
     function verificarTexto(e){
         let n = Number(e);
 
@@ -50,6 +54,22 @@ export default function FormasDePagamento(){
 
             if(cont >= tam.length){
                 setCodCard(cvv)
+            }
+        }
+    }
+
+    function verificarCep(e){
+        let cep = Number(e);
+
+        if(isNaN(cep)){
+            setCep('')
+        }
+        else{
+            let cont = 8;
+            let tam  = cep + "";
+            
+            if(cont >= tam.length){
+                setCep(cep)
             }
         }
     }
@@ -92,24 +112,40 @@ export default function FormasDePagamento(){
 
 
     const navigate = useNavigate();
-    async function cadastrarCartao() {
+
+    async function cadastrarCartao(){
+        try {
+            let cartao = {
+                numero: nmrCard,
+                nome:   nomeCard,
+                codigo: codCard,
+                vencimento: vencimento,
+                parcelas: nmrParcelas
+            }
+          
+            await axios.post(API_URL + '/inserirCartao', cartao);
+            
+    
+            toast.success('Cartão cadastrado com sucesso!')
+          } 
+          catch (err) {
+            toast.error(err.response.data.erro);
+        }
+    }
+
+    async function finalizarPedido() {
       try {
-        let cartao = {
-            numero: nmrCard,
-            nome:   nomeCard,
-            codigo: codCard,
-            vencimento: vencimento,
-            parcelas: nmrParcelas
+        let endereco = {
+            cep: cep,
+            endereco: enderecoCasa,
+            numero: nmrCasa
         }
       
+        await axios.post(API_URL + '/cadastrarEndereco', endereco);
         
-        await axios.post(API_URL + '/inserirCartao', cartao);
 
-        alert(`Pagamento efetuado com sucesso!
-              Acompanhe o status de seu pedido :)`);
-
+        alert(`Pedido efetuado com sucesso :)`);
         navigate('/')
-        
       } 
       catch (err) {
         toast.error(err.response.data.erro);
@@ -193,19 +229,21 @@ export default function FormasDePagamento(){
                                         <option>5</option>
                                         <option>6</option>
                                     </select>
+
+                                    <div onClick={cadastrarCartao} className='bt-cadastrar-card'><button>Cadastrar</button></div>
                                 </div>
                             </div>
 
-                        <hr />
+                            <hr />
 
-                        <div className='formas-de-pagamentos'>
-                            <div>
-                                <i onClick={mostrarTabelaDeb} class="fa-solid fa-caret-up fa-rotate-180"></i>
-                                <i class="fa-solid fa-credit-card cartao-credito" style={{color: '#F7D736',}}></i>
-                                <span>Cartão de débito</span>
+                            <div className='formas-de-pagamentos'>
+                                <div>
+                                    <i onClick={mostrarTabelaDeb} class="fa-solid fa-caret-up fa-rotate-180"></i>
+                                    <i class="fa-solid fa-credit-card cartao-credito" style={{color: '#F7D736',}}></i>
+                                    <span>Cartão de débito</span>
+                                </div>
+                                <span>à vista</span>
                             </div>
-                            <span>à vista</span>
-                        </div>
 
                             <div className='form-cartao' style={{display: mostrarFormDeb}}>
 
@@ -226,23 +264,43 @@ export default function FormasDePagamento(){
                                             <input type='text' value={codCard} onChange={e => maxCod(e.target.value)}/>  
                                         </span>
                                     </div>
+                                    <div onClick={cadastrarCartao} className='bt-cadastrar-card'><button>Cadastrar</button></div>
                                 </div>
                             </div>
 
-                        <hr />
+                            <hr />
 
-                        <div className='formas-de-pagamentos'>
-                            <div>
-                                <i class="fa-solid fa-caret-up fa-rotate-180"></i>
-                                <i class="fa-brands fa-pix pix" style={{color: '#9CDC86',}}></i>
-                                <span>Pix</span>
+                            <div className='formas-de-pagamentos'>
+                                <div>
+                                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                                    <i class="fa-brands fa-pix pix" style={{color: '#9CDC86',}}></i>
+                                    <span>Pix</span>
+                                </div>
+                                <span>à vista</span>
                             </div>
-                            <span>à vista</span>
-                        </div>
 
-                        <hr />
+                            <hr />
 
-                        <div className='botao-confirm' onClick={cadastrarCartao}><button>CONFIRMAR</button></div>
+                            <span style={{marginTop: '60px'}}>Insira o endereço de entrega</span>
+                            <hr />
+                            
+                            <div className='dados-Endereco'>
+                                <div>
+                                    <article>
+                                        <label>Endereço</label>
+                                        <input value={enderecoCasa} onChange={e => setEnderecoCasa(e.target.value)} style={{width: '290px'}} type='text' /> 
+                                    </article>
+                                    
+                                    <article>
+                                        <label style={{maxWidth: '65.64px', width: '100%'}}>CEP</label>
+                                        <input value={cep} onChange={e => verificarCep(e.target.value)} type='text'/> 
+
+                                        <label>N°</label>
+                                        <input value={nmrCasa} onChange={e => setNmrCasa(e.target.value)} style={{width: '100%', maxWidth: '66.38px'}} type='text'/>
+                                    </article>
+                                </div>
+                            </div>
+                        <div className='botao-confirm' onClick={finalizarPedido}><button>CONFIRMAR</button></div>
                     </div>
                 </div> 
 

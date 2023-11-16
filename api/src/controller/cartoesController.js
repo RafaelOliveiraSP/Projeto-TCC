@@ -1,4 +1,4 @@
-import { CadastrarCartao } from '../repository/cartoesRepository.js';
+import { CadastrarCartao, consultarNumeroCard } from '../repository/cartoesRepository.js';
 
 import { Router } from 'express';
 const endpoints = Router();
@@ -14,14 +14,15 @@ endpoints.post('/inserirCartao', async (req, resp) => {
         if(!cartao.numero)
             throw new Error('Digite o número de seu cartão!');
 
+        let r1 = await consultarNumeroCard(cartao.numero)
+            if(r1.length != 0)
+            throw new Error('Cartão já cadastrado!');
+
         if(!cartao.codigo)
             throw new Error('Digite o código de segurança de seu cartão');
 
         if(!cartao.vencimento)
             throw new Error('Insira a data de vencimento do seu cartão');
-
-        if(isNaN(cartao.codigo))
-            throw new Error('O código de segurança deve ser um número')
         
         let r = await CadastrarCartao(cartao)
         resp.send(r);

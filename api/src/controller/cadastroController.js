@@ -66,18 +66,18 @@ endpoints.post('/inserirCliente', async (req, resp) => {
 
 endpoints.post('/verificarLogin', async (req, resp) => {
   try{
-    let login = req.body;
+    const {email, senha} = req.body;
 
-    let r1 = await listaLogins(login)
+    const r1 = await listaLogins(email, senha)
 
-    if(r1.length === 0) 
-      throw new Error('Você não possui cadastro!');
+    if(!r1) 
+      throw new Error('Credenciais inválidas!');
 
 
-  resp.status(204).send()
+    resp.send(r1)
   }
   catch (err) {
-    resp.status(500).send({ erro: err.message });
+    resp.status(401).send({ erro: err.message });
   }
 })
 
