@@ -82,7 +82,9 @@ export default function LoginAdm(){
             <button className="login" onClick={verificarDados}>Fazer Login</button>           
         </div>
 
-        <Rodape />
+        <div className='rodape'>
+         <Rodape />
+        </div>
     </div>  
     )
 }
