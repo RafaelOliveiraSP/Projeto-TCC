@@ -1,11 +1,12 @@
-import { Router } from 'express';
 import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
 import  multer from 'multer';
 
+import { Router } from 'express';
 const endpoints = Router();
+
 const upload = multer({dest: 'storage/imagensProdutos'});
 
 endpoints.post('/inserirProduto', async (req, resp) => {
@@ -18,7 +19,7 @@ endpoints.post('/inserirProduto', async (req, resp) => {
     if(!produto.codigo)
       throw new Error('Informe o código do produto!');
     
-    let r1 = await verificarCodigo(produto.codigo)
+    const r1 = await verificarCodigo(produto.codigo)
       if(r1.length > 0)
       throw new Error('Código já cadastrado!');
 
@@ -29,26 +30,30 @@ endpoints.post('/inserirProduto', async (req, resp) => {
       throw new Error('Digite a quantidade disponível no estoque!');
 
     if(!produto.preco)
-      throw new Error('Informe o valor desse produto!');
+      throw new Error('Informe o preco desse produto!');
     
     if(!produto.precopromocional)
-      throw new Error('Informe o valor promocional(antes do preço atual) desse produto!');
+      throw new Error('Informe o preco promocional(antes do preço atual) desse produto!');
 
     if(!produto.marca)
       throw new Error('Informe a marca desse produto!');
 
-    let r2 = await buscarMarcaPorId(produto.marca);
+    const r2 = await buscarMarcaPorId(produto.marca);
       if(r2.length === 0)
       throw new Error('Marca Inválida');
 
     if(!produto.cor)
       throw new Error('Informe a cor desse produto!');
 
-      let produtoInserido = await inserirProduto(produto)
+      const produtoInserido = await inserirProduto(produto);
+
       resp.send(produtoInserido);
   }
   catch (err) {
-    resp.status(500).send({ erro: err.message });
+    resp.status(400).send({ 
+      erro: err.message 
+    });
+    console.log(err)
   }
 })
 
@@ -66,7 +71,9 @@ endpoints.put('/inserirProduto/:id/capa', upload.single('capa'), async (req, res
 
         resp.status(204).send();
     } catch (error) {
-        resp.status(500).send({erro: error.message})
+        resp.status(500).send({
+          erro: error.message
+        })
     }
 });
 

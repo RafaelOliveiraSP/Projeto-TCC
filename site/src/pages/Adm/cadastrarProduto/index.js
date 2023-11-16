@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import axios from "axios";
 import storage from 'local-storage';
 
+import { enviarImagem, inserirFilme } from '../../../api/AdmApi';
 
 
 export default function CadastrarProduto(){
@@ -20,8 +21,8 @@ export default function CadastrarProduto(){
     const [codigo, setCodigoProduto]                = useState('');
     const [descricao, setDescricao]                 = useState('');
     const [estoque, setEstoque]                     = useState('');
-    const [valor, setValor]                         = useState();
-    const [valorPromocional, setValorPromocional]   = useState();
+    const [preco, setPreco]                         = useState('');
+    const [precopromocional, setPrecoPromocional]   = useState('');
     const [opcoesMarcas, setOpcoesMarcas]           = useState([]);
     const [marca, setMarca]                         = useState(0);
     const [cor, setCor]                             = useState('');
@@ -35,32 +36,14 @@ export default function CadastrarProduto(){
 
     async function cadastrarNovoProduto() {
         try {
-            let produto = {
-            nome: nome,
-            codigo: codigo,
-            descricao: descricao,
-            estoque: estoque,
-            preco: valor,
-            precopromocional: valorPromocional,
-            marca: marca,
-            cor: cor
-          }
+            const r = inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
 
-            let r = await axios.post(API_URL + '/inserirProduto', produto);
+            toast.success(`Produto foi cadastrado com sucesso!`)
 
-            if(!primeiraImg){
-                await axios.post(API_URL + '/inserirProduto/:id/capa', r.data.id, primeiraImg)
-            }
-                
-
-            toast.dark('Produto cadastrado com sucesso!')
-            limparFormulario();
         } 
         catch (err) {
-            if (err.response)
-                toast.error(err.response.data.erro);
-            else
-                toast.error(err.message);
+            alert(err.response.data.erro);
+            toast.error(err.response.data.erro)
         }
     }
 
@@ -69,8 +52,8 @@ export default function CadastrarProduto(){
         setCodigoProduto('');
         setDescricao('');
         setEstoque('');
-        setValor('');
-        setValorPromocional('');
+        setPreco('');
+        setPrecoPromocional('');
         setMarca(0);
         setCor('');
     }
@@ -107,34 +90,34 @@ export default function CadastrarProduto(){
         }
     }
 
-    function verificarValor(e){
+    function verificarPreco(e){
         let n = Number(e);
 
         if(isNaN(n)){
-            setValor('')
+            setPreco('')
         }
         else{
             let cont = 9;
             let tam = n + "";
 
             if(cont >= tam.length){
-                setValor(n)
+                setPreco(n)
             }
         }
     }
 
-    function verificarValorPromocional(e){
+    function verificarPrecoPromocional(e){
         let n = Number(e);
 
         if(isNaN(n)){
-            setValorPromocional('')
+            setPrecoPromocional('')
         }
         else{
             let cont = 9;
             let tam = n + "";
 
             if(cont >= tam.length){
-                setValorPromocional(n)
+                setPrecoPromocional(n)
             }
         }
     }
@@ -215,12 +198,12 @@ export default function CadastrarProduto(){
 
                         <div>
                             <span>Valor:</span>
-                            <div><input type='text' value={valor} onChange={e => verificarValor(e.target.value)}/></div>
+                            <div><input type='text' value={preco} onChange={e => verificarPreco(e.target.value)}/></div>
                         </div>
 
                         <div>
                             <span>Promoção:</span>
-                            <div><input type='text' value={valorPromocional} onChange={e => verificarValorPromocional(e.target.value)}/></div>
+                            <div><input type='text' value={precopromocional} onChange={e => verificarPrecoPromocional(e.target.value)}/></div>
                         </div>
 
                         <div className='input-duplo'>
