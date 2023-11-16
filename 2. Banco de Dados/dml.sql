@@ -25,3 +25,20 @@ insert into tb_dados_cartao(nr_cartao, nm_cartao, nr_cod_seguranca, dt_venciment
 					 values('0000000000000000', 'Rafael Oliveira', '0000', '2023-11-09', 0);
                      
 select * from tb_dados_cartao;
+
+-- ----------------------------------------------------------------------------------------------------------
+
+select * from tb_cadastrar_produto;
+
+
+select id_produto				as  id,
+	    nm_produto				as produto,
+        ds_codigo				as codigo,
+        ds_descricao			as descricao,
+        qnt_estoque				as estoque,
+        vl_preco				as preco,
+        vl_preco_promocional	as precoPromocional,
+        id_marca				as marca,
+        ds_cor					as cor,
+        img_produto				as imagem
+		from tb_cadastrar_produto;
