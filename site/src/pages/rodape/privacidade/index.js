@@ -7,7 +7,7 @@ export default function Privacidade(){
     return(
         <div className='pagina-privacidade'>
         <Cabecalho/>
-         <h1>privacidade</h1>
+         <h1>Privacidade</h1>
          <div className='borda'>
             <div className='info'>
                 <div className='texto'>
