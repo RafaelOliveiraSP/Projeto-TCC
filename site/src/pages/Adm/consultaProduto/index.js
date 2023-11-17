@@ -7,13 +7,13 @@ import { useEffect } from 'react';
 
 import storage from 'local-storage';
 
-
 export default function Consulta(){
-
-
+    
     const navigate = useNavigate();
     
     useEffect(() => {
+        
+
         if (storage('usuario-logado')){
             navigate('/');
         }
@@ -43,9 +43,9 @@ export default function Consulta(){
                     <i class="fa-solid fa-magnifying-glass lupa" style={{color: "#000000",}}></i>
                 </div>
                     
-
+                
                 <div className='codigo-produto'>
-
+                    
                     <div className='cod'>
                     <h1>Código produto</h1>   
                     <input className='caixa-cod' type='text' />
@@ -70,12 +70,12 @@ export default function Consulta(){
                     <div className='estoque'>
                         <h1>Estoque</h1>
                         <input className='caixa-estoque' type='text' />
-                        </div>
                     </div>
-
-                    <Link className='voltar' to='/administrador'>Volte para o menu do ADM</Link>
                 </div>
-
+                
+                    <Link className='voltar' to='/administrador'>Volte para o menu do ADM</Link>
+            </div>
+            
             <Rodape />
         </div>
     );

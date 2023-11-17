@@ -33,10 +33,6 @@ export default function Produtos(){
 
             <h1>Produtos</h1>
 
-            <div  className='mais-vendidos'>
-                <button>Mais Vendidos</button>
-            </div>
-
             <div className='faixa-produtos'>
            
                 <div className='filtrar-tenis'>  
@@ -66,25 +62,19 @@ export default function Produtos(){
                                 <input type='text'/> 
                             </div>
                         </div>
-                            
-                        
                     </div>
 
                 </div>
 
                 <div className='produtos'>     
-                    
                     <div className='faixa-cima-produtos'>
                         {produtos.map(item =>
                             <div className='quadrado-do-tenis'>
-                                <img src='./assets/images/Tenis-KD14Pink.png' alt='KD14'/>
-                                <h1 className='Kd14'>{item.produto}</h1>
-                                <h1 className='valorzinho'>{item.preco}</h1>
-
-                                <div className='botao1'>
-                                    <button onClick={enviarProduto} className='button3-do-produto'>Ver Produto</button>
-                                </div>
-
+                                <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
+                                <h2>{item.produto}</h2>
+                                <h2>R$ {item.preco}</h2>
+                                
+                                <button onClick={enviarProduto} >Ver Produto</button>
                             </div> 
                         )}
                     </div>
@@ -95,70 +85,3 @@ export default function Produtos(){
         </div>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <div className='quadrado-do-tenis'>
-                            <img src='./assets/images/Tenis-KD14Pink.png' alt='Mizuno'/>
-                            <h1 className='Mizuno'>Mizuno Wave Prophecy 12</h1>
-                            <h1 className='valorzinho2'>R$1.799,99</h1>
-
-                            <div className='button2'>
-                                <button  className='button3-do-produto'>Ver Produto</button>
-                            </div>
-
-                        </div>
-                        <div className='quadrado-do-tenis'>
-                            <img className='Nike-Dunk' src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
-                            <h1 className='nike-dunk'>Nike Dunk Low Gray</h1>
-                            <h1 className='valorzinho3'>R$1099,99</h1>
-
-                            <div className='button3'>
-                                <button  className='button3-do-produto'>Ver Produto</button>
-                            </div>
-
-                        </div>
-                        <div className='quadrado-do-tenis'>
-                            <img className= 'Travis' src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
-                            <h1  className='travis-de-tenis'> Travis Scott x Nike Dunk Low Cactus Jack </h1>
-                            <h1  className='valorzinho4'>R$14.500,00</h1>
-
-                            <div className='button4'>
-                                <button className='button3-do-produto'>Ver Produto</button>
-                            </div>
-
-                        </div>         */}

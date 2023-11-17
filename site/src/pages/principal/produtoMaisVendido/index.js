@@ -59,14 +59,6 @@ export default function ProdutoMaisVendido(){
                     <div><div><img src='./assets/images/dunk-travis1.png' alt='dunk-low' /></div></div>
                 </div>
 
-                <div className='imgs'>
-                    <span>
-                        <div><img src='./assets/images/image19.png' alt='sola-dunk' /></div>
-                        <div><img src='./assets/images/Group2.png' alt='par-dunk' /></div>
-                        <div><img src='./assets/images/image20.png' alt='calcanhar-dunk' /></div>
-                    </span>
-                </div>
-
                 <div className='desc-tenis'><span> Travis Scott x Nike Dunk Low <br/>"Cactus Jack" </span></div>
                 
                 <div className='preco'>
