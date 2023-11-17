@@ -40,7 +40,7 @@ export default function CadastrarProduto(){
                 throw new Error('Escolha a imagem do produto');
             
             const novoProduto = await inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
-            const r = await enviarImagem(novoProduto.id, primeiraImg);
+            await enviarImagem(novoProduto.id, primeiraImg);
 
 
             toast.success(`Produto foi cadastrado com sucesso!`)
@@ -63,6 +63,7 @@ export default function CadastrarProduto(){
         setPrecoPromocional('');
         setMarca(0);
         setCor('');
+        setPrimeiraImg();
     }
 
     function verificarCodigo(e){
@@ -98,35 +99,22 @@ export default function CadastrarProduto(){
     }
 
     function verificarPreco(e){
-        let n = Number(e);
+        
+        let cont = 8;
 
-        if(isNaN(n)){
-            setPreco('')
-        }
-        else{
-            let cont = 9;
-            let tam = n + "";
-
-            if(cont >= tam.length){
-                setPreco(n)
-            }
-        }
+        if(cont >= e.length){
+            setPreco(e)
+        }  
     }
 
     function verificarPrecoPromocional(e){
-        let n = Number(e);
+            let cont = 8;
+            
 
-        if(isNaN(n)){
-            setPrecoPromocional('')
+        if(cont >= e.length){
+            setPrecoPromocional(e);
         }
-        else{
-            let cont = 9;
-            let tam = n + "";
-
-            if(cont >= tam.length){
-                setPrecoPromocional(n)
-            }
-        }
+        
     }
 
     // adicionando imagens

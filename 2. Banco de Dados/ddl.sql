@@ -22,18 +22,6 @@ create table tb_cadastrar_produto(
     foreign key (id_marca) 				references tb_marca (id_marca)
 );
 
-create table tb_marca(
-	id_marca 							int primary key auto_increment,
-	ds_marca 							varchar(200) not null
-);
-
-create table tb_imagem_produto(
-	id_imagem 							int primary key auto_increment,
-    id_produto							int 		 not null,
-	img_produto 						varchar(200) not null,
-    foreign key (id_produto)			references tb_cadastrar_produto(id_produto)
-);
-
 -- ----------------------------------------------------------------------------------------
 
 

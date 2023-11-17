@@ -32,10 +32,10 @@ export async function inserirFilme(nome, codigo, descricao, estoque, preco, prec
 
 
 export async function enviarImagem(id, imagem){
-    const FormData = new FormData();
-    FormData.append('capa', imagem);
+    const formData = new FormData();
+    formData.append('capa', imagem);
 
-    const resposta = await axios.put(`/inserirProduto/${id}/capa`, FormData, {
+    const resposta = await api.put(`/inserirProduto/${id}/capa`, formData, {
         headers:{
             "Content-Type": "multipart/form-data"
         },

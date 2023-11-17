@@ -114,35 +114,38 @@
                     height: 500px;
                     width: 320px;
 
-                    padding-top: 20px;
-                    padding-right: 1px;
+                    padding: 20px;
+                    
                     border-radius: 60px;
                     border: 1px solid #000;
 
                     > img{
                         align-items: center;
-                        width: 265.190px;
-                        height: 140.9px;
-                        
-                        
+                        width: 200px;
+                        height: 145px;
+                    }  
 
-                        > button{
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background: none;
-                            width: 150px;
-                            border-radius: 25px;
-                            padding: 15px 0px;
-                            padding-top: 300px;
-                            background-color: #ffffff;
-                            font-size: 16px;
-                            font-weight: 530;
-                            border-radius: 45px;
-                            background-color: rgb(224, 224, 224);
-                            border: 1px;
-                        }
+                    >h2{
+                        margin-top: 20px;
                     }
+                        
+                    > button{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                       
+                        font-size: 16px;
+                        font-weight: 600;
+
+                        width: 150px;
+                        height: 40px;
+
+                        border: none;
+                        margin-top: 50px;                       
+                        border-radius: 25px;
+                        background-color: #e0e0e0;
+                    }
+                    
                 }
             }  
         }
@@ -185,111 +188,26 @@
                 width: 100%;
                 border-radius: 1px;
 
-                    display: flex;
-                    justify-content: center;
+                display: flex;
+                justify-content: center;
             
-                    align-items: center;
-                    border: none;
+                align-items: center;
+                border: none;
             
-                    padding-top: 0px 0px ;
-                    width: 95px;
-                    padding: 15px 0px;
-                    background-color: #ffffff;
-                    font-size: 16px;
-                    font-weight: 530;
-                    border-radius: 45px;
-                    border: none;
-                    background-color:rgb(224, 224, 224);
-                    margin-bottom: 280px;
+                padding-top: 0px 0px ;
+                width: 95px;
+                padding: 15px 0px;
+                background-color: #ffffff;
+                font-size: 16px;
+                font-weight: 530;
+                border-radius: 45px;
+                border: none;
+                background-color:rgb(224, 224, 224);
+                margin-bottom: 280px;
 
-                    outline: none;
-                    padding: 12px 10px 10px 35px;
-
+                outline: none;
+                padding: 12px 10px 10px 35px;
             }
         }
     }
 }
-
-
-.Marca{
-    font-weight:40
-    
-}
-
-.valorzinho{
-    padding: 90px;
-    
-}
-
-.valorzinho2{
-    padding: 50px;
-    
-}
-
-.valorzinho3{
-    padding: 90px;
-    
-
-}
-
-.valorzinho4{
-    padding: 6px;
-   
-}
-
-.Travis{
-    height: 145px !important;
-    width: 269px !important;
-}
-
-.Mizuno{
-   margin-left: 60px;
-}
-
-.botao1{
-    display: flex;
-    justify-content: center;
-
-    padding: 10px;
-}
-
-.button2{
-    display: flex;
-    flex-direction: row-reverse;
-
-    margin-top: 47px;
-}
-
-.button3{
-    display: flex;
-    justify-content: center;
-}
-
-.button4{
-    display: flex;
-    justify-content: center;
-
-    margin:80px
-}
-
-.button3-do-produto{
-    width: 150px;
-    height: 50px;
-    border: none;
-    border-radius: 45px;
-
-}
-
-.button3{
-    padding-bottom: 50px;
-}
-
-
-
-.div-texto-tenis{
-    display: flex;
-    justify-content: center;
-
-
-}
-
