@@ -33,10 +33,6 @@ export default function Produtos(){
 
             <h1>Produtos</h1>
 
-            <div  className='mais-vendidos'>
-                <button>Mais Vendidos</button>
-            </div>
-
             <div className='faixa-produtos'>
            
                 <div className='filtrar-tenis'>  
@@ -77,7 +73,6 @@ export default function Produtos(){
                                 <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
                                 <h2>{item.produto}</h2>
                                 <h2>R$ {item.preco}</h2>
-
                                 
                                 <button onClick={enviarProduto} >Ver Produto</button>
                             </div> 

@@ -11,15 +11,21 @@ show tables;
 
 create table tb_cadastrar_produto( 
 	id_produto 							int primary key auto_increment,
-	nm_produto 							varchar(200) not null,
-	ds_codigo							varchar(50)  not null,
-	ds_descricao						varchar(200) not null,
-	qnt_estoque							int          not null,
-	vl_preco 							int 		 not null,        
-	vl_preco_promocional 				int 		 not null,
-	id_marca 							int          not null,
-	ds_cor								varchar(50)  not null,
+	nm_produto 							varchar(200) 	not null,
+	ds_codigo							varchar(50)  	not null,
+	ds_descricao						varchar(200) 	not null,
+	qnt_estoque							int          	not null,
+	vl_preco 							decimal(6,2) 	not null,        
+	vl_preco_promocional 				decimal(6,2) 	not null,
+	id_marca 							int          	not null,
+	ds_cor								varchar(50)  	not null,
+	img_produto							varchar(200)     		,
     foreign key (id_marca) 				references tb_marca (id_marca)
+);
+
+create table tb_marca(
+	id_marca 							int primary key auto_increment,
+	ds_marca 							varchar(200) not null
 );
 
 -- ----------------------------------------------------------------------------------------
