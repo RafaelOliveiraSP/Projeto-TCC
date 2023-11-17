@@ -1,4 +1,4 @@
-import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -114,5 +114,23 @@ endpoints.get('/listarProdutos', async (req, resp) => {
     resp.status(500).send({ erro: err.message });
   }
 })
+
+// Busca produtos pelo id
+
+endpoints.get('/buscarProdutoPorId/:id', async (req, resp) => {
+  try {
+      const { id } = req.params;
+      const r = await BuscarProdutosPorId(id);
+      
+      if(r.length === 0)
+        throw new Error('Esse produto não existe!')
+      
+      resp.send(r);
+  } catch (error) {
+      resp.status(500).send({
+        erro: error.message
+      })
+  }
+});
 
 export default endpoints;

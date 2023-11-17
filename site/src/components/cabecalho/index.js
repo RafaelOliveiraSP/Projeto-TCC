@@ -21,8 +21,7 @@ export default function Cabecalho(){
                 <div className='links-cabecalho'>
                     <div className='paginas-cabecalho'>
                         <Link to='/'>Home</Link>
-                        <Link to='/produtos'>Produtos</Link>
-                        <Link to='/produto-mais-vendido'>Mais vendido</Link>
+                        <Link to='/produtos'>Produtos</Link>    
                         <Link to='/quemsomos'>Conheça-nos</Link>
                     </div>
                     <div className='icones-compras'>

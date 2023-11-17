@@ -6,15 +6,25 @@ import { useEffect ,useState } from 'react';
 import { API_URL } from '../../../constants.js';
 
 import axios from "axios";
+import { useParams } from 'react-router-dom';
+
 
 export default function ProdutoMaisVendido(){
 
-    const [quantidade,setQuantidade] = useState(0);
-    const [estoque, setEstoque]      = useState(200);
-    const cont = 0;
-
+    const [quantidade,setQuantidade]          = useState(0);
+    const [estoque, setEstoque]               = useState(200);
     const [opcoesTamanhos, setOpcoesTamanhos] = useState([]);
     const [tamanho, setTamanho]               = useState(0);
+
+    const [produto, setProduto]               = useState([0]);
+
+    const cont = 0;
+    const {id} = useParams()
+
+    async function ProdutoConsultado(){
+        let r = await axios.get( API_URL + `/buscarProdutoPorId/${id}`);
+        setProduto(r.data);
+    }
 
     function addProduto(){
         if(cont <= quantidade && estoque > quantidade){
@@ -40,6 +50,7 @@ export default function ProdutoMaisVendido(){
     useEffect(() => {
         //
         listarTamanhos();
+        ProdutoConsultado();
         //
       }, [])
     
@@ -49,22 +60,23 @@ export default function ProdutoMaisVendido(){
 
             <Cabecalho />
 
+            {produto.map(item =>   
             <div className='cartao'>
                    
                    <div className='cartao2'>
 
-                    <h1 className='titulo'>Travis Scott x Nike Dunk Low Cactus Jack</h1>
+                    <h1 className='titulo'>{item.produto}</h1>
                
                 <div className='dunk-low'>
                     <div><div><img src='./assets/images/dunk-travis1.png' alt='dunk-low' /></div></div>
                 </div>
 
-                <div className='desc-tenis'><span> Travis Scott x Nike Dunk Low <br/>"Cactus Jack" </span></div>
+                <div className='desc-tenis'><span>{item.descricao}</span></div>
                 
                 <div className='preco'>
                     <div>
                         <span className='promocao'>&nbsp;R$14.700,00&nbsp;</span>
-                        <span>R$14.500,00</span>
+                        <span>R$ {item.preco}</span>
                     </div>
                     
                 </div>
@@ -101,9 +113,10 @@ export default function ProdutoMaisVendido(){
                 
                 <div className='botao1'>
                     <button onClick={addCarrinho}>ADICIONAR AO CARRINHO</button>
-                </div>
+               </div>
             </div>
-        </div>
+            
+        </div>)}; 
             <Rodape />
         </div>
     )

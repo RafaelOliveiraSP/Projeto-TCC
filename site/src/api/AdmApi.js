@@ -42,3 +42,4 @@ export async function enviarImagem(id, imagem){
     });
     return resposta.status;
 }
+

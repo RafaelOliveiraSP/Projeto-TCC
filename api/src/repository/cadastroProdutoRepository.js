@@ -82,3 +82,24 @@ export async function BuscarTodosOsProdutos(){
   let [dados] = await conexao.query(comando);
   return dados;
 }
+
+// Busca produtos pelo id
+
+export async function BuscarProdutosPorId(id){
+  const comando = `
+  select  id_produto				        as id,
+          nm_produto				        as produto,
+          ds_codigo				          as codigo,
+          ds_descricao			        as descricao,
+          qnt_estoque				        as estoque,
+          vl_preco				          as preco,
+          vl_preco_promocional	    as precoPromocional,
+          id_marca				          as marca,
+          ds_cor					          as cor,
+          img_produto				        as imagem
+  from tb_cadastrar_produto
+           where id_produto = ?;`
+
+let [dados] = await conexao.query(comando, [id]);
+return dados;     
+}

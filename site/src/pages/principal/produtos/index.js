@@ -11,13 +11,9 @@ import axios from 'axios';
 export default function Produtos(){
 
     const [produtos, setProdutos] = useState([]);
-
     const navigate = useNavigate();
-    function enviarProduto(){
-        navigate('/produto-mais-vendido');
-    }
 
-    
+
     async function listaDeProdutos(){
         let r = await axios.get(  API_URL + '/listarProdutos');
         setProdutos(r.data);
@@ -74,7 +70,7 @@ export default function Produtos(){
                                 <h2>{item.produto}</h2>
                                 <h2>R$ {item.preco}</h2>
                                 
-                                <button onClick={enviarProduto} >Ver Produto</button>
+                                <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
                             </div> 
                         )}
                     </div>
