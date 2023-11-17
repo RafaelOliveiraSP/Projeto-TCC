@@ -34,6 +34,8 @@ export default function Produtos(){
             <h1>Painel De Pedidos concluídos</h1>
         </div>
 
+            <div className='meio-dos-quadrados'>
+
         <div className='quadrado-1-tenis'>
             <p>Cliente</p>
             <img  className='Nike-Kd14' src='./assets/images/Tenis-KD14Pink.png' alt='Jordan'/>
@@ -59,11 +61,13 @@ export default function Produtos(){
             <p>Cliente</p>
             <img className='Mizuno' src='./assets/images/mizuno1.png' alt='Mizuno'/>
             <h1>Tênis Masculino Mizuno Wave Prophecy 12-S</h1>
-            <i class="fa-solid fa-xmark"style={{color: "#ff0026",}}></i>
+            <i class="fa-solid fa-check"style={{color: "#00f529",}}></i>
+        </div>
         </div>
 
+        <div className='btvoltar-ao-menu'>
         <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>
-
+        </div>
 
             <Rodape />
         </div>

@@ -9,12 +9,12 @@ import storage from 'local-storage';
 
 const Estatisticas = () => {
   const data = [
-    { brand: 'Adidas', percentage: 80 },
-    { brand: 'Puma', percentage: 50 },
-    { brand: 'Nike', percentage: 85 },
-    { brand: 'Salomon', percentage: 60 },
-    { brand: 'Mizuno', percentage: 55 },
-    { brand: 'Olympikus', percentage: 35 },
+    { bar1: 'Adidas', porcentagem: 80 },
+    { bar2: 'Puma', porcentagem: 50 },
+    { bar3: 'Nike', porcentagem: 85 },
+    { bar4: 'Salomon', porcentagem: 60 },
+    { bar5: 'Mizuno', porcentagem: 55 },
+    { bar6: 'Olympikus', porcentagem: 35 },
   ];
 
   const navigate = useNavigate();
@@ -37,11 +37,16 @@ const Estatisticas = () => {
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="brand" />
+        <XAxis dataKey="bar1" fill='#0000' />
+        <XAxis dataKey="bar2" fill='#0000' />
+        <XAxis dataKey="bar3" fill='#0000' />
+        <XAxis dataKey="bar4" fill='#0000' />
+        <XAxis dataKey="bar5" fill='#0000' />
+        <XAxis dataKey="bar6" fill='#0000' />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="percentage" fill="#8884d8" />
+        <Bar dataKey="porcentagem" fill="#FF0000" />      
       </BarChart>
     </ResponsiveContainer>
   );
