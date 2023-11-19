@@ -69,7 +69,7 @@ export default function Produtos(){
                                 <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
 
                                 <div>
-                                    <h2>{Number(item.preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                                    <h2>{Number(item.precoPromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
                                     <h2>{item.produto}</h2>
                                     <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
                                 </div>
