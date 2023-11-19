@@ -67,10 +67,13 @@ export default function Produtos(){
                         {produtos.map(item =>
                             <div className='quadrado-do-tenis'>
                                 <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
-                                <h2>{item.produto}</h2>
-                                <h2>R$ {item.preco}</h2>
+
+                                <div>
+                                    <h2>{Number(item.preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                                    <h2>{item.produto}</h2>
+                                    <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
+                                </div>
                                 
-                                <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
                             </div> 
                         )}
                     </div>

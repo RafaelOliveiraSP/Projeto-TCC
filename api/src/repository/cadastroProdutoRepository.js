@@ -101,5 +101,6 @@ export async function BuscarProdutosPorId(id){
            where id_produto = ?;`
 
 let [dados] = await conexao.query(comando, [id]);
-return dados;     
+return dados[0];     
 }
+

@@ -111,8 +111,29 @@
         align-items: center;
         justify-content: flex-end;
         width: auto;
+        height: 50px;
+        position: relative;
 
         gap: 20px;
+    }
+
+    .statusCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        top: 4px;
+        right: 52px;
+        position: absolute;
+
+        height: 15px;
+        width: 15px;
+
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        border-radius: 100%;
+        background-color: #ff0000;
     }
 
     .coracao{

@@ -9,12 +9,12 @@ export default function HomePage() {
         <Cabecalho />
 
           <section className='banner-fors'>
-            <div><img  src='../assets/images/Banner.png' alt='Banner' /></div>
+            <div><img  src='./assets/images/Banner.png' alt='Banner' /></div>
           </section>
             
           <div className='dunk-low'>
             <div className='cartao-dunk-low'>
-              <div><img src='../assets/images/Banner-Travis_clipdrop-enhance.png' alt='dunk-low'/></div>
+              <div><img src='./assets/images/Banner-Travis_clipdrop-enhance.png' alt='dunk-low'/></div>
             </div>
             <div className='detalhes-dunk-low'>
               <h1>TRAVIS SCOTT x NIKE</h1>
@@ -26,7 +26,7 @@ export default function HomePage() {
           </div>
 
           <section className='banner-salamon'>
-            <div><img  src='../assets/images/segunda-faixa.webp' alt='Salmon'/></div>
+            <div><img  src='./assets/images/segunda-faixa.webp' alt='Salmon'/></div>
           </section>
 
           <div className='Texto-segunda-faixa'>

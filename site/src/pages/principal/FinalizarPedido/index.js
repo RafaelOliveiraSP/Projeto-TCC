@@ -34,7 +34,7 @@ export default function FinalizarPedido(){
                 </div>
 
                 
-                    <button className='button'>Acompanhar pedido</button>
+                <button className='button'>Acompanhar pedido</button>
                 
 
             </div>

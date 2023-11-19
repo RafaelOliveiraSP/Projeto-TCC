@@ -183,7 +183,7 @@ export default function FormasDePagamento(){
                         <div className='formas-de-pagamentos'>
                             <div>
                                 <i class="fa-solid fa-caret-up fa-rotate-180"></i>
-                                <img src='../assets/images/icone-boleto.png' alt='boleto'/>
+                                <img src='./assets/images/icone-boleto.png' alt='boleto'/>
                                 <span>Boleto</span>
                             </div>
                             <span>à vista</span>

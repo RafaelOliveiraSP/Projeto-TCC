@@ -32,29 +32,30 @@ select * from tb_cadastrar_produto;
 
 -- Busca todos os produtos cadastrados
 
-select id_produto				as  id,
-	    nm_produto				as produto,
-        ds_codigo				as codigo,
-        ds_descricao			as descricao,
-        qnt_estoque				as estoque,
-        vl_preco				as preco,
-        vl_preco_promocional	as precoPromocional,
-        id_marca				as marca,
-        ds_cor					as cor,
-        img_produto				as imagem
-		from tb_cadastrar_produto;
+select id_produto				      as  id,
+	     nm_produto				      as produto,
+       ds_codigo				      as codigo,
+       ds_descricao			      as descricao,
+       qnt_estoque				    as estoque,
+       vl_preco				        as preco,
+       vl_preco_promocional	  as precoPromocional,
+       id_marca				        as marca,
+       ds_cor					        as cor,
+       img_produto				    as imagem
+	from tb_cadastrar_produto;
 
 -- Busca produto por id
 
 select  id_produto				    as id,
         nm_produto				    as produto,
-        ds_codigo				    as codigo,
+        ds_codigo				      as codigo,
         ds_descricao			    as descricao,
         qnt_estoque				    as estoque,
-        vl_preco				    as preco,
-        vl_preco_promocional	    as precoPromocional,
-        id_marca				    as marca,
-        ds_cor					    as cor,
+        vl_preco				      as preco,
+        vl_preco_promocional	as precoPromocional,
+        id_marca				      as marca,
+        ds_cor					      as cor,
         img_produto				    as imagem
   from tb_cadastrar_produto
   where id_produto = 1;
+

@@ -3,23 +3,24 @@
     flex-direction: column;
     width: 100%;
 
-        > h1{
-            text-align: center;
-            margin-bottom: 40px;
-            margin-top: 35px;
-        }
+    > h1{
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 35px;
+    }
 
-        .faixa-produtos{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            margin-top: 50px;
+    .faixa-produtos{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 50px;
 
         .filtrar-tenis{
             display: flex;
             flex-direction: column;
             align-items: center;
 
+            width: 250px;
             padding: 0px 15px;
 
             > h1{
@@ -57,7 +58,6 @@
                     color: #ffffff;
                     transition: 0.9s;
                     transform: rotate(0.4deg);
-                    
                 }
             }
         }
@@ -87,39 +87,59 @@
                     
                     height: 500px;
                     width: 320px;
-
                     padding: 20px;
                     
                     border-radius: 60px;
                     border: 1px solid #000;
+                    transition: 0.1s;
 
                     > img{
-                        align-items: center;
                         width: 200px;
                         height: 145px;
-                    }  
 
-                    >h2{
-                        margin-top: 20px;
-                    }
-                        
-                    > button{
+                        margin: 20px 0px;
+                    } 
+
+                    >div{
                         display: flex;
-                        justify-content: center;
+                        flex-direction: column;
                         align-items: center;
-                       
-                        font-size: 16px;
-                        font-weight: 600;
 
-                        width: 150px;
-                        height: 40px;
+                        width: 100%;
+                        padding-top: 50px;   
+                        border-top: 1px solid #b4b4b4;
 
-                        border: none;
-                        margin-top: 50px;                       
-                        border-radius: 25px;
-                        background-color: #e0e0e0;
-                    }
-                    
+                        > button{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                           
+                            font-size: 16px;
+                            font-weight: 600;
+    
+                            width: 150px;
+                            height: 40px;
+    
+                            border: none;
+                            margin-top: 50px;                       
+                            border-radius: 25px;
+                            background-color: #e0e0e0;
+                            cursor: pointer;
+                        }
+
+                        > button:hover{
+                            background-color: #000;
+                            color: #ffffff;
+                            transition: 0.5s;
+                            transform: rotate(0.4deg);
+                        }
+                    }               
+                }
+
+                .quadrado-do-tenis:hover{
+                    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+                    cursor: pointer;
+                    transform: translateY(-10px);
                 }
             }  
         }

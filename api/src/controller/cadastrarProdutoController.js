@@ -133,4 +133,6 @@ endpoints.get('/buscarProdutoPorId/:id', async (req, resp) => {
   }
 });
 
+
+
 export default endpoints;

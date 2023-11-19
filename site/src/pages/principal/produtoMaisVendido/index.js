@@ -12,19 +12,23 @@ import { useParams } from 'react-router-dom';
 export default function ProdutoMaisVendido(){
 
     const [quantidade,setQuantidade]          = useState(0);
-    const [estoque, setEstoque]               = useState(200);
+
     const [opcoesTamanhos, setOpcoesTamanhos] = useState([]);
     const [tamanho, setTamanho]               = useState(0);
 
-    const [produto, setProduto]               = useState([0]);
+    const [product, setProduct]               = useState([]);
+
+    const { produto, descricao, preco, estoque, precoPromocional, imagem } = product;
 
     const cont = 0;
     const {id} = useParams()
+    // const teste = estoque + ''; 
 
     async function ProdutoConsultado(){
         let r = await axios.get( API_URL + `/buscarProdutoPorId/${id}`);
-        setProduto(r.data);
+        setProduct(r.data)
     }
+
 
     function addProduto(){
         if(cont <= quantidade && estoque > quantidade){
@@ -38,20 +42,21 @@ export default function ProdutoMaisVendido(){
         }
     }
 
-    function addCarrinho(){
-        setEstoque(estoque - 1)
-    }
-
     async function listarTamanhos() {
         let r = await axios.get( API_URL +'/tamanhos');
         setOpcoesTamanhos(r.data);
     }
 
+    // function MudarEstoque(){
+
+    // }
+
     useEffect(() => {
         //
         listarTamanhos();
         ProdutoConsultado();
-        //
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
     
         
@@ -60,35 +65,34 @@ export default function ProdutoMaisVendido(){
 
             <Cabecalho />
 
-            {produto.map(item =>   
             <div className='cartao'>
                    
                    <div className='cartao2'>
 
-                    <h1 className='titulo'>{item.produto}</h1>
+                    <h1 className='titulo'>{produto}</h1>
                
                 <div className='dunk-low'>
-                    <div><div><img src='./assets/images/dunk-travis1.png' alt='dunk-low' /></div></div>
+                    <div><img src={`${API_URL}/` + imagem} alt='dunk-low' /></div>
                 </div>
-
-                <div className='desc-tenis'><span>{item.descricao}</span></div>
+    
+                <div className='desc-tenis'><span>{descricao}</span></div>
                 
                 <div className='preco'>
                     <div>
-                        <span className='promocao'>&nbsp;R$14.700,00&nbsp;</span>
-                        <span>R$ {item.preco}</span>
+                        <label>De:<span className='promocao'>&nbsp;{Number(preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}&nbsp;</span></label>
+                        <span>Para:<span>{Number(precoPromocional).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span></span>
                     </div>
-                    
                 </div>
+
+                <span>Estoque: {estoque}</span>
 
                 <div className='entrega'>
                     <div>
-                       <img src='./assets/images/image21.png' alt='caminhao' />
+                        <i class="fa-solid fa-truck" style={{fontSize: '19px'}}></i>
                         <span>Frete grátis</span> 
                     </div>
                 </div>
 
-                <div className='parcela'>10x de R$1450,00</div>
 
                 <div className='tamanho'>Tamanho: </div>
                 
@@ -112,11 +116,11 @@ export default function ProdutoMaisVendido(){
                 </div>
                 
                 <div className='botao1'>
-                    <button onClick={addCarrinho}>ADICIONAR AO CARRINHO</button>
+                    <button>ADICIONAR AO CARRINHO</button>
                </div>
             </div>
             
-        </div>)}; 
+        </div>
             <Rodape />
         </div>
     )

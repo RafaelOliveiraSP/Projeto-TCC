@@ -11,32 +11,31 @@
         align-items: center;
 
         width: 100%;
-        padding: 0px 10px;
-
+    
     .cartao2{
         display: flex;
         flex-direction: column;
         max-width: 810px;
+        width: 100%;
         
-
+        padding: 0px 30px;
         
         .titulo{
             display: flex;
-            padding-top: 80px;
 
             justify-content: center;
-            align-items: center;
-
-            
+            align-items: center;  
         }
 
         .dunk-low{
             display: flex;
             justify-content: center;
            
-
             width: 100%;
             max-width: 100%;
+
+            border: 1px solid #4E5B60;
+            border-radius: 10px;
 
             > div{
                 display: flex;
@@ -45,24 +44,15 @@
 
                
                 width: 100%;
+                height: 350px;
                 max-height: 350px;
+                max-width: 450px;
 
-                border: 1px solid #4E5B60;
-                border-radius: 10px;
-
-                margin-bottom: 40px;
                 padding: 0px 20px;
 
-                > div{
-                    max-width: 550px;
-                    max-height: 287.95px;
-
-                    padding: 0px 10px;
-
-                    > img{
-                        width: 100%;
-                        height: 100%;
-                    }
+                > img{
+                    width: 100%;
+                    height: 100%;
                 }
             }
         }
@@ -101,11 +91,10 @@
                 flex-direction: column;
                 
                 font-family: 'Monda', sans-serif;
-                font-size: 25px;
+                font-size: 28px;
     
-                width: 810px;
-
-                padding-top: 40px; 
+                width: 100%;
+                margin-top: 40px; 
             }
         }
 
@@ -116,28 +105,45 @@
 
             >div{
                 display: flex;
-                max-width: 810px;
-                width: 810px;
+                flex-direction: column;
+                width: 100%;
 
-                gap: 20px;
+                gap: 15px;
 
-                > span{
-                    display: flex;
-                    
-                    font-size: 35px;
-                    font-family: 'Monda', sans-serif;
-        
-                    padding-top: 70px;
+                >label{
+                    margin-top: 60px;
+                    font-size: 25px;
+                    text-decoration: none;
+                    font-family: 'Monda', sans-serif;  
                 }
 
-                .promocao{
-                    width: auto;
+                .promocao{ 
+                    margin-left: 30px;
+                    font-size: 25px;
+                    color: #fa6060;
                     text-decoration: line-through;
-
-                    font-size: 30px;
+                    font-family: 'Monda', sans-serif;              
                 }
-            }
-            
+
+                >span{
+                    font-size: 25px;
+                    font-family: 'Monda', sans-serif;  
+
+                    > span{
+                        margin-left: 17px;
+                        color: #000;
+                        // color: #fa6060;
+                        font-size: 25px;
+                        font-family: 'Monda', sans-serif;  
+                    }
+                }    
+            }  
+        }
+
+        > span{
+            margin-top: 40px;
+            font-size: 20px;
+            font-family: 'Monda', sans-serif;
         }
 
         .entrega{
@@ -146,7 +152,7 @@
 
             width: 67%;
 
-            padding-top: 70px;
+            margin-top: 20px;
 
             > div{
                 display: flex;
@@ -154,47 +160,23 @@
                 justify-content: center;
                 align-items: center;
 
-                width: auto;
+                
                 border: 1px solid #4E5B60;
                 border-radius: 10px;
 
                 width: 200px;
-           
+                height: 35px;
+                gap: 10px;
 
-        >img{
-            max-width: 45px;
-            max-height: 55px;
-
-            padding: 5px 10px 5px 10px;
-        }
-
-        >span{
-            font-size: 20px;
-
-            padding: 5px 5px;
-
-            font-family: 'Monda', sans-serif;
-
-           
-        }
-        
-    }
-
-        }
-
-        .parcela{
-            display: flex;
-
-            width: 810px;
-
-            font-family: 'Monda', sans-serif;
-            font-size: 25px;
-
-            padding-top: 30px;
+                > span{
+                    font-size: 20px;
+                    font-family: 'Monda', sans-serif;  
+                }
+            }
         }
 
         .tamanho{
-            width: 810px;
+            width: 100%;
             padding-top: 20px;
 
             font-family: 'Monda', sans-serif;
@@ -203,27 +185,27 @@
 
         .caixa-numero{
             display: flex;
-            width: 810px;
+            width: 100%;
 
             padding-top: 5px;
             
 
-        .numeracao{
-            
-            width: 110px;
-            height: 40px;
-            
-            font-size: 18px;
-            font-family: 'Monda', sans-serif;
+            .numeracao{
 
-            border-radius: 5px;
-            outline: none;
-        }
+                width: 110px;
+                height: 40px;
+                
+                font-size: 18px;
+                font-family: 'Monda', sans-serif;
+
+                border-radius: 5px;
+                outline: none;
+            }
         }
 
         .qtd{
             display: flex;
-            width: 810px;
+            width: 100%;
             margin-top: 40px;
             position: relative;
 
