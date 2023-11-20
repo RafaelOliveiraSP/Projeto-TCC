@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
 
-    justify-content: space-between;
-
     width: 100%;
     height: 100%;
 
@@ -137,6 +135,16 @@
 
             color: #000;
         }
+    }
 
+    #voltarMenu{
+        display: flex;
+        text-decoration: none;
+        color: #000;
+
+        width: 100%;
+        height: 50px;
+        padding: 0px 40px;
+        margin-top: 50px;
     }
 }

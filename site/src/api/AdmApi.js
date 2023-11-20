@@ -48,6 +48,11 @@ export async function listaDeProdutos(){
     return resposta.data;
 }
 
+export async function listaProdutosPorNome(nome){
+    const resposta = await api.get(`/buscarProdutoPorNome?nome=${nome}`);
+    return resposta.data;
+}
+
 export async function listaProdutosPorId(id){
     const resposta = await api.get(`/buscarProdutoPorId/${id}`);
     return resposta.data;

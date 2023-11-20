@@ -139,13 +139,11 @@ endpoints.get('/buscarProdutoPorNome', async (req, resp) => {
   try {
       const { nome } = req.query;
 
-      if(!nome)
-      throw new Error('Digite o nome do filme que está procurando!')
-
       const r = await BuscarProdutosPorNome(nome);
       
       if(r.length === 0 )
         throw new Error('Esse produto não existe!')
+        
       else
         resp.send(r);
   } catch (error) {

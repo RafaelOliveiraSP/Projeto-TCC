@@ -74,8 +74,9 @@ export default function Consulta(){
                         </div>
                     </div>
 
-                    <Link className='voltar' to='/administrador'>Volte para o menu do ADM</Link>
                 </div>
+
+                <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>
 
             <Rodape />
         </div>
