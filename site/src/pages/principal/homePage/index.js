@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
-import Cabecalho from '../../../components/cabecalho';
-import Rodape from '../../../components/rodape';
 import './index.scss';
 
+import { Link, useNavigate } from 'react-router-dom';
+
+import Cabecalho from '../../../components/cabecalho';
+import Rodape from '../../../components/rodape';
+
+
+
 export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="pagina-principal">
         <Cabecalho />
@@ -21,7 +27,7 @@ export default function HomePage() {
               <h2>Dunk Low Cactus Jack </h2>
               <p>Combinando o estilo clássico do Dunk Low com a criatividade de Travis Scott, este tênis se destaca na multidão. <b>Sua paleta de cores vibrantes e detalhes artísticos</b> únicos refletem a personalidade única de Travis Scott, tornando-o um item de moda autêntico.</p>
             
-              <Link to='/produto-mais-vendido'>VENHA CONFERIR</Link>
+              <button onClick={() => navigate(`/detalhesDoProduto/1`)}>VENHA CONFERIR</button>
             </div>
           </div>
 
@@ -32,7 +38,7 @@ export default function HomePage() {
           <div className='Texto-segunda-faixa'>
             <h1>ODYSSEY ELMT LOW</h1>
             <p>Conquiste trilhas com confiança e velocidade</p>
-            <div><Link to='/produtos'>VER PRODUTO</Link></div>
+            <div><button onClick={() => navigate(`/detalhesDoProduto/2`)}>VER PRODUTO</button></div>
           </div>
 
           <div className='terceira-faixa'>
@@ -45,19 +51,19 @@ export default function HomePage() {
             <div className='faixa-destaques'>
               <div>
                 <img src='./assets/images/tenis-Adidas1.png' alt='tenis Adidas'/>
-                <Link to='/produtos'>VER PRODUTO</Link>
+                <button onClick={() => navigate(`/detalhesDoProduto/3`)}>VER PRODUTO</button>
               </div>
               <div>
                 <img src='./assets/images/tenis-Adidas2.png' alt='tenis Adidas'/>
-                <Link to='/produtos'>VER PRODUTO</Link>
+                <button onClick={() => navigate(`/detalhesDoProduto/4`)}>VER PRODUTO</button>
               </div>
               <div>
                 <img src='./assets/images/tenis-Adidas3.png' alt='tenis Adidas'/>
-                <Link to='/produtos'>VER PRODUTO</Link>
+                <button onClick={() => navigate(`/detalhesDoProduto/5`)}>VER PRODUTO</button>
               </div>
               <div>
                 <img src='./assets/images/tenis-Adidas4.png' alt='tenis Adidas'/>
-                <Link to='/produtos'>VER PRODUTO</Link>
+                <button onClick={() => navigate(`/detalhesDoProduto/6`)}>VER PRODUTO</button>
               </div>
             </div>
           </div>

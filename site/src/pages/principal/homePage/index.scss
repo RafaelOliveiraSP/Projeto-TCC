@@ -95,7 +95,7 @@
       margin-bottom: 100px;
     }
 
-    > a{
+    > button{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -114,7 +114,7 @@
       background-color: #d9d9d9;
     }
 
-    > a:hover{
+    > button:hover{
       background-color: #000;
       color: #fff;
       transition: 0.9s;
@@ -176,7 +176,7 @@
       padding: 0px 10px;
     }
 
-    div > a{
+    div > button{
       color: #000;
       font-family: 'Monda', sans-serif;
       font-size: 14px;
@@ -194,7 +194,7 @@
       text-align: center; 
     }
     
-    div > a:hover{
+    div > button:hover{
       background-color: #000;
       color: #fff;
       transition: 0.9s;
@@ -261,7 +261,7 @@
           height: 100%;
         }
 
-        >a{
+        >button{
           position: absolute;
           bottom: -15px;
 

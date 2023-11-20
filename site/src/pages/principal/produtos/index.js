@@ -30,9 +30,7 @@ export default function Produtos(){
             <h1>Produtos</h1>
 
             <div className='faixa-produtos'>
-           
-                <div className='filtrar-tenis'>  
-                         
+                <div className='filtrar-tenis'>      
                     <h1>filtrar por</h1>
                     <p className='Marca'>Marca</p>
                    
@@ -59,7 +57,6 @@ export default function Produtos(){
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div className='produtos'>     

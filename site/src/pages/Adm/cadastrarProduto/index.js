@@ -193,12 +193,12 @@ export default function CadastrarProduto(){
 
                         <div>
                             <span>Valor:</span>
-                            <div><input type='text' value={preco} onChange={e => verificarPreco(e.target.value)}/></div>
+                            <div><input placeholder='Ex: 1500.00' type='text' value={preco} onChange={e => verificarPreco(e.target.value)}/></div>
                         </div>
 
                         <div>
                             <span>Promoção:</span>
-                            <div><input type='text' value={precopromocional} onChange={e => verificarPrecoPromocional(e.target.value)}/></div>
+                            <div><input placeholder='Ex: 1000.00' type='text' value={precopromocional} onChange={e => verificarPrecoPromocional(e.target.value)}/></div>
                         </div>
 
                         <div className='input-duplo'>

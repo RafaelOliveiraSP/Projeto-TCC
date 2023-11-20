@@ -30,10 +30,10 @@ endpoints.post('/inserirProduto', async (req, resp) => {
       throw new Error('Digite a quantidade disponível no estoque!');
 
     if(!produto.preco)
-      throw new Error('Informe o preco desse produto!');
+      throw new Error('Informe o preço desse produto!');
     
     if(!produto.precopromocional)
-      throw new Error('Informe o preco promocional(antes do preço atual) desse produto!');
+      throw new Error('Informe o preço promocional desse produto!');
 
     if(!produto.marca)
       throw new Error('Informe a marca desse produto!');
