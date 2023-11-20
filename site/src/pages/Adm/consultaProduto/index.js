@@ -32,50 +32,39 @@ export default function Consulta(){
 
             <Cabecalho />
 
-            <div className='cartao'>
+            <div className='cartao-consulta'>
 
-                <h1 className='titulo'>Consulta ao produto</h1>
+                <h1 >Consulte os produtos cadastrados</h1>
 
-                <div className='input-pesquisar'>
-                    <span className='texto-pesquisar'>Insira o código do produto</span>
-                        
-                    <input className='pesquisa' type='text' />
+                <div className='input-pesquisar'>                    
+                    <input placeholder='Digite o nome do produto que deseja consultar' className='pesquisa' type='text' />
                     <i class="fa-solid fa-magnifying-glass lupa" style={{color: "#000000",}}></i>
                 </div>
                     
                 
-                <div className='codigo-produto'>
+                <div className='codigo-produto'>   
+                   
+                    <h1>Código</h1>                   
                     
-                    <div className='cod'>
-                    <h1>Código produto</h1>   
-                    <input className='caixa-cod' type='text' />
-                    </div>
-                        
-                        
-                    <div className='id-produto'>
-                        <h1>ID do produto</h1>
-                        <input className='caixa-id' type='text' />
-                    </div>
+                    <h1>Modelo</h1>
 
-                    <div className='marca'>
-                        <h1>Marca</h1>
-                        <input className='caixa-marca' type='text' />
-                    </div>
+                    <h1>Descrição</h1>
 
-                    <div className='modelo'>
-                        <h1>Modelo</h1>
-                        <input className='caixa-modelo' type='text' />
-                    </div>
+                    <h1>Estoque</h1>
 
-                    <div className='estoque'>
-                        <h1>Estoque</h1>
-                        <input className='caixa-estoque' type='text' />
-                    </div>
+                    <h1>Preço</h1>
+
+                    <h1>Preço Atual</h1>
+ 
+                    <h1>Marca</h1>
+
+                    <h1>Cor</h1>
+
                 </div>
-                
-                    <Link className='voltar' to='/administrador'>Volte para o menu do ADM</Link>
             </div>
-            
+
+                <Link id='voltarMenu' to='/administrador'>Volte para o menu do ADM</Link>
+
             <Rodape />
         </div>
     );

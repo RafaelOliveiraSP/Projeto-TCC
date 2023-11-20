@@ -87,20 +87,41 @@ export async function BuscarTodosOsProdutos(){
 
 export async function BuscarProdutosPorId(id){
   const comando = `
-  select  id_produto				        as id,
-          nm_produto				        as produto,
-          ds_codigo				          as codigo,
-          ds_descricao			        as descricao,
-          qnt_estoque				        as estoque,
-          vl_preco				          as preco,
-          vl_preco_promocional	    as precoPromocional,
-          id_marca				          as marca,
-          ds_cor					          as cor,
-          img_produto				        as imagem
-  from tb_cadastrar_produto
-           where id_produto = ?;`
+        select  id_produto				        as id,
+                nm_produto				        as produto,
+                ds_codigo				          as codigo,
+                ds_descricao			        as descricao,
+                qnt_estoque				        as estoque,
+                vl_preco				          as preco,
+                vl_preco_promocional	    as precoPromocional,
+                id_marca				          as marca,
+                ds_cor					          as cor,
+                img_produto				        as imagem
+        from tb_cadastrar_produto
+                where id_produto = ?;`
 
-let [dados] = await conexao.query(comando, [id]);
-return dados[0];     
+  let [dados] = await conexao.query(comando, [id]);
+  return dados[0];     
 }
 
+// Busca produtos pelo nome
+
+export async function BuscarProdutosPorNome(nome){
+  const comando = `
+        select 	P.id_produto				    as id,
+                P.nm_produto				    as produto,
+                P.ds_codigo			    	  as codigo,
+                P.ds_descricao		    	as descricao,
+                P.qnt_estoque				    as estoque,
+                P.vl_preco					    as preco,
+                P.vl_preco_promocional	as precoPromocional,
+                M.id_marca					    as Idmarca,
+                M.ds_marca					    as marca,
+                P.ds_cor					      as cor
+        from 						                tb_cadastrar_produto as P
+        inner join 				              tb_marca as M on M.id_marca = P.id_marca
+        where P.nm_produto like ?;`
+
+  let [dados] = await conexao.query(comando, [`%${nome}%`]);
+  return dados;  
+}

@@ -1,4 +1,4 @@
-import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId, BuscarProdutosPorNome } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -126,6 +126,28 @@ endpoints.get('/buscarProdutoPorId/:id', async (req, resp) => {
         throw new Error('Esse produto não existe!')
       
       resp.send(r);
+  } catch (error) {
+      resp.status(500).send({
+        erro: error.message
+      })
+  }
+});
+
+// Busca produtos pelo nome
+
+endpoints.get('/buscarProdutoPorNome', async (req, resp) => {
+  try {
+      const { nome } = req.query;
+
+      if(!nome)
+      throw new Error('Digite o nome do filme que está procurando!')
+
+      const r = await BuscarProdutosPorNome(nome);
+      
+      if(r.length === 0 )
+        throw new Error('Esse produto não existe!')
+      else
+        resp.send(r);
   } catch (error) {
       resp.status(500).send({
         erro: error.message

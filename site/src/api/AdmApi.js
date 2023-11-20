@@ -43,3 +43,13 @@ export async function enviarImagem(id, imagem){
     return resposta.status;
 }
 
+export async function listaDeProdutos(){
+    const resposta = await api.get('/listarProdutos');
+    return resposta.data;
+}
+
+export async function listaProdutosPorId(id){
+    const resposta = await api.get(`/buscarProdutoPorId/${id}`);
+    return resposta.data;
+}
+

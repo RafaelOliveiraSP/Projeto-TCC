@@ -7,6 +7,7 @@ import { API_URL } from '../../../constants.js';
 
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import { listaProdutosPorId } from '../../../api/AdmApi';
 
 
 export default function ProdutoMaisVendido(){
@@ -25,8 +26,8 @@ export default function ProdutoMaisVendido(){
     // const teste = estoque + ''; 
 
     async function ProdutoConsultado(){
-        let r = await axios.get( API_URL + `/buscarProdutoPorId/${id}`);
-        setProduct(r.data)
+        let r = await listaProdutosPorId(id)
+        setProduct(r)
     }
 
 

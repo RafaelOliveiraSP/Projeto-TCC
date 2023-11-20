@@ -1,26 +1,37 @@
 
 import './index.scss';
+
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import Loading from '../../../components/loading';
+
+
 import { useEffect, useState } from 'react';
 import { API_URL } from '../../../constants';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { listaDeProdutos } from '../../../api/AdmApi';
 
 
 export default function Produtos(){
 
     const [produtos, setProdutos] = useState([]);
+    const [loading, setLoading]   = useState(true);
+
     const navigate = useNavigate();
 
 
-    async function listaDeProdutos(){
-        let r = await axios.get(  API_URL + '/listarProdutos');
-        setProdutos(r.data);
+    async function carregaTodosOsProdutos(){
+        let r = await listaDeProdutos();
+        setProdutos(r);
     }
 
     useEffect(() => {
-        listaDeProdutos();
+        carregaTodosOsProdutos();
+
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000)
+        
     }, [])
 
     return(
@@ -61,18 +72,23 @@ export default function Produtos(){
 
                 <div className='produtos'>     
                     <div className='faixa-cima-produtos'>
-                        {produtos.map(item =>
+
+                        {loading  === true && <Loading />} 
+
+                        {loading === false &&
+                        <>{produtos.map(item =>
                             <div className='quadrado-do-tenis'>
                                 <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
 
                                 <div>
-                                    <h2>{Number(item.precoPromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                                    <h1>{Number(item.precoPromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h1>
                                     <h2>{item.produto}</h2>
                                     <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
                                 </div>
                                 
                             </div> 
-                        )}
+                        )}</>
+                        }
                     </div>
                 </div>
 
