@@ -68,12 +68,12 @@ export async function buscarMarcaPorId(id) {
 export async function BuscarTodosOsProdutos(){
   const comando = `
       select id_produto				        as id,
-             nm_produto				        as produto,
+             nm_produto				        as nome,
              ds_codigo				        as codigo,
              ds_descricao			        as descricao,
              qnt_estoque				      as estoque,
              vl_preco				          as preco,
-             vl_preco_promocional	    as precoPromocional,
+             vl_preco_promocional	    as precopromocional,
              id_marca				          as marca,
              ds_cor					          as cor,
              img_produto				      as imagem
@@ -88,12 +88,12 @@ export async function BuscarTodosOsProdutos(){
 export async function BuscarProdutosPorId(id){
   const comando = `
         select  id_produto				        as id,
-                nm_produto				        as produto,
+                nm_produto				        as nome,
                 ds_codigo				          as codigo,
                 ds_descricao			        as descricao,
                 qnt_estoque				        as estoque,
                 vl_preco				          as preco,
-                vl_preco_promocional	    as precoPromocional,
+                vl_preco_promocional	    as precopromocional,
                 id_marca				          as marca,
                 ds_cor					          as cor,
                 img_produto				        as imagem

@@ -31,12 +31,12 @@ select  id_produto		as  id,
 -- Consulta produto por id
         
 select  id_produto		as id,
-        nm_produto		as produto,
+        nm_produto		as nome,
         ds_codigo		as codigo,
         ds_descricao		as descricao,
         qnt_estoque		as estoque,
         vl_preco		as preco,
-        vl_preco_promocional	as precoPromocional,
+        vl_preco_promocional	as precopromocional,
         id_marca	    	as marca,
         ds_cor			as cor,
         img_produto		as imagem
@@ -46,12 +46,12 @@ select  id_produto		as id,
 -- Consulta produto por nome
 
 select 	P.id_produto		as id,
-        P.nm_produto		as produto,
+        P.nm_produto		as nome,
         P.ds_codigo		as codigo,
         P.ds_descricao		as descricao,
         P.qnt_estoque		as estoque,
         P.vl_preco		as preco,
-        P.vl_preco_promocional	as precoPromocional,
+        P.vl_preco_promocional	as precopromocional,
         M.id_marca		as Idmarca,
         M.ds_marca		as marca,
         P.ds_cor		as cor

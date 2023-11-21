@@ -19,7 +19,7 @@ export default function ProdutoMaisVendido(){
 
     const [product, setProduct]               = useState([]);
 
-    const { produto, descricao, preco, estoque, precoPromocional, imagem } = product;
+    const { nome, descricao, preco, estoque, precopromocional, imagem } = product;
 
     const cont = 0;
     const {id} = useParams()
@@ -70,10 +70,10 @@ export default function ProdutoMaisVendido(){
                    
                    <div className='cartao2'>
 
-                    <h1 className='titulo'>{produto}</h1>
+                    <h1 className='titulo'>{nome}</h1>
                
                 <div className='dunk-low'>
-                    <div><img src={`${API_URL}/` + imagem} alt='dunk-low' /></div>
+                    <div><img src={`${API_URL}/` + imagem} alt={nome} /></div>
                 </div>
     
                 <div className='desc-tenis'><span>{descricao}</span></div>
@@ -81,7 +81,7 @@ export default function ProdutoMaisVendido(){
                 <div className='preco'>
                     <div>
                         <label>De:<span className='promocao'>&nbsp;{Number(preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}&nbsp;</span></label>
-                        <span>Para:<span>{Number(precoPromocional).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span></span>
+                        <span>Para:<span>{Number(precopromocional).toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</span></span>
                     </div>
                 </div>
 

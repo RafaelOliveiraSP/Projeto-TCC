@@ -78,11 +78,11 @@ export default function Produtos(){
                         {loading === false &&
                         <>{produtos.map(item =>
                             <div className='quadrado-do-tenis'>
-                                <img src={`${API_URL}/` + item.imagem} alt={item.produto} />
+                                <img src={`${API_URL}/` + item.imagem} alt={item.nome} />
 
                                 <div>
-                                    <h1>{Number(item.precoPromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h1>
-                                    <h2>{item.produto}</h2>
+                                    <h1>{Number(item.precopromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h1>
+                                    <h2>{item.nome}</h2>
                                     <button onClick={() => navigate(`/detalhesDoProduto/${item.id}`)} >Ver Produto</button>
                                 </div>
                                 
