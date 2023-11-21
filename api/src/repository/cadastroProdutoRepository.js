@@ -137,3 +137,32 @@ export async function RemoverProduto(id){
   const [dados] = await conexao.query(comando, [id]);
   return dados.affectedRows;     
 }
+
+// Altera um produto
+
+export async function AlterarProduto(id, produto){
+  const comando =`
+        update 	tb_cadastrar_produto
+           set  nm_produto		        = ?,
+                ds_codigo		          = ?,
+                ds_descricao		      = ?,
+                qnt_estoque		        = ?,
+                vl_preco		          = ?,
+                vl_preco_promocional	= ?,
+                id_marca		          = ?,
+                ds_cor			          = ?
+      where id_produto		            = ?`
+
+  const [dados] = await conexao.query(comando, [
+        produto.nome,
+        produto.codigo,
+        produto.descricao,
+        produto.estoque,
+        produto.preco,
+        produto.precopromocional,
+        produto.marca,
+        produto.cor,
+        id
+  ]);
+  return dados.affectedRows;
+}

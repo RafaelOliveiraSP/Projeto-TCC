@@ -1,4 +1,4 @@
-import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId, BuscarProdutosPorNome } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId, BuscarProdutosPorNome, RemoverProduto, AlterarProduto } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -126,7 +126,8 @@ endpoints.get('/buscarProdutoPorId/:id', async (req, resp) => {
         throw new Error('Esse produto não existe!')
       
       resp.send(r);
-  } catch (error) {
+  } 
+  catch (error) {
       resp.status(500).send({
         erro: error.message
       })
@@ -146,13 +147,83 @@ endpoints.get('/buscarProdutoPorNome', async (req, resp) => {
         
       else
         resp.send(r);
-  } catch (error) {
+  } 
+  catch (error) {
       resp.status(500).send({
         erro: error.message
       })
   }
 });
 
+// Deleta um produto
 
+endpoints.delete('/deletarProduto/:id', async (req, resp) => {
+  try{
+    const { id } = req.params;
+    const r = await RemoverProduto(id);
+
+    if(r != 1)
+        throw new Error('Filme não pode ser removido!');
+    
+    resp.status(204).send();
+  } 
+  catch (error) {
+    resp.status(400).send({
+      erro: error.message
+    })
+  }
+});
+
+// Altera um produto
+
+endpoints.put('/alterarProduto/:id', async (req, resp) => {
+  try{
+      const { id }      = req.params;
+      const { produto } = req.body;
+
+    if(!produto.nome)
+      throw new Error('Informe o nome do produto!');
+
+    if(!produto.codigo)
+      throw new Error('Informe o código do produto!');
+    
+    const r1 = await verificarCodigo(produto.codigo)
+      if(r1.length > 0)
+      throw new Error('Código já cadastrado!');
+
+    if(!produto.descricao)
+      throw new Error('Dê uma pequena descrição do produto!');
+
+    if(!produto.estoque)
+      throw new Error('Digite a quantidade disponível no estoque!');
+
+    if(!produto.preco)
+      throw new Error('Informe o preço desse produto!');
+    
+    if(!produto.precopromocional)
+      throw new Error('Informe o preço promocional desse produto!');
+
+    if(!produto.marca)
+      throw new Error('Informe a marca desse produto!');
+
+    const r2 = await buscarMarcaPorId(produto.marca);
+      if(r2.length === 0)
+      throw new Error('Marca Inválida');
+
+    if(!produto.cor)
+      throw new Error('Informe a cor desse produto!');
+
+    const r = await AlterarProduto(id, produto);
+      if(r != 1)
+        throw new Error('Não foi possível alterar esse produto!');
+      else
+        resp.status(204).send();
+  }
+  catch (error) {
+    resp.status(400).send({
+      erro: error.message
+    })
+  }
+});
 
 export default endpoints;
