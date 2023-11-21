@@ -109,7 +109,7 @@ export async function BuscarProdutosPorId(id){
 export async function BuscarProdutosPorNome(nome){
   const comando = `
         select 	P.id_produto				    as id,
-                P.nm_produto				    as produto,
+                P.nm_produto				    as nome,
                 P.ds_codigo			    	  as codigo,
                 P.ds_descricao		    	as descricao,
                 P.qnt_estoque				    as estoque,
