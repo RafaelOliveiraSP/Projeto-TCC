@@ -20,8 +20,6 @@ export default function MinhaConta(){
     const [dtNasc, setDtNasc]       = useState('');
     const [email , setEmail]        = useState('');
 
-    // const {Id, Nome, Sobrenome, Usuario, CPF, Sexo, DataNascimento, Telefone, Email, Senha} = usuario;
-
     const navigate = useNavigate();
 
     function sairConta(){
