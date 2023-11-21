@@ -16,14 +16,13 @@ import { login } from '../../../api/UsuarioApi';
 
 export default function Login(){
 
-    const [email, setEmail] = useState(''); 
-    const [senha, setSenha] = useState('');
+    const [email, setEmail]     = useState(''); 
+    const [senha, setSenha]     = useState('');
 
     const[carregando, setCarregando] = useState(false)
 
     const navigate = useNavigate()
     const ref = useRef();
-
 
     async function verificarDados(){
         ref.current.continuousStart();

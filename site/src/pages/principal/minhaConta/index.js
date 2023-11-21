@@ -6,29 +6,53 @@ import Rodape from '../../../components/rodape'
 import { useNavigate } from 'react-router-dom';
 
 import storage from 'local-storage';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function MinhaConta(){
 
-        const navigate = useNavigate();
+    
+    const [nome, setNome]           = useState('');
+    const [sobrenome, setSobrenome] = useState('');
+    const [usuario, setUsuario ]    = useState('');
+    const [cpf, setCpf]             = useState('');
+    const [sexo, setSexo]           = useState('');
+    const [telefone, setTelefone]   = useState('');
+    const [dtNasc, setDtNasc]       = useState('');
+    const [email , setEmail]        = useState('');
 
-        function sairConta(){
-            storage.remove('usuario-logado');
-            navigate('/');
+    // const {Id, Nome, Sobrenome, Usuario, CPF, Sexo, DataNascimento, Telefone, Email, Senha} = usuario;
+
+    const navigate = useNavigate();
+
+    function sairConta(){
+        storage.remove('usuario-logado');
+        navigate('/');
+    }
+
+    useEffect(() => {
+
+        if (!storage('usuario-logado')){
+            navigate('/login');
+        }
+        else if(storage('adm-logado')){
+             navigate('/administrador');
+        }
+        else{
+            const usuarioLogado = storage('usuario-logado');
+            setNome(usuarioLogado.Nome);
+            setSobrenome(usuarioLogado.Sobrenome);
+            setUsuario(usuarioLogado.Usuario);
+            setCpf(usuarioLogado.CPF); 
+            setSexo(usuarioLogado.Sexo);
+            setTelefone(usuarioLogado.Telefone);
+            setDtNasc(usuarioLogado.DataNascimento);
+            setEmail(usuarioLogado.Email);     
         }
 
-        useEffect(() => {
-            if (!storage('usuario-logado')){
-                navigate('/login');
-            }
-            else if(storage('adm-logado')){
-                navigate('/administrador');
-            }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [])
-
-        return(
+    return(
             
             <div className='pagina-MinhaConta'>
 
@@ -43,48 +67,50 @@ export default function MinhaConta(){
                 
                 <div>
                     <img src='../assets/images/logo-Jordan1.png' alt='Jordan1-logo'/>
-
+                    
                     <div>
                         <h2>Nome:</h2>
-                        <input></input>
+                        <div>{nome}</div>
                     </div>
 
                     <div>
                         <h2>Sobrenome:</h2>
-                        <input></input>
+                        <div>{sobrenome}</div>
                     </div>
 
                     <div>
                         <h2>Usúario:</h2>
-                        <input></input>
+                        <div>{usuario}</div>
                     </div>
 
                     <div>
                         <h2>CPF:</h2>
-                        <input></input>
+                        <div>{cpf}</div>
                     </div>
 
                     <div>
                         <h2>Sexo:</h2>
-                        <input></input>
+                        <div>{sexo}</div>
                     </div>
 
                     <div>
                         <h2>Número de Telefone:</h2>
-                        <input></input>
+                        <div>{telefone}</div>
                     </div>
 
                     <div>
                         <h2>Data de Nascimento:</h2>
-                        <input></input>
+                        <div>{dtNasc.substring(0, 10)}</div>
                     </div>
 
                     <div>
                         <h2>Email:</h2>
-                        <input></input>
+                        <div>{email}</div>
                     </div>
 
-                    <button onClick={sairConta}> Sair da minha conta</button>
+                    <span>
+                        <button onClick={sairConta}> Sair da minha conta <i class="fa-solid fa-right-from-bracket"></i></button>
+                    </span>
                 </div>
 
             </div>
