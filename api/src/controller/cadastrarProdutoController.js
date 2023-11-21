@@ -213,8 +213,8 @@ endpoints.put('/alterarProduto/:id', async (req, resp) => {
     if(!produto.cor)
       throw new Error('Informe a cor desse produto!');
 
-    const r = await AlterarProduto(id, produto);
-      if(r != 1)
+    const resposta = await AlterarProduto(id, produto);
+      if(resposta != 1)
         throw new Error('Não foi possível alterar esse produto!');
       else
         resp.status(204).send();
