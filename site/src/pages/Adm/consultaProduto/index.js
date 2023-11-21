@@ -82,11 +82,11 @@ export default function Consulta(){
                 {produtos.map(item => 
                     <div className='linha-produto'>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '87.38px', width: '87.38px' }}>{item.codigo}</div>
-                        <div style={{maxWidth: '92.48px', width: '92.48px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left'}}>{item.produto}</div>
+                        <div style={{maxWidth: '92.48px', width: '92.48px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left'}}>{item.nome}</div>
                         <div style={{maxWidth: '110.28px', width: '110.28px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{item.descricao}</div>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '94.69px', width: '94.69px'}}>{item.estoque}</div>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '100px', width: '100px'}}>{Number(item.preco).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
-                        <div style={{display: 'flex', justifyContent: 'center', maxWidth: '128.33px', width: '128.33px'}}>{Number(item.precoPromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
+                        <div style={{display: 'flex', justifyContent: 'center', maxWidth: '128.33px', width: '128.33px'}}>{Number(item.precopromocional).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '85px', width: '85px'}}>{item.marca}</div>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '78px', width: '78px'}}>{item.cor}</div>
                         <span style={{display: 'flex', justifyContent: 'center', maxWidth: '89.02px', width: '89.02px'}}>

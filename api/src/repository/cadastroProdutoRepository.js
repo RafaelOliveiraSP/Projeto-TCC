@@ -114,7 +114,7 @@ export async function BuscarProdutosPorNome(nome){
                 P.ds_descricao		    	as descricao,
                 P.qnt_estoque				    as estoque,
                 P.vl_preco					    as preco,
-                P.vl_preco_promocional	as precoPromocional,
+                P.vl_preco_promocional	as precopromocional,
                 M.id_marca					    as Idmarca,
                 M.ds_marca					    as marca,
                 P.ds_cor					      as cor

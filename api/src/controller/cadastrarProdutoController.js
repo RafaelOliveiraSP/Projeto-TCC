@@ -222,7 +222,9 @@ endpoints.put('/alterarProduto/:id', async (req, resp) => {
   catch (error) {
     resp.status(400).send({
       erro: error.message
+      
     })
+    console.log(error);
   }
 });
 
