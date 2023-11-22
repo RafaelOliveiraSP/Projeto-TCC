@@ -4,7 +4,7 @@ import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
 import { useEffect,useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import { API_URL } from '../../../constants.js';
 import { toast } from 'react-toastify';
@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 import axios from "axios";
 import storage from 'local-storage';
 
-import { enviarImagem, inserirFilme } from '../../../api/AdmApi';
+import { alterarProduto, enviarImagem, inserirProduto, listaProdutosPorId } from '../../../api/AdmApi';
 
 
 export default function CadastrarProduto(){
@@ -27,6 +27,8 @@ export default function CadastrarProduto(){
     const [marca, setMarca]                         = useState(0);
     const [cor, setCor]                             = useState('');
 
+    const { id } = useParams()
+
     const [primeiraImg, setPrimeiraImg]             = useState();
 
     async function listarMarcas(){
@@ -34,17 +36,44 @@ export default function CadastrarProduto(){
         setOpcoesMarcas(r.data);
     }
 
+    
+    async function ProdutoConsultado(){
+        let r = await listaProdutosPorId(id)
+        setNome(r.nome);
+        setCodigoProduto(r.codigo);
+        setDescricao(r.descricao);
+        setEstoque(r.estoque);
+        setPreco(r.preco);
+        setPrecoPromocional(r.precopromocional);
+        setMarca(r.marca);
+        setCor(r.cor);
+        // setPrimeiraImg(r.imagem);
+    }
+
     async function cadastrarNovoProduto() {
         try {
-            if(!primeiraImg)
-                throw new Error('Escolha a imagem do produto');
+            if(!id){
+                if(!primeiraImg)
+                    throw new Error('Escolha a imagem do produto');
+                
+                const novoProduto = await inserirProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
+                await enviarImagem(novoProduto.id, primeiraImg);
+
+                toast.success(`Produto foi cadastrado com sucesso!`)
+                limparFormulario(); 
+            }
+            else{
+                if(!primeiraImg)
+                    throw new Error('Escolha a imagem do produto');
+                
+                const novoProduto = await alterarProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
+                // await enviarImagem(novoProduto.id, primeiraImg);
+
+                toast.success(`Produto foi alterado com sucesso!`)
+                limparFormulario(); 
+            }
+
             
-            const novoProduto = await inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
-            await enviarImagem(novoProduto.id, primeiraImg);
-
-
-            toast.success(`Produto foi cadastrado com sucesso!`)
-            limparFormulario();
         }
         catch(err) {
             if(err.response)
@@ -136,7 +165,10 @@ export default function CadastrarProduto(){
     useEffect(() => {
         
         listarMarcas();
-        
+        if(id){
+            ProdutoConsultado();
+        }  
+
         if (storage('usuario-logado')){
             navigate('/');
         }

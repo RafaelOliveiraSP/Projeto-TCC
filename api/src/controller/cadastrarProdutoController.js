@@ -179,7 +179,8 @@ endpoints.delete('/deletarProduto/:id', async (req, resp) => {
 endpoints.put('/alterarProduto/:id', async (req, resp) => {
   try{
       const { id }      = req.params;
-      const { produto } = req.body;
+      const produto     
+      = req.body;
 
     if(!produto.nome)
       throw new Error('Informe o nome do produto!');
@@ -224,7 +225,6 @@ endpoints.put('/alterarProduto/:id', async (req, resp) => {
       erro: error.message
       
     })
-    console.log(error);
   }
 });
 

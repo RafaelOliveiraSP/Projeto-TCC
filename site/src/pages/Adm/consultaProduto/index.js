@@ -90,7 +90,7 @@ export default function Consulta(){
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '85px', width: '85px'}}>{item.marca}</div>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '78px', width: '78px'}}>{item.cor}</div>
                         <span style={{display: 'flex', justifyContent: 'center', maxWidth: '89.02px', width: '89.02px'}}>
-                            <i class="fa-regular fa-pen-to-square"></i>
+                            <i onClick={() => navigate(`/cadastrar-produto/${item.id}`)} class="fa-regular fa-pen-to-square"></i>
                             <i class="fa-solid fa-trash-can"></i>
                         </span>
                     </div>  
