@@ -55,7 +55,10 @@ export default function Rotas(){
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
                 <Route path='/consulta-produto' element={<Consulta/>} />
+
                 <Route path='/cadastrar-produto' element={<CadastrarProduto />} />
+                <Route path='/cadastrar-produto/:id' element={<CadastrarProduto />} />
+
                 <Route path='/PainelDePedidos' element={<PainelDePedidos/>}/>
                 <Route path='/PedidosEmAndamento' element={<PedidosEmAndamento/>}/>
                 <Route path='/estatisticas' element={<Estatisticas />} />
