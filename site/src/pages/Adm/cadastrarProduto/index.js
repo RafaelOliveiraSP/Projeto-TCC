@@ -66,8 +66,8 @@ export default function CadastrarProduto(){
                 if(!primeiraImg)
                     throw new Error('Escolha a imagem do produto');
                 
-                const novoProduto = await alterarProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
-                // await enviarImagem(novoProduto.id, primeiraImg);
+                await alterarProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
+                await enviarImagem(id, primeiraImg);
 
                 toast.success(`Produto foi alterado com sucesso!`)
                 limparFormulario(); 
@@ -246,8 +246,17 @@ export default function CadastrarProduto(){
                             <input type='color' value={cor} onChange={e => setCor(e.target.value)}/>
                         </div>
 
+                        <div className='botaoCadastrar' onClick={cadastrarNovoProduto}> 
+                        
+                        {!id &&
+                            <button>Adicionar Produto</button>
+                        } 
+                        {id &&
+                            <button>Alterar Produto</button>
+                        }
 
-                        <div className='botaoCadastrar' onClick={cadastrarNovoProduto}><button>Adicionar Produto</button></div>
+                        </div>
+                        
                     </div>
                 </div>
                 
