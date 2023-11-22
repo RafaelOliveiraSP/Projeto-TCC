@@ -4,18 +4,41 @@ import Rodape from '../../../components/rodape';
 
 import storage from 'local-storage';
 
-import { listaDeProdutos, listaProdutosPorNome } from '../../../api/AdmApi';
+import { deletarProduto, listaDeProdutos, listaProdutosPorNome } from '../../../api/AdmApi';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+
+import { confirmAlert } from 'react-confirm-alert';
 
 export default function Consulta(){
 
     const [produtos, setProdutos]  = useState([]);
     const [filtro, setFiltro ]     = useState('');
 
-    async function removerProduto(id, nome){
-        alert(id + '-' + nome)
+    async function deletarProdutoClick(id, nome){
+
+        confirmAlert({
+            title: 'Remover Produto',
+            message: `deseja remover o produto ${nome}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        await deletarProduto(id, nome);
+                        if(filtro === '')
+                            carregarTodosOsProdutos();
+                        else
+                            filtrar();
+
+                        toast.dark(`O produto foi removido com sucesso!`)
+                    }
+                },
+                {
+                    label: 'Não',
+                }
+            ]
+        })
     }
 
     function teclaPressionada(e){
@@ -84,7 +107,7 @@ export default function Consulta(){
                 </div>
 
                 {produtos.map(item => 
-                    <div className='linha-produto'>
+                    <div key={item.id} className='linha-produto'>
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '87.38px', width: '87.38px' }}>{item.codigo}</div>
                         <div style={{maxWidth: '92.48px', width: '92.48px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', textAlign: 'left'}}>{item.nome}</div>
                         <div style={{maxWidth: '110.28px', width: '110.28px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{item.descricao}</div>
@@ -95,7 +118,7 @@ export default function Consulta(){
                         <div style={{display: 'flex', justifyContent: 'center', maxWidth: '78px', width: '78px'}}>{item.cor}</div>
                         <span style={{display: 'flex', justifyContent: 'center', maxWidth: '89.02px', width: '89.02px'}}>
                             <i onClick={() => navigate(`/cadastrar-produto/${item.id}`)} class="fa-regular fa-pen-to-square"></i>
-                            <i onClick={() => removerProduto(item.id, item.nome)} class="fa-solid fa-trash-can"></i>
+                            <i onClick={() => deletarProdutoClick(item.id, item.nome)} class="fa-solid fa-trash-can"></i>
                         </span>
                     </div>  
                 )}
