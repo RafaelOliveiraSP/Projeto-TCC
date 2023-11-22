@@ -30,6 +30,18 @@ export async function inserirProduto(nome, codigo, descricao, estoque, preco, pr
     return r1.data;
 }
 
+export async function enviarImagem(id, imagem){
+    const formData = new FormData();
+    formData.append('capa', imagem);
+
+    const resposta = await api.put(`/inserirProduto/${id}/capa`, formData, {
+        headers:{
+            "Content-Type": "multipart/form-data"
+        },
+    });
+    return resposta.status;
+}
+
 export async function alterarProduto( id ,nome, codigo, descricao, estoque, preco, precopromocional, marca, cor){
     const r1 = await api.put(`/alterarProduto/${id}`, {
         nome: nome,
@@ -45,15 +57,8 @@ export async function alterarProduto( id ,nome, codigo, descricao, estoque, prec
     return r1.data;
 }
 
-export async function enviarImagem(id, imagem){
-    const formData = new FormData();
-    formData.append('capa', imagem);
-
-    const resposta = await api.put(`/inserirProduto/${id}/capa`, formData, {
-        headers:{
-            "Content-Type": "multipart/form-data"
-        },
-    });
+export async function deletarProduto(id){
+    const resposta = await api.delete(`/deletarProduto/${id}`);
     return resposta.status;
 }
 
