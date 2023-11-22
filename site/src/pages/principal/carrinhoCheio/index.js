@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import storage from 'local-storage';
 import { listaDeProdutos, listaProdutosPorId } from '../../../api/AdmApi';
+import CarrinhoItem from '../../../components/carrinhoItem';
 
 export default function MeusPedidos(){
 
@@ -37,26 +38,21 @@ export default function MeusPedidos(){
 
     return(
 
-         <div className='pagina-MeusPedidos'>
+         <div className='pagina-carrinhoCheio'>
             <Cabecalho/>
 
-         <div className='cartao'>
+            <div className='cartao'>
 
-         <h1> Carrinho </h1>
+            <h1> Carrinho </h1>
 
-        <div className='tenis-1'>
-        <img className='tenis-travis' src='./assets/images/dunk-travis1.png' alt='travis'/>
-        <p>Travis Scott x Nike Dunk Low Cactus <br/>Jack Special Box</p>
-                
-        <div>
-            <span className='preco'>R$14.500,00</span>
-                     <button> Comprar </button>
-                 </div>
-                    
-                 </div>
-                     <hr/>
-        </div>
+            <div className='itens'>
+                {itens.map(item =>
+                <CarrinhoItem /> 
+                )}
+            
+            </div>
+            </div>
                 <Rodape/>
             </div>
         )
-} 
+ }
