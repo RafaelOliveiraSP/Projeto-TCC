@@ -26,7 +26,7 @@ import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
 import MinhaConta from          './pages/principal/minhaConta';
-import Estatisticas from './pages/Adm/estatisticas';
+import Estatisticas from        './pages/Adm/estatisticas';
 
 
 
