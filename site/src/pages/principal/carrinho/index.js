@@ -5,7 +5,9 @@ import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
 
 
+
 export default function Carrinho() {
+    
     return(
         <div className='pagina-carrinho'>
             <Cabecalho/>

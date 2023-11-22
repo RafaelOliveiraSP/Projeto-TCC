@@ -99,14 +99,23 @@
             }
 
             > span{
-    
-                gap: 10px;                
+                gap: 10px;
+                
+                > i{
+                    display: none;
+                }
             }
         }
 
         .linha-produto:hover{
             background-color: #e4e2e2;
             cursor: pointer;
+
+            > span{  
+                > i{
+                    display: flex;
+                }
+            }
         }
 
     }

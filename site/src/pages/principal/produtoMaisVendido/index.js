@@ -5,6 +5,9 @@ import { useEffect ,useState } from 'react';
 
 import { API_URL } from '../../../constants.js';
 
+import storage from 'local-storage'
+import {toast} from 'react-toastify'
+
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { listaProdutosPorId } from '../../../api/AdmApi';
@@ -26,8 +29,8 @@ export default function ProdutoMaisVendido(){
     // const teste = estoque + ''; 
 
     async function ProdutoConsultado(){
-        let r = await listaProdutosPorId(id)
-        setProduct(r)
+        let r = await listaProdutosPorId(id);
+        setProduct(r);
     }
 
 
@@ -43,6 +46,26 @@ export default function ProdutoMaisVendido(){
         }
     }
 
+    async function adicionarAoCarrinho() {
+        let carrinho = [];
+        if (storage('carrinho')){
+                carrinho = storage('carrinho');
+        }
+
+        if (!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+        
+            storage('carrinho', carrinho);
+        
+        }
+
+        toast.success('Seu produto foi adicionado ao carrinho :)');
+       
+    }
+
     async function listarTamanhos() {
         let r = await axios.get( API_URL +'/tamanhos');
         setOpcoesTamanhos(r.data);
@@ -53,7 +76,7 @@ export default function ProdutoMaisVendido(){
     // }
 
     useEffect(() => {
-        //
+        
         listarTamanhos();
         ProdutoConsultado();
 
@@ -117,7 +140,7 @@ export default function ProdutoMaisVendido(){
                 </div>
                 
                 <div className='botao1'>
-                    <button>ADICIONAR AO CARRINHO</button>
+                    <button onClick={adicionarAoCarrinho}>ADICIONAR AO CARRINHO</button>
                </div>
             </div>
             

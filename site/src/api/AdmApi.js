@@ -15,7 +15,7 @@ export async function loginAdmin(email, senha){
     return r.data;
 }
 
-export async function inserirFilme(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor){
+export async function inserirProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor){
     const r1 = await api.post('/inserirProduto', {
         nome: nome,
         codigo: codigo,
@@ -30,7 +30,6 @@ export async function inserirFilme(nome, codigo, descricao, estoque, preco, prec
     return r1.data;
 }
 
-
 export async function enviarImagem(id, imagem){
     const formData = new FormData();
     formData.append('capa', imagem);
@@ -40,6 +39,26 @@ export async function enviarImagem(id, imagem){
             "Content-Type": "multipart/form-data"
         },
     });
+    return resposta.status;
+}
+
+export async function alterarProduto( id ,nome, codigo, descricao, estoque, preco, precopromocional, marca, cor){
+    const r1 = await api.put(`/alterarProduto/${id}`, {
+        nome: nome,
+        codigo: codigo,
+        descricao: descricao,
+        estoque: estoque,
+        preco: preco,
+        precopromocional: precopromocional,
+        marca: marca,
+        cor: cor
+    });
+    
+    return r1.data;
+}
+
+export async function deletarProduto(id){
+    const resposta = await api.delete(`/deletarProduto/${id}`);
     return resposta.status;
 }
 
@@ -58,3 +77,6 @@ export async function listaProdutosPorId(id){
     return resposta.data;
 }
 
+export function buscarImagem(imagem){
+    return `${api.getUri()}/${imagem}`
+}

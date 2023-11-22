@@ -16,7 +16,7 @@ import Carrinho from            './pages/principal/carrinho';
 import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import StatusPedido from        './pages/principal/StatusPedido';
-import MeusPedidos from         './pages/principal/pedidosFinalizados';
+import MeusPedidos from         './pages/principal/carrinhoCheio';
 import FormasDePagamento from   './pages/principal/formasDePagamento';
    
 
@@ -26,7 +26,7 @@ import Privacidade from         './pages/rodape/privacidade';
 import Termoscondicoes from     './pages/rodape/termos';
 import Trocas from              './pages/rodape/trocas';
 import MinhaConta from          './pages/principal/minhaConta';
-import Estatisticas from './pages/Adm/estatisticas';
+import Estatisticas from        './pages/Adm/estatisticas';
 
 
 
@@ -55,7 +55,10 @@ export default function Rotas(){
                 <Route path='/LoginAdm' element={<LoginAdm/>}/>
                 <Route path='/administrador' element={<Admin />} />
                 <Route path='/consulta-produto' element={<Consulta/>} />
+
                 <Route path='/cadastrar-produto' element={<CadastrarProduto />} />
+                <Route path='/cadastrar-produto/:id' element={<CadastrarProduto />} />
+
                 <Route path='/PainelDePedidos' element={<PainelDePedidos/>}/>
                 <Route path='/PedidosEmAndamento' element={<PedidosEmAndamento/>}/>
                 <Route path='/estatisticas' element={<Estatisticas />} />
