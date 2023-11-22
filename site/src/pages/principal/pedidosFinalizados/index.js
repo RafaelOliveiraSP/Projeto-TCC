@@ -42,7 +42,7 @@ export default function MeusPedidos(){
 
          <div className='cartao'>
 
-         <h1> Meus Pedidos </h1>
+         <h1> Carrinho </h1>
 
         <div className='tenis-1'>
         <img className='tenis-travis' src='./assets/images/dunk-travis1.png' alt='travis'/>
@@ -50,41 +50,13 @@ export default function MeusPedidos(){
                 
         <div>
             <span className='preco'>R$14.500,00</span>
-                     <button>Comprar novamente</button>
+                     <button> Comprar </button>
                  </div>
                     
                  </div>
                      <hr/>
-                            
-                 <div className='tenis-2'>
-                     <img src='./assets/images/jordan12.png' alt='jordan'/>
-                     <p>Tênis Air Jordan 12 <br/>Retro</p>
-
-                <div>
-                        <span>R$ 1.899,99</span>
-                            <button>Comprar novamente</button>
-                </div>
-
-                </div>
-                        <hr/>
-
-
-                <div className='tenis-3'>
-
-                        <img src='./assets/images/076c1f8bedcf4d52b329aedf00aa5539_9366__1_-removebg-preview 4.png' alt='ultra'/>
-                        <p>Tênis Ultra 4DFWD</p>
-
-                    <div>
-                         <span>R$ 1.999,99</span>
-                        <button>Comprar novamente</button>
-                    </div>
-                </div>
-
-                 <Link className='voltar' to='/'> Voltar para a pagina inicial </Link>
-                
         </div>
-
                 <Rodape/>
             </div>
         )
-}
+} 
