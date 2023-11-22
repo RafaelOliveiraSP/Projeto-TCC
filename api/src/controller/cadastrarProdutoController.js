@@ -181,7 +181,7 @@ endpoints.put('/alterarProduto/:id', async (req, resp) => {
       const { id }      = req.params;
       const produto     
       = req.body;
-
+    console.log(produto);
     if(!produto.nome)
       throw new Error('Informe o nome do produto!');
 

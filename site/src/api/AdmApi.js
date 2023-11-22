@@ -77,3 +77,6 @@ export async function listaProdutosPorId(id){
     return resposta.data;
 }
 
+export function buscarImagem(imagem){
+    return `${api.getUri()}/${imagem}`
+}

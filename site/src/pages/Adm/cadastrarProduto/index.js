@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 import axios from "axios";
 import storage from 'local-storage';
 
-import { alterarProduto, enviarImagem, inserirProduto, listaProdutosPorId } from '../../../api/AdmApi';
+import { alterarProduto, enviarImagem, inserirProduto, listaProdutosPorId, buscarImagem } from '../../../api/AdmApi';
 
 
 export default function CadastrarProduto(){
@@ -27,7 +27,7 @@ export default function CadastrarProduto(){
     const [marca, setMarca]                         = useState(0);
     const [cor, setCor]                             = useState('');
 
-    const { id } = useParams()
+    const { id } = useParams();
 
     const [primeiraImg, setPrimeiraImg]             = useState();
 
@@ -47,14 +47,15 @@ export default function CadastrarProduto(){
         setPrecoPromocional(r.precopromocional);
         setMarca(r.marca);
         setCor(r.cor);
-        // setPrimeiraImg(r.imagem);
+        setPrimeiraImg(r.imagem);
     }
 
     async function cadastrarNovoProduto() {
         try {
+            if(!primeiraImg)
+                throw new Error('Escolha a imagem do produto');
+
             if(!id){
-                if(!primeiraImg)
-                    throw new Error('Escolha a imagem do produto');
                 
                 const novoProduto = await inserirProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
                 await enviarImagem(novoProduto.id, primeiraImg);
@@ -63,14 +64,13 @@ export default function CadastrarProduto(){
                 limparFormulario(); 
             }
             else{
-                if(!primeiraImg)
-                    throw new Error('Escolha a imagem do produto');
+                await alterarProduto(id, nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
                 
-                await alterarProduto(nome, codigo, descricao, estoque, preco, precopromocional, marca, cor);
-                await enviarImagem(id, primeiraImg);
+                if(typeof(primeiraImg) == 'object')
+                    await enviarImagem(id, primeiraImg);
 
-                toast.success(`Produto foi alterado com sucesso!`)
-                limparFormulario(); 
+                toast.success(`Produto foi alterado com sucesso!`);
+                navigate('/');
             }
 
             
@@ -155,7 +155,13 @@ export default function CadastrarProduto(){
     }
 
     function mostrarPrimeiraImagem(){
-        return URL.createObjectURL(primeiraImg);
+        if(typeof (primeiraImg) == 'object') {
+          return URL.createObjectURL(primeiraImg);  
+        }
+        else {
+            return buscarImagem(primeiraImg);
+        }
+        
     }
 
     
@@ -199,7 +205,7 @@ export default function CadastrarProduto(){
                                 }
 
                                 {primeiraImg &&
-                                    <img src={mostrarPrimeiraImagem()} className='prm-fr-select' alt='prm-img' />
+                                    <img src={mostrarPrimeiraImagem()} className='prm-fr-select' alt='Imagem Produto' />
                                 }
                                 <input type='file' id='primeira-img' onChange={e => setPrimeiraImg(e.target.files[0])}/>
                             </div>
@@ -241,7 +247,7 @@ export default function CadastrarProduto(){
                                     <option value={item.id}> {item.marca} </option>  
                                 )}
                             </select>
-
+                        
                             <span style={{width: '73px', textAlign: 'center'}}>Cor:</span>
                             <input type='color' value={cor} onChange={e => setCor(e.target.value)}/>
                         </div>
