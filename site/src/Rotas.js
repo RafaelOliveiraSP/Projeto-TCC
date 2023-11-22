@@ -16,7 +16,7 @@ import Carrinho from            './pages/principal/carrinho';
 import FinalizarPedido from     './pages/principal/FinalizarPedido';
 import PedidoRealizado from     './pages/principal/PedidoRealizado';
 import StatusPedido from        './pages/principal/StatusPedido';
-import MeusPedidos from         './pages/principal/pedidosFinalizados';
+import MeusPedidos from         './pages/principal/carrinhoCheio';
 import FormasDePagamento from   './pages/principal/formasDePagamento';
    
 
