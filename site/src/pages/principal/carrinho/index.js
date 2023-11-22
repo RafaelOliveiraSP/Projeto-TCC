@@ -3,37 +3,11 @@ import { Link } from 'react-router-dom';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { useEffect, useState } from 'react';
-import Storage from 'local-storage';
-import { listaProdutosPorId } from '../../../api/AdmApi';
+
 
 
 export default function Carrinho() {
-    const [itens, setItens] = useState([])
-
-    async function carregarCarrinho(){
-        let carrinho = Storage('carrinho');
-        if (carrinho){
-         
-            let temp = [];
-
-            for (let produto of carrinho) {
-                let p = await  listaProdutosPorId(produto.id)
-                temp.push({
-                    produto: p,
-                    qtd: produto.qtd
-                })
-            }
-            console.log(temp);
-            setItens(temp);
-        }
-    }
-
-    useEffect(() => {
-        carregarCarrinho();
     
-    }, [])
-
     return(
         <div className='pagina-carrinho'>
             <Cabecalho/>

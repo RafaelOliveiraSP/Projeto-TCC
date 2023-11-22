@@ -5,7 +5,7 @@ import { useEffect ,useState } from 'react';
 
 import { API_URL } from '../../../constants.js';
 
-import Storage from 'local-storage'
+import storage from 'local-storage'
 import {toast} from 'react-toastify'
 
 import axios from "axios";
@@ -29,8 +29,8 @@ export default function ProdutoMaisVendido(){
     // const teste = estoque + ''; 
 
     async function ProdutoConsultado(){
-        let r = await listaProdutosPorId(id)
-        setProduct(r)
+        let r = await listaProdutosPorId(id);
+        setProduct(r);
     }
 
 
@@ -46,10 +46,10 @@ export default function ProdutoMaisVendido(){
         }
     }
 
-    function adicionarAoCarrinho() {
+    async function adicionarAoCarrinho() {
         let carrinho = [];
-        if (Storage('carrinho')){
-                carrinho = Storage('carrinho');
+        if (storage('carrinho')){
+                carrinho = storage('carrinho');
         }
 
         if (!carrinho.find(item => item.id === id)) {
@@ -58,7 +58,7 @@ export default function ProdutoMaisVendido(){
                 qtd: 1
             })
         
-            Storage('carrinho', carrinho);
+            storage('carrinho', carrinho);
         
         }
 
@@ -76,7 +76,7 @@ export default function ProdutoMaisVendido(){
     // }
 
     useEffect(() => {
-        //
+        
         listarTamanhos();
         ProdutoConsultado();
 
