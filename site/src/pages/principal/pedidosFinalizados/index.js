@@ -20,7 +20,7 @@ export default function MeusPedidos(){
                 
                 <div>
                     <span className='preco'>R$14.500,00</span>
-                    <button>Comprar novamente</button>
+                    <button> Comprar </button>
                 </div>
                     
                 </div>
@@ -32,7 +32,7 @@ export default function MeusPedidos(){
 
                     <div>
                         <span>R$ 1.899,99</span>
-                        <button>Comprar novamente</button>
+                        <button> Comprar </button>
                     </div>
                 </div>
                     <hr/>
@@ -45,7 +45,7 @@ export default function MeusPedidos(){
 
                     <div>
                         <span>R$ 1.999,99</span>
-                        <button>Comprar novamente</button>
+                        <button> Comprar </button>
                     </div>
                 </div>
 
