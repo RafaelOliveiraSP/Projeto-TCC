@@ -38,21 +38,23 @@ export default function MeusPedidos(){
 
     return(
 
-         <div className='pagina-carrinhoCheio'>
+        <div className='pagina-carrinhoCheio'>
             <Cabecalho/>
 
-            <div className='cartao'>
+            <div className='cartao-componente'>
+                <div>
+                   <h1> Carrinho </h1>
 
-            <h1> Carrinho </h1>
-
-            <div className='itens'>
-                {itens.map(item =>
-                    <CarrinhoItem item={item} /> 
-                )}
+                    <div className='listaItens'>
+                        {itens.map(item =>
+                            <CarrinhoItem item={item} /> 
+                        )}
+                    
+                    </div> 
+                </div>
+            </div>
             
-            </div>
-            </div>
-                <Rodape/>
-            </div>
-        )
+            <Rodape/>
+        </div>
+    )
  }

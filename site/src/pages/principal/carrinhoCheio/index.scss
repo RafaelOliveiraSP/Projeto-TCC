@@ -1,37 +1,33 @@
 .pagina-carrinhoCheio{
     display: flex;
     flex-direction: column;
-    justify-content: space-between ;
 
     width: 100%;
     height: 100%;
 
-    .cartao{
+    .cartao-componente{
         display: flex;
         justify-content: center;
-        align-items: center;
+        
 
-    > h1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        min-height: 700px;
 
-        margin: 50px;
+        > div{
+            width: 60%;
+
+            > h1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin: 50px 0px;
+            }
+
+            .listaItens{
+                max-width: 80%;
+            }
+        }
+
     }
-
-    
-
-    
-
-    .voltar{
-        display: flex;
-        margin-top: 60px;
-        border-radius: 10px;
-
-        border: 1px solid #d9d9d9;
-        font-family: 'Monda', sans-serif;
-        font-weight: 500;
-    }
- }
- 
 }
