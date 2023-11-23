@@ -2,6 +2,7 @@ import './index.scss';
 
 import { Link } from 'react-router-dom';
 
+    // const produtos = storage('carrinho')
 
 export default function Cabecalho(){
 
