@@ -1,27 +1,34 @@
-// import { API_URL } from "../../constants";
+import { API_URL } from "../../constants";
 import './index.scss';
 
 
 
-export default function CarrinhoItem(props) {
+export default function CarrinhoItem({ item: { produto: { info, categorias, imagens }, qtd }, removerItem }) {
+
+    function removerItem(id) {
+        let carrinho = Storage('compCarrinhoItem');
+        carrinho = carrinho.filter(item => item.id !== id);
+
+        Storage('carrinho', carrinho);
+        carregarCarrinho();
+    }
 
     return(
-        <div className="comp-carrrinho-item">
-
+        <div className="compCarrinhoItem">
+                
             <div>
                 <div >
-                    <img style={{width: "120px", height: "70px"}} src='./assets/images/dunk-travis1.png' alt='travis'/>
-                    <div className="nome">{props.item.produto.nome}</div>
+                    <img/>
+                    <div className="nome"></div>
                             
                     <div>
-                        <span className='preco'>{props.item.produto.preco}</span>
+                        <span className='preco'></span>
                         <button> Comprar </button>       
                     </div>
-                    <hr/>
-
-                </div>
-
+                </div> 
             </div>
+
+            <hr/>
 
         </div>
     )
