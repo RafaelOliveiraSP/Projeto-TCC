@@ -3,25 +3,26 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const Chart = () => {
   const data = [
-    { paymentMethod: 'Débito', Débito: 75, color: '#FFA500' },
-    { paymentMethod: 'Crédito', Crédito: 50, color: '#FFFF00' },
-    { paymentMethod: 'PIX', PIX: 90, color: '#FF0000' },
-    { paymentMethod: 'Boleto', Boleto: 20, color: '#008000' },
+    { paymentMethod: 'Débito', Débito: 75},
+    { paymentMethod: 'Crédito', Crédito: 50},
+    { paymentMethod: 'PIX', PIX: 90 },
+    { paymentMethod: 'Boleto', Boleto: 20},
   ];
 
   return (
-    <div>
-      <h2>Marcas mais vendidas</h2>
-      <ResponsiveContainer width="100%" height={300}>
+    <div style={{display:'flex',alignItems:'center', flexDirection:'column',paddingBlockEnd:'10%'}}>
+      <h2>Formas de Pagamento</h2>
+      <ResponsiveContainer width="60%" height={210}>
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="paymentMethod" />
           <YAxis />
           <Tooltip />
-          <Legend />
-          <Bar dataKey="" fill="#8884d8">
-          
-          </Bar>
+          <Legend style={{display:'flex', justifyContent:'space-arround'}}/>
+          <Bar dataKey="Débito" fill="green"/>
+          <Bar dataKey="Crédito" fill="red"/>
+          <Bar dataKey="PIX" fill="orange"/>
+          <Bar dataKey="Boleto" fill="#0AA5D6"/>
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import storage from 'local-storage';
+import Chart from '../../../components/graficos';
 
 
 const Estatisticas = () => {
@@ -41,22 +42,25 @@ const Estatisticas = () => {
       <Cabecalho/>
       <div className='borda'> 
         <div className='gr1' style={{display: "flex", paddingTop: '10%', paddingBlockEnd: '10%',justifyContent:'space-between', alignItems: 'center', flexDirection:'column'}}>
-            <h2>Marcas mais vendidas</h2>
+            <h2>Marcas mais Vendidas</h2>
             <ResponsiveContainer width="60%" height={210} >
             <BarChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="bar1" fill='#0000' />
               <YAxis />
               <Tooltip />
-              <Legend />            
+              <Legend style={{display:'flex', justifyContent:'space-arround'}}/>            
               <Bar dataKey="adidas" fill="red"/>      
               <Bar dataKey='Puma' fill="blue"/>
-              <Bar dataKey='Nike' fill="yellow"/>
+              <Bar dataKey='Nike' fill="#E58A00"/>
               <Bar dataKey='Salomon' fill="black"/>
               <Bar dataKey='Mizuno' fill="orange"/>
               <Bar dataKey='Olympikus' fill="green"/>
             </BarChart>
           </ResponsiveContainer>
+        </div>
+        <div className='gr2'>
+          <Chart/>
         </div>
       </div>
       <Rodape/>
