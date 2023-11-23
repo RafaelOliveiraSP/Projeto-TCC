@@ -1,12 +1,25 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
+import { useEffect } from 'react';
 
+import storage from 'local-storage';
 
 
 export default function Carrinho() {
+
+    const navigate = useNavigate(); 
+
+    useEffect(() => {
+        if (storage('carrinho')){
+            navigate('/meuspedidos');
+        }
+       
+        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
     return(
         <div className='pagina-carrinho'>
