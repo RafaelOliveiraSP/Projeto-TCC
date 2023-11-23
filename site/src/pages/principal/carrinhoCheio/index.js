@@ -1,11 +1,10 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import Rodape from '../../../components/rodape';
-import { Link } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
 import storage from 'local-storage';
-import { listaDeProdutos, listaProdutosPorId } from '../../../api/AdmApi';
+import { listaProdutosPorId } from '../../../api/AdmApi';
 import CarrinhoItem from '../../../components/carrinhoItem';
 
 export default function MeusPedidos(){
@@ -25,7 +24,7 @@ export default function MeusPedidos(){
                     qtd: produto.qtd
                 })
             }
-            console.log(temp);
+            
             setItens(temp);
         }
     }
@@ -33,26 +32,29 @@ export default function MeusPedidos(){
     useEffect(() => {
         carregarCarrinho();
     
+        
   }, []) 
 
 
     return(
 
-         <div className='pagina-carrinhoCheio'>
+        <div className='pagina-carrinhoCheio'>
             <Cabecalho/>
 
-            <div className='cartao'>
+            <div className='cartao-componente'>
+                <div>
+                   <h1> Carrinho </h1>
 
-            <h1> Carrinho </h1>
-
-            <div className='itens'>
-                {itens.map(item =>
-                <CarrinhoItem /> 
-                )}
+                    <div className='listaItens'>
+                        {itens.map(item =>
+                            <CarrinhoItem item={item} /> 
+                        )}
+                    
+                    </div> 
+                </div>
+            </div>
             
-            </div>
-            </div>
-                <Rodape/>
-            </div>
-        )
+            <Rodape/>
+        </div>
+    )
  }

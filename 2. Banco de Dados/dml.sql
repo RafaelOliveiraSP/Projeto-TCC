@@ -59,6 +59,21 @@ from 				tb_cadastrar_produto as P
 inner join 			tb_marca as M on M.id_marca = P.id_marca
 where P.nm_produto like "%a%";
 
+-- Consulta produto pela marca
+
+select  id_produto			as id,
+	nm_produto			as nome,
+        ds_codigo			as codigo,
+        ds_descricao			as descricao,
+        qnt_estoque			as estoque,
+        vl_preco		        as preco,
+        vl_preco_promocional	        as precopromocional,
+        id_marca			as marca,
+        ds_cor				as cor,
+        img_produto			as imagem
+	from tb_cadastrar_produto
+	where id_marca = 1;
+
 
 -- Deleta produto
 

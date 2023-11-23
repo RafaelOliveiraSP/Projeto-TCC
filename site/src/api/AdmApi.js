@@ -77,6 +77,11 @@ export async function listaProdutosPorId(id){
     return resposta.data;
 }
 
+export async function listaProdutosPorMarca(marca){
+    const resposta = await api.get(`/buscarProdutoPorMarca/${marca}`)
+    return resposta.data;
+}
+
 export function buscarImagem(imagem){
     return `${api.getUri()}/${imagem}`
 }

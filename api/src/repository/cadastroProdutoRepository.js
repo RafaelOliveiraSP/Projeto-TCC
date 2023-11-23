@@ -44,11 +44,21 @@ export async function inserirImagem(imagem, id) {
 export async function verificarCodigo(codigo) {
   const comando = `
       select * from tb_cadastrar_produto                                    
-              where ds_codigo       like ?
+                where ds_codigo       = ?
   `
 
-  const [dados] = await conexao.query(comando, [ '%' + codigo + '%',])
+  const [dados] = await conexao.query(comando, [codigo])
   return dados;
+}
+
+export async function verificarCodigoAlterado(codigo) {
+  const comando = `
+      select * from tb_cadastrar_produto                                    
+                where ds_codigo       = ?
+  `
+
+  const [dados] = await conexao.query(comando, [codigo])
+  return dados[0];
 }
 
 // busca marcas pelo id 
@@ -125,6 +135,28 @@ export async function BuscarProdutosPorNome(nome){
   const [dados] = await conexao.query(comando, [`%${nome}%`]);
   return dados;  
 }
+
+// Busca produto por marca 
+
+export async function BuscarProdutosPorMarca(marca){
+  const comando = `
+        select  id_produto				        as id,
+                nm_produto				        as nome,
+                ds_codigo				          as codigo,
+                ds_descricao			        as descricao,
+                qnt_estoque				        as estoque,
+                vl_preco				          as preco,
+                vl_preco_promocional	    as precopromocional,
+                id_marca				          as marca,
+                ds_cor					          as cor,
+                img_produto				        as imagem
+        from tb_cadastrar_produto
+                where id_marca = ?`
+
+  const [dados] = await conexao.query(comando, [marca]);
+  return dados;              
+}
+
 
 // deleta um produto 
 

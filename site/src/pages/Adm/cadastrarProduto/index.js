@@ -70,7 +70,10 @@ export default function CadastrarProduto(){
                     await enviarImagem(id, primeiraImg);
 
                 toast.success(`Produto foi alterado com sucesso!`);
-                navigate('/');
+
+                setTimeout(() => {
+                    navigate('/administrador');
+                }, 5600)
             }
 
             
