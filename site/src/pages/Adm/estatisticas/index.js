@@ -1,5 +1,7 @@
 import './index.scss';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Cabecalho from '../../../components/cabecalho';
+import Rodape from '../../../components/rodape';
 
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -9,12 +11,12 @@ import storage from 'local-storage';
 
 const Estatisticas = () => {
   const data = [
-    { bar1: 'Adidas', porcentagem: 80 },
-    { bar2: 'Puma', porcentagem: 50 },
-    { bar3: 'Nike', porcentagem: 85 },
-    { bar4: 'Salomon', porcentagem: 60 },
-    { bar5: 'Mizuno', porcentagem: 55 },
-    { bar6: 'Olympikus', porcentagem: 35 },
+    { bar1: 'Adidas',adidas: 80 },
+    { bar1: 'Puma',Puma: 50 },
+    { bar1: 'Nike',Nike: 85 },
+    { bar1: 'Salomon',Salomon: 60 },
+    { bar1: 'Mizuno',Mizuno: 55 },
+    { bar1: 'Olympikus',Olympikus: 35 },
   ];
 
   const navigate = useNavigate();
@@ -33,22 +35,32 @@ const Estatisticas = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+
   return (
-    <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bar1" fill='#0000' />
-        <XAxis dataKey="bar2" fill='#0000' />
-        <XAxis dataKey="bar3" fill='#0000' />
-        <XAxis dataKey="bar4" fill='#0000' />
-        <XAxis dataKey="bar5" fill='#0000' />
-        <XAxis dataKey="bar6" fill='#0000' />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="porcentagem" fill="#FF0000" />      
-      </BarChart>
-    </ResponsiveContainer>
+    <div className='pagina estatisticas'>
+      <Cabecalho/>
+      <div className='borda'> 
+        <div className='gr1' style={{display: "flex", paddingTop: '10%', paddingBlockEnd: '10%',justifyContent:'space-between', alignItems: 'center', flexDirection:'column'}}>
+            <h2>Marcas mais vendidas</h2>
+            <ResponsiveContainer width="60%" height={210} >
+            <BarChart data={data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="bar1" fill='#0000' />
+              <YAxis />
+              <Tooltip />
+              <Legend />            
+              <Bar dataKey="adidas" fill="red"/>      
+              <Bar dataKey='Puma' fill="blue"/>
+              <Bar dataKey='Nike' fill="yellow"/>
+              <Bar dataKey='Salomon' fill="black"/>
+              <Bar dataKey='Mizuno' fill="orange"/>
+              <Bar dataKey='Olympikus' fill="green"/>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+      <Rodape/>
+    </div>    
   );
 };
 
