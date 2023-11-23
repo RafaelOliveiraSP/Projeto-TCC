@@ -1,4 +1,4 @@
-import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId, BuscarProdutosPorNome, RemoverProduto, AlterarProduto } from '../repository/cadastroProdutoRepository.js';
+import { buscarMarcaPorId, verificarCodigo, inserirProduto, inserirImagem, BuscarTodosOsProdutos, BuscarProdutosPorId, BuscarProdutosPorNome, RemoverProduto, AlterarProduto, verificarCodigoAlterado, BuscarProdutosPorMarca } from '../repository/cadastroProdutoRepository.js';
 import { listarMarcas } from '../repository/marcasRepository.js';
 import { listarTamanhos } from '../repository/tamanhoRepository.js';
 
@@ -155,6 +155,26 @@ endpoints.get('/buscarProdutoPorNome', async (req, resp) => {
   }
 });
 
+// Busca produtos por marca
+
+endpoints.get('/buscarProdutoPorMarca/:marca', async (req, resp) => {
+  try {
+    const { marca } = req.params;
+    const r = await BuscarProdutosPorMarca(marca);
+    
+    if(r.length === 0 )
+      throw new Error('Não há produtos desta!')
+      
+    else
+      resp.send(r);
+  } 
+  catch (error) {
+      resp.status(500).send({
+        erro: error.message
+      })
+  }
+})
+
 // Deleta um produto
 
 endpoints.delete('/deletarProduto/:id', async (req, resp) => {
@@ -179,17 +199,18 @@ endpoints.delete('/deletarProduto/:id', async (req, resp) => {
 endpoints.put('/alterarProduto/:id', async (req, resp) => {
   try{
       const { id }      = req.params;
-      const produto     
-      = req.body;
-    console.log(produto);
+      const produto     = req.body;
+    
     if(!produto.nome)
       throw new Error('Informe o nome do produto!');
 
     if(!produto.codigo)
       throw new Error('Informe o código do produto!');
     
-    const r1 = await verificarCodigo(produto.codigo)
-      if(r1.length > 0)
+    const r1 = await verificarCodigoAlterado(produto.codigo)
+    const { codigo } = r1;
+
+      if(codigo != produto.codigo && r1.length > 0 )
       throw new Error('Código já cadastrado!');
 
     if(!produto.descricao)
