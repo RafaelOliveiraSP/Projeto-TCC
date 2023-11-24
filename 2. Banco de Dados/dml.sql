@@ -120,3 +120,4 @@ insert into tb_tamanho(ds_numero)
 		values('37'), ('38'), ('39'), ('40'), ('41'), ('42'), ('43');
            
 select * from tb_tamanho;
+

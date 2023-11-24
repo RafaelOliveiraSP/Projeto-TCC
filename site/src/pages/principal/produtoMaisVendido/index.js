@@ -62,7 +62,7 @@ export default function ProdutoMaisVendido(){
         
         }
 
-        toast.success('Seu produto foi adicionado ao carrinho :)');
+        // toast.success('Seu produto foi adicionado ao carrinho :)');
        
     }
 
